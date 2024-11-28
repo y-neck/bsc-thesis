@@ -1,0 +1,142 @@
+%Preamble
+\documentclass[12pt,a4paper]{article}        %Define text type and basic formatting
+
+\usepackage[utf8]{inputenc}     %Usage of UTF-8 for umlauts
+\usepackage[ngerman]{babel}     %Paper language; 
+\pagenumbering{arabic}  % "Normal" page numbering
+%Set line spacing to 1.5
+\usepackage{setspace}
+\onehalfspacing
+
+%Citation and reference
+\usepackage[backend=biber, 
+style=authoryear,
+citestyle=authoryear-comp,
+hyperref=true,
+giveninits,    %Shorten first names to initial
+uniquename=init,    %prevent name disambiguation
+sorting=nyt,
+natbib  %enable citep/citet(parentheses only around year)
+]{biblatex}   %REFERENCES https://www.overleaf.com/learn/latex/Bibliography_management_in_LaTeX
+\addbibresource{references.bib}     %Lib file
+\usepackage[nottoc,numbib]{tocbibind}   %add bibliography to toc
+
+%page citation in text with colon: https://tex.stackexchange.com/questions/433122/changing-comma-in-textcite-to-colon
+\DeclareFieldFormat{postnote}{#1}
+\DeclareFieldFormat{multipostnote}{#1}
+\renewcommand\postnotedelim{\addcolon\addspace}
+\renewcommand\nameyeardelim{\addcomma\space} %comma between author and year
+%u.a. as et al.
+\DefineBibliographyStrings{german}{%
+  andothers = {et al.},
+}
+%Replace and/und with &
+\renewcommand*{\finalnamedelim}{%
+\ifnumgreater{\value{liststop}}{2}{\finalandcomma}{}%
+\addspace\&\space}%
+
+%images
+\usepackage{graphicx}       %Required for adding images
+\graphicspath{{images/}}    %image path
+\usepackage{wallpaper}  %Page background img
+
+\usepackage{parskip}        %Prevent indention of paragraphs
+\usepackage{mathtools}    %required for math formulas
+\usepackage{amssymb}    %mathematical symbols
+\usepackage{listings}   %For code listings
+
+%Use markdown in LaTex https://de.overleaf.com/learn/latex/Articles/How_to_write_in_Markdown_on_Overleaf
+\usepackage[footnotes,definitionLists,hashEnumerators,smartEllipses,hybrid]{markdown}   
+
+\usepackage{titlesec}   %Style titles
+\usepackage{fancyhdr}   %Header/footer
+\usepackage[bottom]{footmisc}   %Foot notes, at end of page
+
+%Links
+\usepackage[colorlinks,
+pdfpagelabels,
+pdfstartview = FitH,
+bookmarksopen = true,
+bookmarksnumbered = true,
+linkcolor = black,
+plainpages = false,
+hypertexnames = false,
+citecolor = black,
+urlcolor = black]{hyperref}   %Hyperref pkg -> clickable links and TOC
+\usepackage{csquotes}   % Autostyle quotes language-specific
+
+%Font settings
+\renewcommand{\familydefault}{\sfdefault}       %Text sans-serif
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}
+\fancyhf{}      %Clear all header/footer stylings
+\rfoot{\thepage\hspace{1pt}}        %Add page number
+
+%Title page settings
+\usepackage{titling}    %Title page styling
+\title{«Video- und bildbasierte Desinformation auf Schweizer Social-Media-Plattformen»}        %Document Title
+\author{Yannick Spriessler}     %Author of paper
+\date{20.12.2024}     %Date of paper; ALTERNATIVE: \today
+%___________________________________________________________________________________________
+%TITLE PAGE
+\begin{document}  
+    \begin{titlingpage} %Start titling page
+    \includegraphics[height=30px]{fh-logo.png}\\   %Include logo
+    \begin{large}
+    Fachhochschule Graubünden\\ %The name of your university
+    BSc Multimedia Production\\
+    mmp22b
+    \end{large}
+    \vspace{1cm} %You can control the vertical distance
+    \begin{center}
+    \begin{LARGE} 
+    \textbf{\thetitle} \\
+    \end{LARGE}
+    \begin{large}
+    Exposé Bachelorarbeit\\
+    \end{large}
+    \vspace{1cm} %Put the distance you need.
+    \theauthor\\
+    \thedate
+    \end{center}
+    \end{titlingpage}
+    %\pagebreak      %Insert page break
+%-----------------------------------------------
+%TOC
+    % \thispagestyle{empty}
+    % \setcounter{page}{0}    %Set page no.
+    % \tableofcontents        %Content index
+    % \pagebreak
+%-----------------------------------------------
+%DOC
+    %\begin{abstract} \end{abstract}    %If abstract is used
+    
+    %\frontmatter   %If foreword
+    %\mainmatter    %Main part if foreword used
+
+    \section{Einleitung}
+    \subsection{Einführung ins Thema}
+    \subsection{Forschungsfrage}
+    \subsection{Relevanz}
+    \subsubsection{Gesellschaft}
+    \subsubsection{Wissenschaft}
+    \section{Forschungsstand}
+    \section{Methodik}
+    \pagebreak
+    \section{Zeitplan}
+
+    the quick brown fox jumps over the lazy dog
+    fgh\smartcite[1-500, 28]{eg34} %like \footcite{\parencite{}}
+    
+    \[x=something\]
+    See also \cite{eg34}
+    \blockquote[Gwgwhe5]{. Lorem ipsum dolor sit amet  bkjkb djblakBSD HNOFClBrI fczubj jbijareg iohioeksfg egkEG IJOlewgnkNERG Kenfsl rjhgbnlnkelnfeklF […]} \parencite[22]{eg34}\\ %line break
+    f uhe iogoweg oiuhlswer, as explained by \textcite{eg34}
+
+
+\pagebreak
+%-----------------------------------------------
+%BIB
+
+\printbibliography[heading=bibintoc, title={References}]  %Literaturverzeichnis, auch im TOC
+\end{document}
