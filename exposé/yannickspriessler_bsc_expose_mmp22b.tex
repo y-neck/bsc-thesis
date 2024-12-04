@@ -2,23 +2,23 @@
 \documentclass[12pt,a4paper]{article}        %Define text type and basic formatting
 
 \usepackage[utf8]{inputenc}     %Usage of UTF-8 for umlauts
-\usepackage[ngerman]{babel}     %Paper language; 
+\usepackage[ngerman]{babel}     %Paper language;
 \pagenumbering{arabic}  % "Normal" page numbering
 %Set line spacing to 1.5
 \usepackage{setspace}
 \onehalfspacing
 
 %Citation and reference
-\usepackage[backend=biber, 
-style=authoryear,
-citestyle=authoryear-comp,
-hyperref=true,
-giveninits,    %Shorten first names to initial
-uniquename=init,    %prevent name disambiguation
-sorting=nyt,
-natbib  %enable citep/citet(parentheses only around year)
+\usepackage[backend=biber,
+  style=authoryear,
+  citestyle=authoryear-comp,
+  hyperref=true,
+  giveninits,    %Shorten first names to initial
+  uniquename=init,    %prevent name disambiguation
+  sorting=nyt,
+  natbib  %enable citep/citet(parentheses only around year)
 ]{biblatex}   %REFERENCES https://www.overleaf.com/learn/latex/Bibliography_management_in_LaTeX
-\addbibresource{references.bib}     %Lib file
+\addbibresource{./references.bib}     %Lib file
 \usepackage[nottoc,numbib]{tocbibind}   %add bibliography to toc
 
 %page citation in text with colon: https://tex.stackexchange.com/questions/433122/changing-comma-in-textcite-to-colon
@@ -32,7 +32,7 @@ natbib  %enable citep/citet(parentheses only around year)
 }
 %Replace and/und with &
 \renewcommand*{\finalnamedelim}{%
-\ifnumgreater{\value{liststop}}{2}{\finalandcomma}{}%
+  \ifnumgreater{\value{liststop}}{2}{\finalandcomma}{}%
 \addspace\&\space}%
 
 %images
@@ -46,7 +46,7 @@ natbib  %enable citep/citet(parentheses only around year)
 \usepackage{listings}   %For code listings
 
 %Use markdown in LaTex https://de.overleaf.com/learn/latex/Articles/How_to_write_in_Markdown_on_Overleaf
-\usepackage[footnotes,definitionLists,hashEnumerators,smartEllipses,hybrid]{markdown}   
+\usepackage[footnotes,definitionLists,hashEnumerators,smartEllipses,hybrid]{markdown}
 
 \usepackage{titlesec}   %Style titles
 \usepackage{fancyhdr}   %Header/footer
@@ -54,14 +54,14 @@ natbib  %enable citep/citet(parentheses only around year)
 
 %Links
 \usepackage[colorlinks,
-pdfpagelabels,
-pdfstartview = FitH,
-bookmarksopen = true,
-bookmarksnumbered = true,
-linkcolor = black,
-plainpages = false,
-hypertexnames = false,
-citecolor = black,
+  pdfpagelabels,
+  pdfstartview = FitH,
+  bookmarksopen = true,
+  bookmarksnumbered = true,
+  linkcolor = black,
+  plainpages = false,
+  hypertexnames = false,
+  citecolor = black,
 urlcolor = black]{hyperref}   %Hyperref pkg -> clickable links and TOC
 \usepackage{csquotes}   % Autostyle quotes language-specific
 
@@ -69,7 +69,11 @@ urlcolor = black]{hyperref}   %Hyperref pkg -> clickable links and TOC
 \renewcommand{\familydefault}{\sfdefault}       %Text sans-serif
 \renewcommand{\headrulewidth}{0pt}
 \pagestyle{fancy}
+
+%Footer
 \fancyhf{}      %Clear all header/footer stylings
+\lfoot{\thedate\hspace{1pt}}
+\cfoot{Exposé Bachelorarbeit\\«Video- und bildbasierte Desinformation auf Schweizer Social-Media-Plattformen» (Arbeitstitel)}
 \rfoot{\thepage\hspace{1pt}}        %Add page number
 
 %Title page settings
@@ -77,21 +81,22 @@ urlcolor = black]{hyperref}   %Hyperref pkg -> clickable links and TOC
 \title{«Video- und bildbasierte Desinformation auf Schweizer Social-Media-Plattformen» (Arbeitstitel)}        %Document Title
 \author{Yannick Spriessler}     %Author of paper
 \date{20.12.2024}     %Date of paper; ALTERNATIVE: \today
+
 %___________________________________________________________________________________________
 %TITLE PAGE
-\begin{document}  
-    \begin{titlingpage} %Start titling page
-    \begin{center}
+\begin{document}
+\begin{titlingpage} %Start titling page
+  \begin{center}
     \begin{large}
-    Fachhochschule Graubünden, Institut für Multimedia Production (IMP)\\ %The name of your university
+      Fachhochschule Graubünden, Institut für Multimedia Production (IMP)\\ %The name of your university
     \end{large}
     \vspace{2cm} %You can control the vertical distance
-    \begin{LARGE} 
-    \textbf{\thetitle} \\
+    \begin{LARGE}
+      \textbf{\thetitle} \\
     \end{LARGE}
     \vspace{1cm}
     \begin{large}
-    Exposé Bachelorarbeit\\
+      Exposé Bachelorarbeit\\
     \end{large}
     \vspace{5cm} %Put the distance you need.
     Autor: \theauthor \\
@@ -102,46 +107,57 @@ urlcolor = black]{hyperref}   %Hyperref pkg -> clickable links and TOC
     Modul: SRSP 5 \\
     Referentin: Prof. Dr. Franziska Oehmer-Pedrazzi \\
     Koreferent: Benjamin Hanimann \\ \\
-    \thedate
-    \end{center}
-    \end{titlingpage}
-    %\pagebreak      %Insert page break
+    Datum: \thedate
+  \end{center}
+\end{titlingpage}
+%\pagebreak      %Insert page break
 %-----------------------------------------------
 %TOC
-    % \thispagestyle{empty}
-    % \setcounter{page}{0}    %Set page no.
-    % \tableofcontents        %Content index
-    % \pagebreak
+% \thispagestyle{empty}
+% \setcounter{page}{0}    %Set page no.
+% \tableofcontents        %Content index
+% \pagebreak
 %-----------------------------------------------
 %DOC
-    %\begin{abstract} \end{abstract}    %If abstract is used
-    
-    %\frontmatter   %If foreword
-    %\mainmatter    %Main part if foreword used
+%\begin{abstract} \end{abstract}    %If abstract is used
 
-    \section{Einleitung}
-    \subsection{Einführung ins Thema}
-    \subsection{Forschungsfrage}
-    \subsection{Relevanz}
-    \subsubsection{Gesellschaft}
-    \subsubsection{Wissenschaft}
-    \section{Forschungsstand}
-    \section{Methodik}
-    \pagebreak
-    \section{Zeitplan}
+%\frontmatter   %If foreword
+%\mainmatter    %Main part if foreword used
 
-    the quick brown fox jumps over the lazy dog
-    fgh\smartcite[1-500, 28]{eg34} %like \footcite{\parencite{}}
-    
-    \[x=something\]
-    See also \cite{eg34}
-    \blockquote[Gwgwhe5]{. Lorem ipsum dolor sit amet  bkjkb djblakBSD HNOFClBrI fczubj jbijareg iohioeksfg egkEG IJOlewgnkNERG Kenfsl rjhgbnlnkelnfeklF […]} \parencite[22]{eg34}\\ %line break
-    f uhe iogoweg oiuhlswer, as explained by \textcite{eg34}
+\section{Einleitung}
+\subsection{Einführung ins Thema}
+– Kurzbeschreibung des verbindenden Themas von Bachelorthesis und Lehrprojekt\\
+\subsection{Relevanz}
+\subsubsection{Gesellschaft}
+\subsubsection{Wissenschaft}
+– Darstellung der Relevanz des Themas (gesellschaftliche, kommunikationspraktische und/oder wissenschaftliche Relevanz)
+\section{Bachelorthesis (Umfang ca. 1 Seite)}
+\subsection{Forschungsfrage}
+– Spezifische Zielsetzung und Fragestellung der Bachelorthesis
+\subsection{Forschungsstand}
+– Erste Angaben zum Forschungsstand: Auf welche Literatur stützt sich die Bachelorthesis? Welches sind die zentralen Erkenntnisse und Argumente, die die Fragestellung begründen? Welches sind die relevanten Publikationen und Autor:innen in diesem Bereich?
+\section{Methodik}
+– Geplantes Vorgehen: Methode(n) (Inhaltsanalyse, Befragung, Beobachtung usw.) sowie Forschungsdesign (Analysegegenstand, Analysezeitraum usw.)
+\section{Lehrprojekt}
+– Inhalt und Idee
+\\– Geplante Umsetzung (Webseite, Film, Magazin usw.)
+\\– Zielsetzung und Zielgruppe
+\pagebreak
+\section{Zeitplan}
 
+the quick brown fox jumps over the lazy dog
+fgh\smartcite[1-500, 28]{eg34} %like \footcite{\parencite{}}
+
+\[x=something\]
+See also \cite{eg34}
+\blockquote[Gwgwhe5]{. Lorem ipsum dolor sit amet  bkjkb djblakBSD HNOFClBrI fczubj jbijareg iohioeksfg egkEG IJOlewgnkNERG Kenfsl rjhgbnlnkelnfeklF […]} \parencite[22]{eg34}\\ %line break
+f uhe iogoweg oiuhlswer, as explained by \textcite{eg34}
 
 \pagebreak
 %-----------------------------------------------
 %BIB
 
-\printbibliography[heading=bibintoc, title={References}]  %Literaturverzeichnis, auch im TOC
+\printbibliography[heading=bibintoc, title={Literaturverzeichnis}] %Literaturverzeichnis, auch im TOC
+– Einheitliche Auflistung sämtlicher im Exposé direkt und indirekt zitierten Publikationen, empfohlener Zitierstil: APA (siehe «Leitfaden für die Bachelorarbeit») \\
+– Evtl. KI-Tools auflisten
 \end{document}
