@@ -18,13 +18,13 @@
   sorting=nyt,
   natbib  %enable citep/citet(parentheses only around year)
 ]{biblatex}   %REFERENCES https://www.overleaf.com/learn/latex/Bibliography_management_in_LaTeX
-\addbibresource{./references.bib}     %Lib file
+\addbibresource{references.bib}     %Lib file
 \usepackage[nottoc,numbib]{tocbibind}   %add bibliography to toc
 
 %page citation in text with colon: https://tex.stackexchange.com/questions/433122/changing-comma-in-textcite-to-colon
-\DeclareFieldFormat{postnote}{#1}
-\DeclareFieldFormat{multipostnote}{#1}
-\renewcommand\postnotedelim{\addcolon\addspace}
+%\DeclareFieldFormat{postnote}{#1}
+%\DeclareFieldFormat{multipostnote}{#1}
+%\renewcommand\postnotedelim{\addcolon\addspace}
 \renewcommand\nameyeardelim{\addcomma\space} %comma between author and year
 %u.a. as et al.
 \DefineBibliographyStrings{german}{%
@@ -130,30 +130,38 @@ Die Bachelorarbeit wird sich damit befassen, wie Social-Media-Plattformen im DAC
 Inhalte, welche von Faktencheck-Plattformen aus dem DACH-Raum als Desinformation anerkannt wurden, werden durch eine Inhaltsanalyse strukturell untersucht, um daraus Erkenntnisse über oft verwendete Mechanismen zu gewinnen. Diese werden danach verwendet, um darauf basierend als Lehrprojekt eine interaktive Aufklärungsplattform für Nutzende dieser sozialen Plattformen zu gestalten.
 
 \subsection{Relevanz}
+
 \subsubsection{Gesellschaft}
+Im Jahr 2024 betrug der Anteil der Social-Media-Nutzenden in der Schweiz knapp 80\% \parencite[22]{we_are_social_anteil_2024}. Somit wird durch Social-Media-Inhalte ein Grossteil der Schweizer Bevölkerung erreicht. Dadurch kann Desinformation potenziell einen grossen Einfluss auf die Bevölkerung und ihre (politische) Meinungsbildung haben \parencites[18]{grujic_warnhinweise_2024}[258]{hohlfeld_schlechte_2020}. \\
+\textcite[258]{hohlfeld_schlechte_2020} schreiben Desinformation die Fähigkeit zu, demokratische Gesellschaften “durch Inhalte, die Angst und Verunsicherung schüren, [...] durch die Schwächung der seriösen Institutionen der Erkenntnisbeschaffung und [...] durch Normverschiebungen des politisch Sagbaren” zu destablisieren. Gemäss dem \textcite{bundesministerium_des_innern_und_fur_heimat_desinformation_2022} (zit. nach \textcite[15]{teetz_social-media-post_2023}) kann Desinformation ab einem gewissen Grad sogar als Bedrohung der nationalen Sicherheit verstanden werden.
+
 \subsubsection{Wissenschaft}
 – Darstellung der Relevanz des Themas (gesellschaftliche, kommunikationspraktische und/oder wissenschaftliche Relevanz)
+
+\pagebreak
 \section{Bachelorthesis (Umfang ca. 1 Seite)}
+
 \subsection{Forschungsfrage}
-– Spezifische Zielsetzung und Fragestellung der Bachelorthesis
+Folgende Fragestellung wird in der Bachelorarbeit behandelt:\\
+
+\begin{quote}
+  Wie wird video- und bildbasierte Desinformation auf Social-Media-Plattformen im DACH-Raum eingesetzt, um politische und gesellschaftliche Narrative zu verbreiten?
+\end{quote}
+
 \subsection{Forschungsstand}
 – Erste Angaben zum Forschungsstand: Auf welche Literatur stützt sich die Bachelorthesis? Welches sind die zentralen Erkenntnisse und Argumente, die die Fragestellung begründen? Welches sind die relevanten Publikationen und Autor:innen in diesem Bereich?
+
+\pagebreak
 \section{Methodik}
 – Geplantes Vorgehen: Methode(n) (Inhaltsanalyse, Befragung, Beobachtung usw.) sowie Forschungsdesign (Analysegegenstand, Analysezeitraum usw.)
+
 \section{Lehrprojekt}
 – Inhalt und Idee
 \\– Geplante Umsetzung (Webseite, Film, Magazin usw.)
 \\– Zielsetzung und Zielgruppe
 \pagebreak
+
 \section{Zeitplan}
-
-the quick brown fox jumps over the lazy dog
-fgh\smartcite[1-500, 28]{eg34} %like \footcite{\parencite{}}
-
-\[x=something\]
-See also \cite{eg34}
-\blockquote[Gwgwhe5]{. Lorem ipsum dolor sit amet  bkjkb djblakBSD HNOFClBrI fczubj jbijareg iohioeksfg egkEG IJOlewgnkNERG Kenfsl rjhgbnlnkelnfeklF […]} \parencite[22]{eg34}\\ %line break
-f uhe iogoweg oiuhlswer, as explained by \textcite{eg34}
 
 \pagebreak
 %-----------------------------------------------
