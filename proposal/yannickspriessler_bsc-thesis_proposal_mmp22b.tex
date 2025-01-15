@@ -1,0 +1,216 @@
+%Preamble
+\documentclass[12pt,a4paper]{article}        %Define text type and basic formatting
+
+\usepackage[utf8]{inputenc}     %Usage of UTF-8 for umlauts
+\usepackage[ngerman]{babel}     %Paper language;
+\pagenumbering{arabic}  % "Normal" page numbering
+%Set line spacing to 1.5
+\usepackage{setspace}
+\onehalfspacing
+
+%Citation and reference
+\usepackage[backend=biber,
+  style=authoryear,
+  citestyle=authoryear-comp,
+  hyperref=true,
+  giveninits,    %Shorten first names to initial
+  uniquename=init,    %prevent name disambiguation
+  sorting=nyt,
+  natbib  %enable citep/citet(parentheses only around year)
+]{biblatex}   %REFERENCES https://www.overleaf.com/learn/latex/Bibliography_management_in_LaTeX
+\addbibresource{references.bib}     %Lib file
+\usepackage[nottoc,numbib]{tocbibind}   %add bibliography to toc
+
+%page citation in text with colon: https://tex.stackexchange.com/questions/433122/changing-comma-in-textcite-to-colon
+%\DeclareFieldFormat{postnote}{#1}
+%\DeclareFieldFormat{multipostnote}{#1}
+%\renewcommand\postnotedelim{\addcolon\addspace}
+\renewcommand\nameyeardelim{\addcomma\space} %comma between author and year
+%u.a. as et al.
+\DefineBibliographyStrings{german}{%
+  andothers = {et al.},
+}
+%Replace and/und with &
+\renewcommand*{\finalnamedelim}{%
+  \ifnumgreater{\value{liststop}}{2}{\finalandcomma}{}%
+\addspace\&\space}%
+
+%images
+\usepackage{graphicx}       %Required for adding images
+\graphicspath{{images/}}    %image path
+\usepackage{wallpaper}  %Page background img
+
+\usepackage{parskip}        %Prevent indention of paragraphs
+\usepackage{mathtools}    %required for math formulas
+\usepackage{amssymb}    %mathematical symbols
+\usepackage{listings}   %For code listings
+
+%Use markdown in LaTex https://de.overleaf.com/learn/latex/Articles/How_to_write_in_Markdown_on_Overleaf
+\usepackage[footnotes,definitionLists,hashEnumerators,smartEllipses,hybrid]{markdown}
+
+\usepackage{titlesec}   %Style titles
+\usepackage{fancyhdr}   %Header/footer
+\usepackage[bottom]{footmisc}   %Foot notes, at end of page
+
+%Links
+\usepackage[colorlinks,
+  pdfpagelabels,
+  pdfstartview = FitH,
+  bookmarksopen = true,
+  bookmarksnumbered = true,
+  linkcolor = black,
+  plainpages = false,
+  hypertexnames = false,
+  citecolor = black,
+urlcolor = black]{hyperref}   %Hyperref pkg -> clickable links and TOC
+\usepackage{csquotes}   % Autostyle quotes language-specific
+
+%Font settings
+\renewcommand{\familydefault}{\sfdefault}       %Text sans-serif
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}
+
+%Footer
+\fancyhf{}      %Clear all header/footer stylings
+\lfoot{\thedate\hspace{1pt}}
+\cfoot{Proposal Bachelorarbeit\\«Video- und bildbasierte Desinformation auf Social-Media-Plattformen in der Schweiz» (Arbeitstitel)}
+\rfoot{\thepage\hspace{1pt}}        %Add page number
+
+%Title page settings
+\usepackage{titling}    %Title page styling
+\title{«Video- und bildbasierte Desinformation auf Social-Media-Plattformen in der Schweiz» (Arbeitstitel)}        %Document Title
+\author{Yannick Spriessler}     %Author of paper
+\date{20.12.2024}     %Date of paper; ALTERNATIVE: \today
+
+%___________________________________________________________________________________________
+%TITLE PAGE
+\begin{document}
+\begin{titlingpage} %Start titling page
+  \begin{center}
+    \begin{large}
+      Fachhochschule Graubünden, Institut für Multimedia Production (IMP)\\ %The name of your university
+    \end{large}
+    \vspace{2cm} %You can control the vertical distance
+    \begin{LARGE}
+      \textbf{\thetitle} \\
+    \end{LARGE}
+    \vspace{1cm}
+    \begin{large}
+      Proposal Bachelorarbeit\\
+    \end{large}
+    \vspace{5cm} %Put the distance you need.
+    Autor: \theauthor \\
+    Studiengang: BSc Multimedia Production \\
+    Matrikel-Nr.: 22-160-360 \\
+    Adresse: Breitenstrasse 26, 4416 Bubendorf \\
+    E-Mail: yannick.spriessler@stud.fhgr.ch \\ \\
+    Referentin: Prof. Dr. Franziska Oehmer-Pedrazzi \\
+    Koreferent: Benjamin Hanimann \\ \\
+    Datum: \thedate
+  \end{center}
+\end{titlingpage}
+%\pagebreak      %Insert page break
+%-----------------------------------------------
+%TOC
+\thispagestyle{empty}
+\setcounter{page}{0}    %Set page no.
+\tableofcontents        %Content index
+\pagebreak
+%-----------------------------------------------
+%DOC
+%\begin{abstract} \end{abstract}    %If abstract is used
+
+%\frontmatter   %If foreword
+%\mainmatter    %Main part if foreword used
+\section{Thema}
+Die Bachelorarbeit wird sich damit befassen, wie Inhalte auf Social-Media-Plattformen in der Schweiz verwendet werden, um durch video- und bildbasierte Desinformation politische oder gesellschaftliche Narrative zu stärken. \\
+
+\subsection{(Eigene Motivation)}
+\subsection{Zielsetzung \& Fragestellung der Bachelorthesis}
+\subsection{Zielsetzung Lehrprojekt}
+\section{Mediales Lehrprojekt}
+\subsection{Form und Inhalt}
+- Inhalt: Worum geht es beim Lehrprojekt?\\
+- Medialer Ansatz: Umsetzung des medialen Projekts
+- Aktueller Stand; vergleichbare Projekte
+
+Als Lehrprojekt ist eine interaktive, webbasierte Aufklärungsplattform angedacht. Sie soll auf spannende und interaktive Art das Bewusstsein für die Verbreitung von Desinformation auf Social-Media-Plattformen stärken und Möglichkeiten vermitteln, diese besser zu erkennen und ihre Verbreitung einzudämmen.\\
+Umgesetzt werden soll die Plattform mit interaktiven Elementen und Videobeiträgen von Expertinnen und Experten. Als Beispiel dienen Plattformen wie \href{https://www.der-newstest.de}{Der Newstest.de} und \href{https://madetomeasure.online/de/}{Made To Measure}.\\
+Zielgruppe sind alle Nutzenden von Social-Media-Plattformen.
+
+\subsection{Konzept, Methodenwahl, Produktionsplan}
+- Konzeption (inkl. eingesetzte mediale Formen)
+- Methoden, Werkzeuge, Vorgehen
+- Darlegung Produktionsplan
+- Beschreibung einzelner Arbeitsschritte
+\section{Bachelorthesis}
+\subsection{Thema und Problemstellung}
+Inhalte mit Schweizer Bezug, welche von Faktencheck-Plattformen aus dem DACH-Raum als Desinformation anerkannt wurden, werden durch eine Inhaltsanalyse strukturell untersucht, um daraus Erkenntnisse über oft verwendete Mechanismen zu gewinnen. Diese werden danach verwendet, um darauf basierend als Lehrprojekt eine interaktive Aufklärungsplattform für Nutzende dieser sozialen Plattformen zu gestalten.
+
+\subsection{Relevanz}
+
+\subsubsection{Gesellschaft}
+Im Jahr 2024 betrug der Anteil der Social-Media-Nutzenden in der Schweiz knapp 80\% \parencite[22]{we_are_social_anteil_2024}. Somit wird durch Social-Media-Inhalte ein Grossteil der Schweizer Bevölkerung erreicht. Dadurch kann Desinformation potenziell einen grossen Einfluss auf die Bevölkerung und ihre (politische) Meinungsbildung haben \parencites[18]{grujic_warnhinweise_2024}[258]{hohlfeld_schlechte_2020}[1]{khan_fake_2021}. \\
+\textcite[258]{hohlfeld_schlechte_2020} schreiben Desinformation die Fähigkeit zu, demokratische Gesellschaften “durch Inhalte, die Angst und Verunsicherung schüren, [...] durch die Schwächung der seriösen Institutionen der Erkenntnisbeschaffung und [...] durch Normverschiebungen des politisch Sagbaren” zu destablisieren. Gemäss dem \textcite{bundesministerium_des_innern_und_fur_heimat_desinformation_2022} (zit. nach \textcite[15]{teetz_social-media-post_2023}) kann Desinformation ab einem gewissen Grad sogar als Bedrohung der nationalen Sicherheit verstanden werden.
+
+\subsubsection{Wissenschaft}
+Social-Media-Plattformen und ihre entsprechenden Algorithmen zur Inhaltsauswahl basieren neben den Interaktionen der Nutzenden untereinander in ihrer Funktionsweise vor allem auf der Generierung von Aufmerksamkeit \parencites[vgl.][220]{schmidt_meinungsbildung_2022}[493]{behnke_manipulation_2018}. Durch die Verbreitung eines Inhaltes wird zwangsläufig die Kapazität der Nutzenden für die Verarbeitung anderer Inhalte geschmälert \parencite[248]{hohlfeld_schlechte_2020}. \\
+Die Wissenschaft kennt das Potenzial und die Gefahr von Social-Media-Plattformen, durch Fragmentierung und das Anzeigen bestimmter Inhalte Filterblasen zu schaffen und die Gesellschaft zu spalten – dieser Effekt konnte jedoch bisher nicht tatsächlich bewiesen werden \parencite[220]{schmidt_meinungsbildung_2022}.\\
+
+\subsection{Forschungsfrage}
+Folgende Fragestellung wird in der Bachelorarbeit behandelt:\\
+
+\begin{quote}
+  Wie wird video- und bildbasierte Desinformation auf Social-Media-Plattformen in der Schweiz eingesetzt, um politische und gesellschaftliche Narrative zu verbreiten?
+\end{quote}
+
+\subsubsection{(Zielsetzung der Arbeit)}
+
+\subsection{Forschungsstand}
+
+Bei Desinformation handelt es sich um "(...)news articles that are intentionally and verifiably false, and could mislead readers." \parencite[213]{allcott_social_2017} Die Motivation hinter Desinformation umfasst normalerweise entweder finanzielle oder ideologische Zwecke \parencites[vgl.][138]{tandoc_defining_2018}[225]{schmidt_meinungsbildung_2022}[154-155]{lange_unsicherheit_2019}.
+
+Der Begriff "Fake News" wurde zunehmend zu politischen Propagandazwecken verwendet. \Textcite[148]{marx_fake_2020} empfehlen deshalb, stattdessen von aktueller Desinformation zu sprechen. \\
+Bezüglich den Definitionskriterien für Desinformation besteht in der Wissenschaft Uneinigkeit; die folgende Arbeit stützt sich deshalb auf die Kriterien nach \textcite{marx_fake_2020}: \\
+- (Visuelle) Kommunikation \\
+- Aktualitätsbezug \\
+- Wahrheitsanspruch in Abgrenzung zur Satire \\
+- Unwahrheit: Irreführendes Potenzial \\
+- Unwahrhaftigkeit: Die Produzierenden sind sich der Unwahrhaftigkeit ihrer Nachricht bewusst \\
+- Täuschungsabsicht: Vorsätzliche Verbreitung falscher Tatsachen\\
+
+Desinformation dient in der Regel dazu, politische Ziele zu erreichen, das Vertrauen in öffentliche Institutionen zu schmälern und die Polarisierung der Gesellschaft voranzutreiben \parencites[vgl.][ ]{allcott_social_2017}[225]{schmidt_meinungsbildung_2022}[162]{lange_unsicherheit_2019}. \\
+
+In Anlehnung daran kann davon ausgegangen werden, dass Desinformation gemäss den oben definierten Kriterien vermutlich vor allem im politischen Kontext betrieben wird \parencites[vgl.][51]{sammer_fake_2021}[217]{allcott_social_2017}[498]{behnke_manipulation_2018}. Eine klare Absenderschaft lässt sich jedoch meist nur schwer definieren \parencite[498-499]{behnke_manipulation_2018}.
+% \begin{quotation}
+%   Weil [durch demokratisierte Meinungsbildungsprozesse aufgrund von Inhalten Nutzender, d. Verf.] die journalistische Legitimitäts-, Relevanz- und Glaubwürdigkeitsprüfung entfällt, entsteht gleichzeitig jedoch ein Einfallstor für extreme Meinungen und Desinformation, und die Fehleranfälligkeit des Meinungsbildungsprozesses steigt. Das kann dazu führen, dass die Medien, aber auch andere demokratische Institutionen an Glaubwürdigkeit und Vertrauen in der Bevölkerung verlieren. \parencite[226]{schmidt_meinungsbildung_2022}.
+% \end{quotation}
+
+\subsection{Methodik}
+Methodisch ist eine Inhaltsanalyse aktueller video-/bildbasierter Desinformation auf Social-Media-Plattformen in der Schweiz geplant. Dazu werden Inhalte untersucht, welche von Faktencheck-Plattformen im entsprechenden Gebiet als Desinformation markiert wurden. \\
+Des Weiteren sind zur Einordnung und zugunsten weiterer Erkenntnisse Experteninterviews geplant, welche dann in Videoform gegebenenfalls auch für das Lehrprojekt verwendet werden.
+
+\subsubsection{Analysegegenstand}
+Diverse Faktencheck-Plattformen publizieren ihre Erkenntnisse zu geprüften Inhalten online. Diese Artikel werden strukturiert ausgewertet, um daraus möglichst Mechanismen für Desinformation auf Social Media abzuleiten. Durch die Limitierung auf solche Plattformen kann sichergestellt werden, dass entsprechende Kriterien für die Qualifikation als Desinformation der Inhalte gegeben sind.
+
+\subsubsection{Datenerhebung und Auswertungsmethode}
+\subsubsection{Analysezeitraum}
+Untersucht werden Beiträge zu Inhalten ab 2020. So wird einerseits deren Aktualitätsbezug sichergestellt, andererseits wird in Krisenzeiten nachweislich besonders viel Desinformation verbreitet (\textcite{tandoc_defining_2018} zit. nach \textcite[2]{ceron_fake_2021}). Dies lässt sich auch für die Covid19-Pandemie nachweisen (ebd.).
+
+\subsection{Darstellung Grobstruktur der Arbeit}
+
+\section{Zeitplan}
+
+\section{AI-Tools}
+Es wurden keine AI-Tools zum Schreiben des Exposés verwendet.
+
+\pagebreak
+%-----------------------------------------------
+%BIB
+\section{Literaturverzeichnis}
+\printbibliography
+\subsection{Weitere mögliche Quellen}
+
+\fullcite{zoglauer_konstruierte_2021}
+
+\end{document}

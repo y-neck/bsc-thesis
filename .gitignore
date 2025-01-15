@@ -9,6 +9,7 @@
 .bcf
 .bbl
 .aux
+.toc
 
 .DS_Store
 .vscode
