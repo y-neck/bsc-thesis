@@ -84,8 +84,8 @@ urlcolor = black]{hyperref}   %Hyperref pkg -> clickable links and TOC
 \date{07.02.2025}     %Date of paper; ALTERNATIVE: \today
 
 % Separate bibliography for images
-\defbibheading{imagecredits}{\section*{Bildverweis}}
-\addbibresource{img-references.bib}
+% \defbibheading{imagecredits}{\section*{Bildverweis}}
+% \addbibresource{img-references.bib}
 
 %___________________________________________________________________________________________
 %TITLE PAGE
@@ -114,6 +114,7 @@ urlcolor = black]{hyperref}   %Hyperref pkg -> clickable links and TOC
   %   Datum: \thedate
   % \end{center}
   \includepdf{Titelblatt_Proposal}
+  % {\small \phantom{Image courtesy of \cite{howard_trees_2017}.}}
 \end{titlingpage}
 \pagebreak      %Insert page break
 %-----------------------------------------------
@@ -250,4 +251,6 @@ Es wurden keine AI-Tools zum Schreiben des Proposals verwendet.
 - \cite{zoglauer_konstruierte_2021} \\
 
 \printbibliography
+% \section {Bildverweis}
+% \printbibliography[heading=imagecredits, keyword=image]
 \end{document}
