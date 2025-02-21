@@ -1,0 +1,120 @@
+%Preamble
+\documentclass[12pt,a4paper]{article}        %Define text type and basic formatting
+
+\usepackage[utf8]{inputenc}     %Usage of UTF-8 for umlauts
+\usepackage[ngerman]{babel}     %Paper language;
+\pagenumbering{arabic}  % "Normal" page numbering
+%Set line spacing to 1.5
+\usepackage{setspace}
+\onehalfspacing
+
+%Citation and reference
+\usepackage[backend=biber,
+  style=authoryear,
+  citestyle=authoryear-comp,
+  hyperref=true,
+  giveninits,    %Shorten first names to initial
+  uniquename=init,    %prevent name disambiguation
+  sorting=nyt,
+  natbib  %enable citep/citet(parentheses only around year)
+]{biblatex}   %REFERENCES https://www.overleaf.com/learn/latex/Bibliography_management_in_LaTeX
+\addbibresource{references.bib}     %Lib file
+\usepackage[nottoc,numbib]{tocbibind}   %add bibliography to toc
+
+%page citation in text with colon: https://tex.stackexchange.com/questions/433122/changing-comma-in-textcite-to-colon
+%\DeclareFieldFormat{postnote}{#1}
+%\DeclareFieldFormat{multipostnote}{#1}
+%\renewcommand\postnotedelim{\addcolon\addspace}
+\renewcommand\nameyeardelim{\addcomma\space} %comma between author and year
+%u.a. as et al.
+\DefineBibliographyStrings{german}{%
+  andothers = {et al.},
+}
+%Replace and/und with &
+\renewcommand*{\finalnamedelim}{%
+  \ifnumgreater{\value{liststop}}{2}{\finalandcomma}{}%
+\addspace\&\space}%
+
+%images
+\usepackage{graphicx}       %Required for adding images
+\graphicspath{{images/}}    %image path
+\usepackage{wallpaper}  %Page background img
+
+\usepackage{parskip}        %Prevent indention of paragraphs
+\usepackage{mathtools}    %required for math formulas
+\usepackage{amssymb}    %mathematical symbols
+\usepackage{listings}   %For code listings
+
+%Use markdown in LaTex https://de.overleaf.com/learn/latex/Articles/How_to_write_in_Markdown_on_Overleaf
+\usepackage[footnotes,definitionLists,hashEnumerators,smartEllipses,hybrid]{markdown}
+
+\usepackage{titlesec}   %Style titles
+\usepackage{fancyhdr}   %Header/footer
+\usepackage[bottom]{footmisc}   %Foot notes, at end of page
+
+%Links
+\usepackage[colorlinks,
+  pdfpagelabels,
+  pdfstartview = FitH,
+  bookmarksopen = true,
+  bookmarksnumbered = true,
+  linkcolor = black,
+  plainpages = false,
+  hypertexnames = false,
+  citecolor = black,
+urlcolor = black]{hyperref}   %Hyperref pkg -> clickable links and TOC
+\usepackage{csquotes}   % Autostyle quotes language-specific
+
+%Font settings
+\renewcommand{\familydefault}{\sfdefault}       %Text sans-serif
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}
+
+%Footer
+\fancyhf{}      %Clear all header/footer stylings
+\lfoot{\thedate\hspace{1pt}}
+\cfoot{Proposal Bachelorarbeit\\«Video- und bildbasierte Desinformation auf Social-Media-Plattformen in der Schweiz» (Arbeitstitel)}
+\rfoot{\thepage\hspace{1pt}}        %Add page number
+
+%Title page settings
+\usepackage{pdfpages}
+\usepackage{titling}    %Title page styling
+\title{«Video- und bildbasierte Desinformation auf Social-Media-Plattformen in der Schweiz» (Arbeitstitel)}        %Document Title
+\author{Yannick Spriessler}     %Author of paper
+\date{07.02.2025}     %Date of paper; ALTERNATIVE: \today
+
+% Separate bibliography for images
+% \defbibheading{imagecredits}{\section*{Bildverweis}}
+% \addbibresource{img-references.bib}
+
+%___________________________________________________________________________________________
+%TITLE PAGE
+\begin{document}
+\begin{titlingpage} %Start titling page
+
+  \includepdf{Titelblatt_Proposal}
+  % {\small \phantom{Image courtesy of \cite{howard_trees_2017}.}}
+\end{titlingpage}
+\pagebreak      %Insert page break
+%-----------------------------------------------
+%TOC
+\thispagestyle{empty}
+\setcounter{page}{0}    %Set page no.
+\tableofcontents        %Content index
+\pagebreak
+%-----------------------------------------------
+%DOC
+%\begin{abstract} \end{abstract}    %If abstract is used
+
+%\frontmatter   %If foreword
+%\mainmatter    %Main part if foreword used
+
+
+\pagebreak
+%-----------------------------------------------
+%BIB
+
+\printbibliography
+% \section {Bildverweis}
+% \printbibliography[heading=imagecredits, keyword=image]
+\end{document}
