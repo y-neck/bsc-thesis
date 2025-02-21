@@ -15,8 +15,10 @@
   hyperref=true,
   giveninits,    %Shorten first names to initial
   uniquename=init,    %prevent name disambiguation
-  sorting=nyt,
-  natbib  %enable citep/citet(parentheses only around year)
+  sorting=nyt,  % sort by name, year, title
+  natbib,  %enable citep/citet(parentheses only around year)
+  maxbibnames=99,  %show all names in bibliography (no influence on in-text citation)
+  minbibnames=1  %show at least one name before et al
 ]{biblatex}   %REFERENCES https://www.overleaf.com/learn/latex/Bibliography_management_in_LaTeX
 \addbibresource{references.bib}     %Lib file
 \usepackage[nottoc,numbib]{tocbibind}   %add bibliography to toc
@@ -34,6 +36,7 @@
 \renewcommand*{\finalnamedelim}{%
   \ifnumgreater{\value{liststop}}{2}{\finalandcomma}{}%
 \addspace\&\space}%
+
 
 %images
 \usepackage{graphicx}       %Required for adding images
@@ -108,7 +111,7 @@ urlcolor = black]{hyperref}   %Hyperref pkg -> clickable links and TOC
 
 %\frontmatter   %If foreword
 %\mainmatter    %Main part if foreword used
-\cite{latzer_vertrauen_2023}
+\textcite{latzer_vertrauen_2023}
 
 \pagebreak
 %-----------------------------------------------
