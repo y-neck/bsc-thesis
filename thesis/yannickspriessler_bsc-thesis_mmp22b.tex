@@ -5,8 +5,8 @@
 \usepackage[ngerman]{babel}     %Paper language;
 \pagenumbering{arabic}  % "Normal" page numbering
 %Set line spacing to 1.5
-\usepackage{setspace}
-\onehalfspacing
+% \usepackage{setspace}
+% \onehalfspacing
 
 %Citation and reference
 \usepackage[backend=biber,
@@ -82,7 +82,7 @@ urlcolor = black]{hyperref}   %Hyperref pkg -> clickable links and TOC
 %Title page settings
 \usepackage{pdfpages}
 \usepackage{titling}    %Title page styling
-\title{«Video- und bildbasierte Desinformation auf Social-Media-Plattformen in der Schweiz» (Arbeitstitel)}        %Document Title
+\title{«Analyse (audio-)visueller Desinformation auf Social-Media-Plattformen in der Schweiz» (Arbeitstitel)}        %Document Title
 \author{Yannick Spriessler}     %Author of paper
 \date{\today}     %Date of paper; ALTERNATIVE: \today
 
@@ -107,11 +107,21 @@ urlcolor = black]{hyperref}   %Hyperref pkg -> clickable links and TOC
 \pagebreak
 %-----------------------------------------------
 %DOC
-%\begin{abstract} \end{abstract}    %If abstract is used
+\renewcommand{\abstractname}{Abstract}
+\begin{abstract}
+  \setlength{\parindent}{0pt}  
+  \begin{tabular}{@{}p{\linewidth}@{}}
+    \hline
+    asdfghjk \\
+    \hline
+  \end{tabular}
+\end{abstract}
 
+Hashtags:
+
+Zitiervorschlag:
 %\frontmatter   %If foreword
 %\mainmatter    %Main part if foreword used
-\textcite{latzer_vertrauen_2023}
 
 \pagebreak
 %-----------------------------------------------
@@ -120,4 +130,14 @@ urlcolor = black]{hyperref}   %Hyperref pkg -> clickable links and TOC
 \printbibliography
 % \section {Bildverweis}
 % \printbibliography[heading=imagecredits, keyword=image]
+\section{Hilfsmittelverzeichnis}
+\begin{table}[]
+\begin{tabular}{lllll}
+fb & dfgfn & \\
+   &       &  \\
+   &       &  \\
+   &       & 
+\end{tabular}
+\end{table}
+\section{Anhang}
 \end{document}
