@@ -96,7 +96,7 @@ urlcolor = black]{hyperref}   %Hyperref pkg -> clickable links and TOC
 \begin{titlingpage} %Start titling page
 
   \includepdf{Titelblatt_Thesis}
-  % {\small \phantom{Image courtesy of \cite{howard_trees_2017}.}}
+  \nocite{howard_trees_2017}  %Citation for title page, only in image bibliography
 \end{titlingpage}
 \pagebreak      %Insert page break
 %-----------------------------------------------
@@ -145,11 +145,12 @@ urlcolor = black]{hyperref}   %Hyperref pkg -> clickable links and TOC
 \pagebreak
 %-----------------------------------------------
 %BIB
-
-\printbibliography
-% \section {Bildverweis}
-% \printbibliography[heading=imagecredits, keyword=image]
-\section{Hilfsmittelverzeichnis}
+\section{Verzeichnisse}
+\subsection{Literatur}
+\printbibliography[heading=none, nottype=artwork]
+ \subsection {Bildverweise}
+ \printbibliography[heading=none, type=artwork] %Only reference artworks
+\subsection{Hilfsmittelverzeichnis}
 \begin{table}[]
 \begin{tabular}{lllll}
 fb & dfgfn & \\
