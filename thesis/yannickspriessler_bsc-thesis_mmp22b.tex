@@ -1,5 +1,6 @@
 %Preamble
 \documentclass[12pt,a4paper]{article}        %Define text type and basic formatting
+\usepackage[document]{ragged2e}   %Text alignment https://www.overleaf.com/learn/latex/Text_alignment
 
 \usepackage[utf8]{inputenc}     %Usage of UTF-8 for umlauts
 \usepackage[ngerman]{babel}     %Paper language;
@@ -37,7 +38,6 @@
   \ifnumgreater{\value{liststop}}{2}{\finalandcomma}{}%
 \addspace\&\space}%
 
-
 %images
 \usepackage{graphicx}       %Required for adding images
 \graphicspath{{images/}}    %image path
@@ -53,7 +53,7 @@
 
 \usepackage{titlesec}   %Style titles
 \usepackage{fancyhdr}   %Header/footer
-\usepackage[bottom]{footmisc}   %Foot notes, at end of page
+%\usepackage[bottom]{footmisc}   %Foot notes, at end of page
 
 %Links
 \usepackage[colorlinks,
@@ -82,7 +82,7 @@ urlcolor = black]{hyperref}   %Hyperref pkg -> clickable links and TOC
 %Title page settings
 \usepackage{pdfpages}
 \usepackage{titling}    %Title page styling
-\title{«Analyse (audio-)visueller Desinformation auf Social-Media-Plattformen in der Schweiz» (Arbeitstitel)}        %Document Title
+\title{«Analyse (audio-) visueller Desinformation auf Social-Media-Plattformen in der Schweiz» (Arbeitstitel)}        %Document Title
 \author{Yannick Spriessler}     %Author of paper
 \date{\today}     %Date of paper; ALTERNATIVE: \today
 
@@ -94,7 +94,6 @@ urlcolor = black]{hyperref}   %Hyperref pkg -> clickable links and TOC
 %TITLE PAGE
 \begin{document}
 \begin{titlingpage} %Start titling page
-
   \includepdf{Titelblatt_Thesis}
   \nocite{howard_trees_2017}  %Citation for title page, only in image bibliography
 \end{titlingpage}
@@ -123,16 +122,21 @@ urlcolor = black]{hyperref}   %Hyperref pkg -> clickable links and TOC
 
 %\mainmatter    %Main part if foreword used
 \section{Einleitung}
-Spätestens seit den US-Wahlen 2016 hat der Begriff «Fake News» stark an Bedeutung gewonnen. Zwar handelt es sich dabei nicht um eine Neuerscheinung und falsche Informationen wurden lange vor der Entwicklung des Internets verbreitet \parencites[214]{allcott_social_2017}[247]{hohlfeld_schlechte_2020}, dennoch ist das Problem unter anderem durch die Verbreitung über das Internet weiter stark angewachsen \parencite[214-215]{allcott_social_2017}. 
+Spätestens seit den US-Wahlen 2016 hat der Begriff «Fake News» stark an Bedeutung gewonnen. Zwar handelt es sich dabei nicht um eine Neuerscheinung und falsche Informationen wurden lange vor der Entwicklung des Internets verbreitet \parencites[214]{allcott_social_2017}[247]{hohlfeld_schlechte_2020}[1]{khan_fake_2021}, dennoch ist das Problem unter anderem durch die Verbreitung über das Internet weiter stark angewachsen \parencites[214-215]{allcott_social_2017}[1]{khan_fake_2021}[1]{lazer_science_2018}. 
 
-Die Bachelorarbeit befasst sich damit, wie audiovisuelle und bildbasierte Desinformation in der Schweiz produziert und auf Social-Media-Plattformen  verbreitet wird, um politische oder gesellschaftliche Narrative zu stärken.
+Die Bachelorarbeit befasst sich damit, welche inhaltlichen und gestalterischen Merkmale audiovisuelle und bildbasierte Desinformation auf Social-Media-Plattformen in der Schweiz aufweist. \linebreak
+Ziel der Arbeit ist es zum einen herauszufinden, ob es mögliche Muster und
+Strategien hinter der Produktion der Inhalte gibt. Zum anderen soll auch ein
+allgemeines Verständnis über die entsprechenden Inhalte gewonnen werden. \linebreak
+Die Erkenntnisse der Bachelorarbeit werden anschliessend verwendet, um darauf basierend eine interaktive Aufklärungsplattform zu gestalten.
 
 \subsection{Relevanz}
-
+Gesellschaft -> JAMES-Studie, 
 
 \subsection{Forschungsfrage}
 \pagebreak
 \section{Forschungsstand}
+Definition von FN: \cites{tandoc_defining_2018}{marx_fake_2020}
 \pagebreak
 \section{Methode}
 \subsection{Methodenwahl}
@@ -155,8 +159,10 @@ Die Bachelorarbeit befasst sich damit, wie audiovisuelle und bildbasierte Desinf
 \section{Verzeichnisse}
 \subsection{Literatur}
 \printbibliography[heading=none, nottype=artwork]
- \subsection {Bildverweise}
+ \subsection{Bildverweise}
  \printbibliography[heading=none, type=artwork] %Only reference artworks
+ \subsubsection{Abbildungsverzeichnis}
+ \listoffigures[heading=none]
 \subsection{Hilfsmittelverzeichnis}
 \begin{table}[]
 \begin{tabular}{lllll}
