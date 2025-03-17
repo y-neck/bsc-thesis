@@ -28,6 +28,12 @@
 %\DeclareFieldFormat{postnote}{#1}
 %\DeclareFieldFormat{multipostnote}{#1}
 %\renewcommand\postnotedelim{\addcolon\addspace}
+
+% Ensure "S." appears before page numbers in citations
+\DeclareFieldFormat{postnote}{S.~#1}
+\DeclareFieldFormat{multipostnote}{S.~#1}
+
+% Handle comma between author and year and et al.
 \renewcommand\nameyeardelim{\addcomma\space} %comma between author and year
 %u.a. as et al.
 \DefineBibliographyStrings{german}{%
@@ -99,13 +105,6 @@ urlcolor = black]{hyperref}   %Hyperref pkg -> clickable links and TOC
 \end{titlingpage}
 \pagebreak      %Insert page break
 %-----------------------------------------------
-%TOC
-\thispagestyle{empty}
-\setcounter{page}{0}    %Set page no.
-\tableofcontents        %Content index
-\pagebreak
-%-----------------------------------------------
-%DOC
 \renewcommand{\abstractname}{Abstract}
 \begin{abstract}
   \setlength{\parindent}{0pt}  
@@ -119,6 +118,13 @@ urlcolor = black]{hyperref}   %Hyperref pkg -> clickable links and TOC
 \linebreak
 %\frontmatter   %If foreword
 \pagebreak
+%TOC
+\thispagestyle{empty}
+\setcounter{page}{0}    %Set page no.
+\tableofcontents        %Content index
+\pagebreak
+%-----------------------------------------------
+%DOC
 
 %\mainmatter    %Main part if foreword used
 \section{Einleitung}
@@ -134,8 +140,11 @@ Die Erkenntnisse der Bachelorarbeit werden anschliessend verwendet, um darauf ba
 \subsection{Relevanz}
 \textbf{Gesellschaft}
 \linebreak
-Im Jahr 2024 betrug der Anteil der Social-Media-Nutzenden in der Schweiz knapp 80 \%. Weiter informiert sich ein bedeutender Anteil der europäischen Bevölkerung über das Internet, eine Mehrheit verwendet Social Media primär für Nachrichten und Unterhaltung \parencite[21–30]{we_are_social_anteil_2024}. Gemäss der JAMES-Studie 2024 \parencite[40]{kulling-knecht_james_2024} informiert sich 2024 etwa die Hälfte der Jugendlichen täglich oder mehrmals pro Woche auf sozialen Plattformen. \\
-Somit wird durch Social-Media-Inhalte ein Grossteil der Schweizer Bevölkerung erreicht. Dadurch können desinformierende Inhalte potenziell einen grossen Einfluss auf die Bevölkerung und ihre (politische) Meinungsbildung haben \parencites[18]{grujic_warnhinweise_2024}[258]{hohlfeld_schlechte_2020}[1-2]{khan_fake_2021}, insbesondere wenn Social-Media-Plattformen auch als Informationsquelle zu politischen und gesellschaftlichen Themen dienen.
+Im Jahr 2024 betrug der Anteil der Social-Media-Nutzenden in der Schweiz knapp 80 \%. Weiter informiert sich ein bedeutender Anteil der europäischen Bevölkerung über das Internet, eine Mehrheit verwendet Social Media primär für Nachrichten und Unterhaltung \parencite[21ff]{we_are_social_anteil_2024}. Gemäss der JAMES-Studie 2024 \parencite[40]{kulling-knecht_james_2024} informiert sich 2024 etwa die Hälfte der Jugendlichen täglich oder mehrmals pro Woche auf sozialen Plattformen. \\
+Somit wird durch Social-Media-Inhalte ein Grossteil der Schweizer Bevölkerung erreicht. Dadurch können desinformierende Inhalte potenziell einen grossen Einfluss auf die Bevölkerung und ihre (politische) Meinungsbildung haben \parencites[18]{grujic_warnhinweise_2024}[258]{hohlfeld_schlechte_2020}[1f]{khan_fake_2021}, insbesondere wenn Social-Media-Plattformen auch als Informationsquelle zu politischen und gesellschaftlichen Themen dienen.
+
+\textcite{grady_neural_1998} haben gezeigt, dass sich Rezipierende besser und länger an visuelle Inhalte erinnern können als an Worte. Eine weitere Untersuchung fand einen Zusammenhang zwischen dem Konsum von Videos und der Möglichkeit der Nutzenden, auf diese zu reagieren \parencite[242]{khan_social_2017}. Inhalte mit Partizipationsmöglichkeit scheinen ausserdem den weiteren Konsum (information seeking) zu befeuern \parencite[243]{khan_social_2017}. \\
+Insofern kann davon ausgegangen werden, dass audiovisuelle Desinformation eine besondere Gefahr darstellt. 
 
 \textbf{Politik}
 \linebreak
@@ -145,8 +154,8 @@ Eine Marketingfirma fand 2016 heraus, dass Fake-News-Seiten für die Verbreitung
 Facebook und weitere Social-Media-Plattformen können somit als starke Treiber von Desinformation verstanden werden \parencite{wong_almost_2016}. In Anbetracht der jüngsten Tendenz, Einordnungen durch Faktencheck-Organisationen auf den Meta-Plattformen einzustellen \parencites{isaac_meta_2025}{meta_transparency_centre_penalties_2025}, ist es für die Nutzenden deshalb umso wichtiger, Inhalte bezüglich ihres Wahrheitsgehalts korrekt einordnen zu können. 
 
 Gemäss dem \textcites{bundesministerium_des_innern_und_fur_heimat_desinformation_2022}\parencite[zit.\ nach][15]{teetz_social-media-post_2023} kann Desinformation in einigen Fällen sogar als Bedrohung der nationalen Sicherheit verstanden werden. \\
-Die Schweiz hat mit ihrer direkten Demokratie ein weltweit einzigartiges politisches System, in keinem anderen Staat hat die Bevölkerung so viele Mitbestimmungsrechte \parencite[2]{sager_politische_2017} Es ist deshalb zwingend notwendig, dass diese ihre politischen Entscheide aufgrund von korrekten Fakten und eigener politischer Entscheidung treffen kann, ohne von Desinformation beeinflusst zu werden \parencite[26]{vogler_wahrnehmung_2021}\parencite[vgl.\ auch][14–15]{european_parliament_directorate-general_for_external_policies_of_the_union_impact_2021}. Auch wenn über die tatsächliche Gefährdung der Schweizer Politik durch Desinformation bisher noch wenig bekannt ist, scheint die Schweiz als Staat vergleichsweise widerstandsfähig zu sein (ebd.).\\
-Durch das Wissen über Desinformation und die Mechanismen der Social-Media-Plattformen und die Fähigkeit, falsche von echten Tatsachen zu unterscheiden, kann diese Gefahr weiter verringert werden.
+Die Schweiz hat mit ihrer direkten Demokratie ein weltweit einzigartiges politisches System, in keinem anderen Staat hat die Bevölkerung so viele Mitbestimmungsrechte \parencite[2]{sager_politische_2017}. Es ist deshalb zwingend notwendig, dass diese ihre politischen Entscheide aufgrund von korrekten Fakten und eigener politischer Entscheidung treffen kann, ohne von Desinformation beeinflusst zu werden \parencite[26]{vogler_wahrnehmung_2021}\parencite[vgl.\ auch][14f]{european_parliament_directorate-general_for_external_policies_of_the_union_impact_2021}. Auch wenn über die tatsächliche Gefährdung der Schweizer Politik durch Desinformation bisher noch wenig bekannt ist, scheint die Schweiz als Staat vergleichsweise widerstandsfähig zu sein (ebd.).\\
+Durch das Wissen der Plattform-Nutzenden über Desinformation und die Mechanismen der Social-Media-Plattformen und die Fähigkeit, falsche von echten Tatsachen zu unterscheiden, kann diese Gefahr weiter verringert werden.
 
 \textbf{Wissenschaft}
 \linebreak
@@ -156,12 +165,27 @@ Durch die Verbreitung eines Inhaltes wird zwangsläufig die Kapazität der Nutze
 
 Die Wissenschaft kennt das Potenzial und die Gefahr von Social-Media-Plattformen, durch Fragmentierung und das Anzeigen bestimmter Inhalte Filterblasen zu schaffen und die Gesellschaft zu spalten – dieser Effekt konnte jedoch bisher nicht tatsächlich bewiesen werden \parencite[220]{schmidt_meinungsbildung_2022}.
 
-Als Massnahme gegen Desinformation werden oft Faktenchecks eingesetzt. Deren Wirksamkeit wird allerdings in Frage gestellt \parencites[1095]{lazer_science_2018}[4–5]{ceron_fake_2021}. ``(\ldots) people prefer information that confirms their preexisting attitudes (selective exposure), view information consistent with their preexisting beliefs as more persuasive than dissonant information (confirmation bias), and are inclined to accept information that pleases them (desirability bias).`` \parencite[1095]{lazer_science_2018}. Faktenchecks könnten in einigen Fällen sogar kontraproduktiv sein, wenn  die Falschinformation wieder aufgefrischt wird und dadurch eher hängenbleibt als die faktische Einordnung (ebd.). Umso wichtiger ist es, dass die Rezipierenden die medialen Artefakte möglichst selbst beurteilen können.
+Als Massnahme gegen Desinformation werden oft Faktenchecks eingesetzt. Deren Wirksamkeit wird allerdings immer wieder in Frage gestellt \parencites[1095]{lazer_science_2018}[4f]{ceron_fake_2021}. ``(\ldots) people prefer information that confirms their preexisting attitudes (selective exposure), view information consistent with their preexisting beliefs as more persuasive than dissonant information (confirmation bias), and are inclined to accept information that pleases them (desirability bias).`` \parencite[1095]{lazer_science_2018}\parencite[vgl.\ auch][18]{grujic_warnhinweise_2024}. Faktenchecks könnten in einigen Fällen sogar kontraproduktiv sein, wenn  die Falschinformation wieder aufgefrischt wird und dadurch eher hängenbleibt als die faktische Einordnung (ebd.). Umso wichtiger ist es, dass die Rezipierenden die medialen Artefakte möglichst selbst beurteilen können.
 
 \subsection{Forschungsfrage}
+Folgende Fragestellung wird in der Bachelorarbeit behandelt:\\
+
+\begin{quote}
+  Welche inhaltlichen und gestalterischen Merkmale weist visuelle und audiovisuelle Desinformation auf Social-Media-Plattformen in der Schweiz auf?
+\end{quote}
+\color{red}Begründung für Forschungsfrage.
+
+
+\color{red}Aufbau der Arbeit 
+\color{black}
 \pagebreak
 \section{Forschungsstand}
+Beispielsweise durch die Präsidentschaft des US-Präsidenten Donald Trump (2017–2021) oder den Brexit hat der Begriff «Fake News» weltweit an Bedeutung gewonnen \parencites[1f]{hohlfeld_schlechte_2020}[1]{marx_fake_2020}. \\
+In der Literatur existieren verschiedene Definitionen des Begriffes. Während beispielsweise \textcite[246f]{hohlfeld_schlechte_2020} die Haltung vertreten, dass «Fake News» als Begriff für desinformierende Inhalte gleichbedeutend sind mit dem politischen Propagandabegriff, wurde in den letzten Jahren auch oft argumentiert, dass «Fake News» lediglich als politischer Begriff gewertet und im wissenschaftlichen Kontext stattdessen von (aktueller) Desinformation gesprochen werden sollte \parencites[e32–3]{bontridder_role_2021}{habgood-coote_stop_2019}[148]{marx_fake_2020}. 
+
 Definition von FN: \cites{tandoc_defining_2018}{marx_fake_2020}
+
+
 \pagebreak
 \section{Methode}
 \subsection{Methodenwahl}
@@ -186,16 +210,9 @@ Definition von FN: \cites{tandoc_defining_2018}{marx_fake_2020}
 \printbibliography[heading=none, nottype=artwork]
  \subsection{Bildverweise}
  \printbibliography[heading=none, type=artwork] %Only reference artworks
- \subsubsection{Abbildungsverzeichnis}
+ \subsection{Abbildungsverzeichnis}
  \listoffigures[heading=none]
 \subsection{Hilfsmittelverzeichnis}
-\begin{table}[]
-\begin{tabular}{lllll}
-Fb & dfgfn & \\
-   &       &  \\
-   &       &  \\
-   &       & 
-\end{tabular}
-\end{table}
+
 \section{Anhang}
 \end{document}
