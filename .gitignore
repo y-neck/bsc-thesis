@@ -1,15 +1,17 @@
 # LaTeX
-.gz
-.xml
-.out
-.log
-.fls
-.fdb_latexmk
-.blg
-.bcf
-.bbl
-.aux
-.toc
+*.gz
+*.xml
+*.out
+*.log
+*.fls
+*.fdb_latexmk
+*.blg
+*.bcf
+*.bbl
+*.aux
+*.toc
+*.lof
+*.lot
 
 .DS_Store
 .vscode
