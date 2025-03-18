@@ -44,6 +44,9 @@
   \ifnumgreater{\value{liststop}}{2}{\finalandcomma}{}%
 \addspace\&\space}%
 
+% Easier inline citation -> \say{} command
+\usepackage{dirtytalk} 
+
 %images
 \usepackage{graphicx}       %Required for adding images
 \graphicspath{{images/}}    %image path
@@ -148,7 +151,7 @@ Insofern kann davon ausgegangen werden, dass audiovisuelle Desinformation eine b
 
 \textbf{Politik}
 \linebreak
-\textcite[258]{hohlfeld_schlechte_2020} schreiben Desinformation die Fähigkeit zu, demokratische Gesellschaften ``durch Inhalte, die Angst und Verunsicherung schüren, [\ldots] [sowie, d. Verf.] durch die Schwächung der seriösen Institutionen der Erkenntnisbeschaffung und [\ldots] durch Normverschiebungen des politisch Sagbaren`` zu destabilisieren. \parencite[vgl.\ auch][1]{khan_fake_2021}.
+\textcite[258]{hohlfeld_schlechte_2020} schreiben Desinformation die Fähigkeit zu, demokratische Gesellschaften \say{durch Inhalte, die Angst und Verunsicherung schüren, [\ldots] [sowie, d. Verf.] durch die Schwächung der seriösen Institutionen der Erkenntnisbeschaffung und [\ldots] durch Normverschiebungen des politisch Sagbaren} zu destabilisieren. \parencite[vgl.\ auch][1]{khan_fake_2021}.
 
 Eine Marketingfirma fand 2016 heraus, dass Fake-News-Seiten für die Verbreitung ihrer Inhalte fast komplett abhängig von Facebook sind. Während solche Seiten 50 \% der Websitebesuche von Facebook erhalten, lagen seriöse Medien bei etwa 20 \%.\parencites{wong_almost_2016}[zit.\ nach][1]{khan_fake_2021}[vgl.\ auch][212]{allcott_social_2017}. \\
 Facebook und weitere Social-Media-Plattformen können somit als starke Treiber von Desinformation verstanden werden \parencite{wong_almost_2016}. In Anbetracht der jüngsten Tendenz, Einordnungen durch Faktencheck-Organisationen auf den Meta-Plattformen einzustellen \parencites{isaac_meta_2025}{meta_transparency_centre_penalties_2025}, ist es für die Nutzenden deshalb umso wichtiger, Inhalte bezüglich ihres Wahrheitsgehalts korrekt einordnen zu können. 
@@ -165,7 +168,7 @@ Durch die Verbreitung eines Inhaltes wird zwangsläufig die Kapazität der Nutze
 
 Die Wissenschaft kennt das Potenzial und die Gefahr von Social-Media-Plattformen, durch Fragmentierung und das Anzeigen bestimmter Inhalte Filterblasen zu schaffen und die Gesellschaft zu spalten – dieser Effekt konnte jedoch bisher nicht tatsächlich bewiesen werden \parencite[220]{schmidt_meinungsbildung_2022}.
 
-Als Massnahme gegen Desinformation werden oft Faktenchecks eingesetzt. Deren Wirksamkeit wird allerdings immer wieder in Frage gestellt \parencites[1095]{lazer_science_2018}[4f]{ceron_fake_2021}. ``(\ldots) people prefer information that confirms their preexisting attitudes (selective exposure), view information consistent with their preexisting beliefs as more persuasive than dissonant information (confirmation bias), and are inclined to accept information that pleases them (desirability bias).`` \parencite[1095]{lazer_science_2018}\parencite[vgl.\ auch][18]{grujic_warnhinweise_2024}. Faktenchecks könnten in einigen Fällen sogar kontraproduktiv sein, wenn  die Falschinformation wieder aufgefrischt wird und dadurch eher hängenbleibt als die faktische Einordnung (ebd.). Umso wichtiger ist es, dass die Rezipierenden die medialen Artefakte möglichst selbst beurteilen können.
+Als Massnahme gegen Desinformation werden oft Faktenchecks eingesetzt. Deren Wirksamkeit wird allerdings immer wieder in Frage gestellt \parencites[1095]{lazer_science_2018}[4f]{ceron_fake_2021}. \say{(\ldots) people prefer information that confirms their preexisting attitudes (selective exposure), view information consistent with their preexisting beliefs as more persuasive than dissonant information (confirmation bias), and are inclined to accept information that pleases them (desirability bias).} \parencites[1095]{lazer_science_2018}\parencite[vgl.\ auch][18]{grujic_warnhinweise_2024}. Faktenchecks könnten in einigen Fällen sogar kontraproduktiv sein, wenn  die Falschinformation wieder aufgefrischt wird und dadurch eher hängenbleibt als die faktische Einordnung (ebd.). Umso wichtiger ist es, dass die Rezipierenden die medialen Artefakte möglichst selbst beurteilen können.
 
 \subsection{Forschungsfrage}
 Folgende Fragestellung wird in der Bachelorarbeit behandelt:\\
@@ -179,36 +182,40 @@ Folgende Fragestellung wird in der Bachelorarbeit behandelt:\\
 \color{red}Aufbau der Arbeit 
 \color{black}
 \pagebreak
-\section{Forschungsstand}
+\section{Literatur}
 
-\textbf{Begriffsdefinition}\\
+\textbf{Begriffsdefinition}
+
 Beispielsweise durch die Präsidentschaft des US-Präsidenten Donald Trump (2017–2021) oder den Brexit hat der Begriff «Fake News» weltweit an Bedeutung gewonnen \parencites[1f]{hohlfeld_schlechte_2020}[1]{marx_fake_2020}. \\
 In der Literatur existieren verschiedene Definitionen des Begriffes. \textcite[246f]{hohlfeld_schlechte_2020} vertreten beispielsweise die Haltung, dass «Fake News» als Begriff für desinformierende Inhalte gleichbedeutend sind mit dem politischen Propagandabegriff. In den letzten Jahren wurde allerdings auch oft argumentiert, dass «Fake News» lediglich als politischer Begriff gewertet und im wissenschaftlichen Kontext stattdessen von (aktueller) Desinformation gesprochen werden sollte \parencites[3]{bontridder_role_2021}{habgood-coote_stop_2019}[148]{marx_fake_2020}. Egelhofer \& Lecheler \parencite[zit.\ nach][148]{marx_fake_2020} differenzieren zwischen «Fake News» als Genre für Falschinformationen und «Fake News» als Label im Sinn einer politischen Instrumentalisierung zur Diskreditierung von Medien und Institutionen.\\
 In Anlehnung an \textcite{marx_fake_2020} und in Abgrenzung zum politischen Label wird in dieser Bachelorarbeit der Begriff «Desinformation» verwendet.
 
 
 In der Wissenschaft gibt es bisher keine einstimmige Definition für Desinformation:
-\textcite[213]{allcott_social_2017} sprechen von ``(\ldots) news articles that are intentionally and verifiably false, and could mislead readers.`` \parencites[vgl.\ auch][140]{tandoc_defining_2018}[1094]{lazer_science_2018}.\\
-Diese Definition kann nicht nur auf News-Artikel angewendet werden, sondern auch auf andere mediale Artefakte \parencite[3]{bontridder_role_2021}. \textcite[1]{marx_fake_2020} definieren aktuelle Desinformation als ``Kommunikation wissentlich und empirisch falscher Informationen zu neuen und relevanten Sachverhalten mit dem Anspruch auf Wahrheit.`` Sie stützen sich dabei auf folgende Kriterien:
+\textcite[213]{allcott_social_2017} sprechen von \say{(\ldots) news articles that are intentionally and verifiably false, and could mislead readers.} \parencites[vgl.\ auch][140]{tandoc_defining_2018}[1094]{lazer_science_2018}.\\
+Diese Definition kann nicht nur auf News-Artikel angewendet werden, sondern auch auf andere mediale Artefakte \parencite[3]{bontridder_role_2021}. \textcite[1]{marx_fake_2020} definieren aktuelle Desinformation als \say{Kommunikation wissentlich und empirisch falscher Informationen zu neuen und relevanten Sachverhalten mit dem Anspruch auf Wahrheit.} Sie stützen sich dabei auf folgende Kriterien:
 
 \begin{itemize}
   \item \textbf{(Visuelle) Kommunikation}: Eine wahrheitsfähige Mitteilung mit repräsentationalem Gehalt, welche einen Wirklichkeitsausschnitt abbildet. Dies bezieht sich nicht nur auf sprachliche, sondern auch auf visuelle Mitteilungen \parencite[151]{marx_fake_2020}.
-  \item \textbf{Aktualitätsbezug}: ``(\ldots) überraschende Themen mit (potenziell) großer Auswirkung auf die Gesellschaft. So ermöglicht sie ihrem Publikum die Ausbildung von (wenn auch empirisch unzutreffenden [\ldots]) Erwartungen und dadurch die Orientierung in einer komplexen Welt.`` \parencite[152]{marx_fake_2020}.
+  \item \textbf{Aktualitätsbezug}: \say{(\ldots) überraschende Themen mit (potenziell) großer Auswirkung auf die Gesellschaft. So ermöglicht sie ihrem Publikum die Ausbildung von (wenn auch empirisch unzutreffenden [\ldots]) Erwartungen und dadurch die Orientierung in einer komplexen Welt.} \parencite[152]{marx_fake_2020}.
   \item \textbf{Wahrheitsanspruch}: Aktuelle Desinformation beansprucht für sich, dass sie (vorgetäuscht) wahr ist. In diese Betrachtung werden sowohl Produzierende wie auch Rezipierende des Inhaltes miteinbezogen. Hierbei gilt, ob es für externe Beobachtende plausibel ist, dass Rezipierende die Nachricht als wahr betrachten \parencite[153]{marx_fake_2020}.
   \item \textbf{Unwahrheit}: Der desinformierende Inhalt besitzt irreführendes Potenzial, da er empirisch falsch ist und somit den zuvor beanspruchten Wahrheitsgehalt nicht einlöst. \parencite[154]{marx_fake_2020}.
   \item \textbf{Unwahrhaftigkeit}: Die Produzierenden sind sich der Tatsache bewusst, dass ihre Mitteilungen falsch sind. \parencite[156]{marx_fake_2020}
-  \item \textbf{Täuschungsabsicht}: Falsche Tatsachen werden vorsätzlich und bewusst verbreitet. Dabei spielt es keine Rolle, ob diese der gezielten Verbreitung von Falschinformationen dienen sollen oder beispielsweise zu Clickbait-Zwecken eingesetzt werden \parencite[157]{marx_fake_2020}. 
+  \item \textbf{Täuschungsabsicht}: Falsche Tatsachen werden vorsätzlich und bewusst verbreitet. Dabei spielt es keine Rolle, ob diese der gezielten Verbreitung von Falschinformationen dienen sollen oder beispielsweise zu Clickbait-Zwecken eingesetzt werden \parencites[157]{marx_fake_2020}[vgl.\ auch][2]{khan_fake_2021}. 
 \end{itemize}
 
 Desinformation muss abgegrenzt werden von weiteren verwandten Themen und Begriffen:
 
 \begin{itemize}
-  \item Misinformation -> Bontridder 2; Khan et al 2; Kohring 156
-  \item Fehlinformation -> Grujic 15
-  \item Satire -> Kohring 154
-  \item Gerücht -> Kohring 155
+  \item \textbf{Missinformation}: Missinformation \say{ (\ldots) refers to false, inaccurate, or misleading information that is shared without any intent to deceive.} \parencite[2]{bontridder_role_2021}. \citeauthor{marx_fake_2020} grenzen Missinformation anhand des Unwahrhaftigkeitskriteriums ab, indem es sich bei Missinformation gemäss ihrer Definition um eine unwissentliche Fehlinformation handelt \parencite[156]{marx_fake_2020}, welche ohne Täuschungsabsicht verbreitet wird \parencite[vgl.\ auch][15]{grujic_warnhinweise_2024}.
+  \item \textbf{Satire}: Satire ist nach \textcite[154]{marx_fake_2020} erkennbar an einer klaren Quelle (beispielsweise ein Satiremagazin) sowie bestimmten Text- und Stilmerkmalen und grenzt sich von Desinformation ab durch den Verzicht auf den Wahrheitsanspruch. Diese Einschätzung wird ebenfalls durch externe Beobachtende getroffen.\\
+  Weitere Merkmale sind humoristische oder übertriebene Darstellungen \parencites[141]{tandoc_defining_2018}[2]{khan_fake_2021}, obwohl diese auch in seriösen und korrekten Nachrichten verwendet werden können.
+  \item \textbf{Gerücht}: Ein Gerücht zeichnet sich dadurch aus, dass sein Wahrheitsgehalt (noch) nicht überprüft ist \parencite[155]{marx_fake_2020}. 
+  \item \textbf{Verschwörungstheorie}: Rosnow \& Kimmel \parencite[zit.\ nach][197]{krafft_disinformation_2020} definieren Verschwörungstheorien (Rumors) als \say{an unverified proposition for belief that bears topical relevance for persons actively involved in its dissemination.} (ebd.). \textcite[197]{krafft_disinformation_2020} halten eine persönliche Betroffenheit sowie Informationsunsicherheit als Bedingungen für eine Verschwörungstheorie fest.\\
+  Von Desinformation unterscheidet sich eine Verschwörungstheorie dadurch, dass sie meist auch von denjenigen geglaubt wird, welche zu ihrer Verbreitung beitragen \parencite[156]{marx_fake_2020}. 
 \end{itemize}
 
+\subsection{Forschungsstand}
 
 \pagebreak
 \section{Methode}
