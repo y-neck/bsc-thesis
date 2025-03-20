@@ -1,6 +1,7 @@
 %Preamble
 \documentclass[12pt,a4paper]{article}        %Define text type and basic formatting
 %\usepackage[document]{ragged2e}   %Text alignment https://www.overleaf.com/learn/latex/Text_alignment
+\usepackage{microtype}  %Refined word breaks
 
 \usepackage[utf8]{inputenc}     %Usage of UTF-8 for umlauts
 \usepackage[ngerman]{babel}     %Paper language;
@@ -134,7 +135,7 @@ urlcolor = black]{hyperref}   %Hyperref pkg -> clickable links and TOC
 Spätestens seit den US-Wahlen 2016 hat der Begriff «Fake News» stark an Bedeutung gewonnen. Zwar handelt es sich dabei nicht um eine Neuerscheinung und falsche Informationen wurden lange vor der Entwicklung des Internets verbreitet \parencites[214]{allcott_social_2017}[247]{hohlfeld_schlechte_2020}[1]{khan_fake_2021}, dennoch ist das Problem unter anderem durch die Verbreitung über das Internet weiter stark angewachsen \parencites[214–215]{allcott_social_2017}[1]{khan_fake_2021}[1]{lazer_science_2018}[4]{ceron_fake_2021}. \\
 Aufgrund der sozialen Medien und der Möglichkeit, innerhalb kürzester Zeit Videos und Bilder zu produzieren, können heute sehr schnell audiovisuelle Falschinformationen verbreitet werden. Diese stellen nicht nur ein Problem für die individuellen Rezipierenden dar, sondern gefährden dabei auch politische und gesellschaftliche Prozesse.
 
-Die Bachelorarbeit befasst sich damit, welche inhaltlichen und gestalterischen Merkmale audiovisuelle und bildbasierte Desinformation auf Social-Media-Plattformen in der Schweiz aufweist. \\
+Die Bachelorarbeit befasst sich damit, welche inhaltlichen und gestalterischen Merkmale audiovisuelle und bildbasierte Desinformation auf Social-Media-Platt\-formen in der Schweiz aufweist. \\
 Ziel der Arbeit ist es zum einen herauszufinden, ob es mögliche Muster und
 Strategien hinter der Produktion der Inhalte gibt. Zum anderen soll auch ein
 allgemeines Verständnis über die entsprechenden Inhalte gewonnen werden. \\
@@ -193,7 +194,7 @@ In Anlehnung an \textcite{marx_fake_2020} und in Abgrenzung zum politischen Labe
 In der Wissenschaft gibt es bisher keine einstimmige Definition für Desinformation. 
 \textcite[148f]{marx_fake_2020} benennen ein Theoriendefizit, basierend auf widersprüchlichen Definitionen sowie nicht-nachvollziehbaren Definitionskriterien.\\
 Laut \textcite[1094]{lazer_science_2018} handelt es sich bei Desinformation um \say{fabricated information that mimics news media content in form but not in organizational process or intent. Fake-news outlets, in turn, lack the news media’s editorial norms and processes for ensuring the accuracy and credibility of information.}
-\textcite[213]{allcott_social_2017} sprechen von \say{(\ldots) news articles that are intentionally and verifiably false, and could mislead readers.} \parencites[vgl.\ auch][140]{tandoc_defining_2018}[1094]{lazer_science_2018}.\\
+\textcite[213]{allcott_social_2017} sprechen von \say{(\ldots) news articles that are intentionally and verifiably false, and could mislead readers.} \parencites[vgl.\ auch][140]{tandoc_jr_defining_2018}[1094]{lazer_science_2018}.\\
 Diese Definition kann nicht nur auf News-Artikel angewendet werden, sondern auch auf andere mediale Artefakte \parencite[3]{bontridder_role_2021}. \textcite[1]{marx_fake_2020} definieren aktuelle Desinformation als \say{Kommunikation wissentlich und empirisch falscher Informationen zu neuen und relevanten Sachverhalten mit dem Anspruch auf Wahrheit.} Sie stützen sich dabei auf folgende Kriterien:
 
 \begin{itemize}
@@ -210,12 +211,12 @@ Desinformation muss abgegrenzt werden von weiteren verwandten Themen und Begriff
 \begin{itemize}
   \item \textbf{Missinformation}: Missinformation \say{ (\ldots) refers to false, inaccurate, or misleading information that is shared without any intent to deceive.} \parencite[2]{bontridder_role_2021}. \citeauthor{marx_fake_2020} grenzen Missinformation anhand des Unwahrhaftigkeitskriteriums ab, indem es sich bei Missinformation gemäss ihrer Definition um eine unwissentliche Fehlinformation handelt \parencite[156]{marx_fake_2020}, welche ohne Täuschungsabsicht verbreitet wird \parencite[vgl.\ auch][15]{grujic_warnhinweise_2024}.
   \item \textbf{Satire}: Satire ist nach \textcite[154]{marx_fake_2020} erkennbar an einer klaren Quelle (beispielsweise ein Satiremagazin) sowie bestimmten Text- und Stilmerkmalen und grenzt sich von Desinformation ab durch den Verzicht auf den Wahrheitsanspruch. Diese Einschätzung wird ebenfalls durch externe Beobachtende getroffen.\\
-  Weitere Merkmale sind humoristische oder übertriebene Darstellungen \parencites[141]{tandoc_defining_2018}[2]{khan_fake_2021}, obwohl diese auch in seriösen und korrekten Nachrichten verwendet werden können.
+  Weitere Merkmale sind humoristische oder übertriebene Darstellungen \parencites[141]{tandoc_jr_defining_2018}[2]{khan_fake_2021}, obwohl diese auch in seriösen und korrekten Nachrichten verwendet werden können.
   \item \textbf{Gerücht}: Ein Gerücht zeichnet sich dadurch aus, dass sein Wahrheitsgehalt (noch) nicht überprüft ist \parencite[155]{marx_fake_2020}. Der Wahrheitsgehalt von Desinformation lässt sich jederzeit prüfen.
   \item \textbf{Verschwörungstheorie}: Rosnow \& Kimmel \parencite[zit.\ nach][197]{krafft_disinformation_2020} definieren Verschwörungstheorien (Rumors) als \say{an unverified proposition for belief that bears topical relevance for persons actively involved in its dissemination.} (ebd.). \textcite[197]{krafft_disinformation_2020} halten eine persönliche Betroffenheit sowie Informationsunsicherheit als Bedingungen für eine Verschwörungstheorie fest.\\
   Von Desinformation unterscheidet sich eine Verschwörungstheorie dadurch, dass sie meist auch von denjenigen geglaubt wird, welche zu ihrer Verbreitung beitragen \parencite[156]{marx_fake_2020}.
-  \item \textbf{Fake News}: Zum einen wird der Begriff im politischen Kontext als abwertendes Label verwendet für Nachrichten, welche nicht nach dem Gusto der politischen Akteurinnen und Akteure berichten \parencite[3]{tandoc_jr_facts_2019}.\\
-  Zum anderen handelt es sich bei «Fake News» um eine Unterkategorie der Desinformation, welche spezifisch Nachrichtenartikel bezeichnet, welche Falschinformationen beinhalten und so aufbereitet sind, dass sie für echt gehalten werden (können) (ebd.).
+  \item \textbf{Fake News}: Zum einen wird der Begriff im politischen Kontext als abwertendes Label verwendet für Nachrichten, welche nicht nach dem Willen der politischen Akteurinnen und Akteure berichten \parencite[3]{tandoc_jr_facts_2019}.\\
+  Zum anderen handelt es sich bei «Fake News» um eine Unterkategorie der Desinformation, welche spezifisch Nachrichtenartikel bezeichnet, die Falschinformationen beinhalten und so aufbereitet sind, dass sie für echt gehalten werden (können) (ebd.).
 \end{itemize}
 
 \citeauthor{marx_fake_2020} haben in ihrer Arbeit eine Begriffsdefinition für aktuelle Desinformation aufgestellt, welche den Term klar definiert und von anderen Kategorien von Falschinformationen abgrenzt. In dieser Bachelorarbeit wird nachfolgend ihre Definition zur Beurteilung von Desinformation angesetzt.
@@ -223,9 +224,22 @@ Desinformation muss abgegrenzt werden von weiteren verwandten Themen und Begriff
 \subsection{Aktuelle Desinformation}
 Viele Publikationen halten fest, dass aktuelle Desinformation kein neues Phänomen ist \parencites[vgl.\ bspw.][2]{tandoc_jr_facts_2019}[214]{allcott_social_2017}[1094]{lazer_science_2018}. \textcite[214]{allcott_social_2017} nennen als eines der ältesten Beispiele den \textit{Great Moon Hoax} von 1835.
 
-Seit Social-Media-Plattformen aufgekommen sind, hat sich die traditionelle Informationsverbreitung stark ins Internet verlagert \parencites{allcott_social_2017}{marx_fake_2020}{tandoc_jr_facts_2019}{lazer_science_2018}. Diese Plattformen erlauben es den Nutzenden, auf sehr einfache Art und ohne grosse Hindernisse Informationen online mit der gesamten Nutzerbasis zu teilen \parencites[1]{vogler_wahrnehmung_2021}{lazer_science_2018}. Informationen zu aktuellen Ereignissen können ohne inhaltliche Richtlinien oder Faktenkontrolle potenziell weltweit verbreitet werden \parencites[147]{marx_fake_2020}[211]{allcott_social_2017}[4]{ceron_fake_2021}. \say{An individual user with no track record or reputation can in some cases reach as many readers as Fox News, CNN, or the New York Times.} \parencite[211]{allcott_social_2017}.
+Seit in den letzten 20 Jahren Social-Media-Plattformen aufgekommen sind, hat sich die traditionelle Informationsverbreitung stark ins Internet verlagert \parencites[211]{allcott_social_2017}[147]{marx_fake_2020}[138]{tandoc_jr_defining_2018}[1094]{lazer_science_2018}. Diese Plattformen erlauben es den Nutzenden, auf sehr einfache Art und ohne grosse Hindernisse Informationen online mit der gesamten Nutzerbasis zu teilen \parencites[1]{vogler_wahrnehmung_2021}{lazer_science_2018}. Informationen zu aktuellen Ereignissen können so ohne inhaltliche Richtlinien, Einordnungen oder Faktenkontrollen potenziell weltweit verbreitet werden \parencites[147]{marx_fake_2020}[211]{allcott_social_2017}[4]{ceron_fake_2021}. \say{An individual user with no track record or reputation can in some cases reach as many readers as Fox News, CNN, or the New York Times.} \parencite[211]{allcott_social_2017}.
 
-Mittlerweile informiert sich weltweit ein Grossteil der Bevölkerung auf sozialen Plattformen oder anderweitig online über aktuelle Geschehnisse \parencite[212]{allcott_social_2017}. In der Schweiz verhält es sich ähnlich \parencite[21ff]{we_are_social_anteil_2024}.
+Mittlerweile informiert sich weltweit ein Grossteil der Bevölkerung auf sozialen Plattformen oder anderweitig online über aktuelle Geschehnisse \parencite[212]{allcott_social_2017}. Auch in der Schweiz nutzt mehr als die Hälfte der Bevölkerung soziale Medien zu Unterhaltungs- und Informationszwecken \parencite[21ff]{we_are_social_anteil_2024}. Nutzende, welche auf Social Media Inhalte zu aktuellen Vorkommnissen teilen, werden so journalistisch tätig, auch ohne sich dessen immer bewusst zu sein \parencite[139]{tandoc_jr_defining_2018}. Professionelle Journalisten und Medienhäuser sind diesem Trend in den letzten Jahren gefolgt und nutzen die Plattformen mittlerweile ebenfalls gezielt zur Verbreitung ihrer Inhalte (ebd.).
+
+Die grosse Freiheit, welche diese Liberalisierung der Inhaltsverbreitung bietet, lässt gleichzeitig Raum für Missbrauch und die Verbreitung von Falschinformationen \parencite[4]{ceron_fake_2021}.\\ 
+Seit 2016 ist vor allem in den USA das Mass an Desinformation stark angestiegen, bedingt durch den Wahlkampf von US-Präsident Donald Trump \parencites[1094f]{lazer_science_2018}{allcott_social_2017}[147]{marx_fake_2020}[147]{tandoc_jr_defining_2018}. \textcite[1094f]{lazer_science_2018} konstatieren einen historischen Tiefpunkt in der Glaubwürdigkeit in die öffentlichen Medien. Durch parteipolitische Polarisierung und geringere Toleranz für andere Meinungen durch Social-Media-Inhalte ist ein massiver Nährboden entstanden für die Verbreitung von Desinformation (ebd.).\\
+Während der Covid-Pandemie 2020 wurde ebenfalls ein starker Anstieg an Desinformation auf den sozialen Medien verzeichnet, beispielsweise zu den neu entwickelten Impfstoffen \parencite[2]{khan_fake_2021}. \Textcite[2]{ceron_fake_2021} nennen als Ursache die vorherrschende Unsicherheit, welche die Verbreitung der Inhalte weiter befeuerte.\\
+Lange galt die Schweiz als vergleichsweise resistent gegen Desinformation \parencite[26]{vogler_wahrnehmung_2021}. Jedoch lässt sich auch hier seit 2021 ein Anstieg verzeichnen. Für die Schweiz gab 2021 etwa ein Viertel der befragten Personen an, oft oder sehr oft auf Desinformation zu stossen (ebd.). In einer OECD-Studie von 2024 zeigte sich ausserdem, dass die Schweizer Bevölkerung in der Bewertung von Desinformation vergleichsweise schlecht abschnitt \parencite{wyl_schweizerinnen_2024}.
+
+- Auswirkungen\\
+- Wer verbreitet Desinformation?\\
+- Motivation hinter der Verbreitung von Desinformation\\
+- Wie wird Desinformation verbreitet?\\
+-- Plattformalgorithmen
+- Zu welchen Themen?\\
+- (Erkennungsmerkmale)
 
 \pagebreak
 \section{Methode}
