@@ -13,5 +13,10 @@
 *.lof
 *.lot
 
+# Office
+*.docx
+*.xlsx
+*.pptx
+
 .DS_Store
 .vscode
