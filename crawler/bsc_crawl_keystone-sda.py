@@ -37,7 +37,17 @@ try:
     # parse page source
     soup = BeautifulSoup(page_source, 'html.parser')
 
-    # initialize article ID
+    # handle 'show more' button until it is no longer present
+    while True:
+        try:
+            driver.click('button.news-list-button')
+            time.sleep(2)
+        except Exception as e:
+            print("No more 'Show more' button or failed to click:", e)
+            break
+    # parse page source
+    page_source = driver.get_page_source()
+    soup = BeautifulSoup(page_source, 'html.parser')
 
     # find all articles
     articles = soup.find_all('a', class_='news-link')   # INFO: Change selector to match article selector (e.g. article class)
@@ -45,6 +55,8 @@ try:
     print (f'Found {len(articles)} articles')
 
     base_id = 1000
+
+    
 
     # iterate through all articles, incrementing the id
     for index, article in enumerate(articles, start=1):
@@ -66,6 +78,8 @@ try:
         current_article.article_title = article.find('div', class_='news-headline').get_text(strip=True)  # remove leading and trailing whitespaces
         current_article.factchecking_platform = 1
 
+        
+        
         # DEBUG: print the current_article's dictionary
         #print(current_article.to_dict())
 
@@ -79,11 +93,12 @@ try:
 except Exception as e:
     print(f'Error retrieving data: {e}')
 
-with open('keystone-sda.json', 'w') as f:
+with open('keystone-sda.json', 'w') as f:       # INFO: Change depending on factchecking platform
     json.dump(all_data, f, indent=2, ensure_ascii=False)    # format with 2-space indentation, allow non-ascii
 
-
-
+# Quit the driver to close the browser
+    driver.close()
+    driver.quit()
 
 
 # # TODO: Open article page
