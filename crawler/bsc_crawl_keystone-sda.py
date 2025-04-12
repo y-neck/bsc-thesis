@@ -56,8 +56,6 @@ try:
 
     base_id = 1000
 
-    
-
     # iterate through all articles, incrementing the id
     for index, article in enumerate(articles, start=1):
         current_article = Article_obj()     # create a new instance for each article
