@@ -49,6 +49,33 @@
 % Easier inline citation -> \say{} command
 \usepackage{dirtytalk}
 
+% Code highlighting
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour},
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  numbers=left,
+  numbersep=5pt,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2
+}
+\lstset{style=mystyle}
+
 %images
 \usepackage{graphicx}       %Required for adding images
 \graphicspath{{images/}}    %image path
@@ -57,7 +84,7 @@
 \usepackage{parskip}        %Prevent indention of paragraphs
 \usepackage{mathtools}    %required for math formulas
 \usepackage{amssymb}    %mathematical symbols
-\usepackage{listings}   %For code listings
+\usepackage{tabularx}   % width-adjustable tables
 
 %Use markdown in LaTex https://de.overleaf.com/learn/latex/Articles/How_to_write_in_Markdown_on_Overleaf
 \usepackage[footnotes,definitionLists,hashEnumerators,smartEllipses,hybrid]{markdown}
@@ -320,7 +347,7 @@ Auf die Schweiz hat Desinformation im Bereich der Politik einen besonders gravie
 ~\label{theory_audiovisual_content}
 Grösstenteils handelt es sich bei der visuellen Desinformation bisher um bearbeitete oder aus dem Kontext gerissene Bilder und Echtvideos \parencite[15]{bradshaw_industrialized_2021}. \textcite[3698]{weikmann_visual_2023} nennen als weitere Formen aber auch irreführende Grafiken, Deepfakes und \say{Virtual performances}, welche Deepfakes mit KI-generiertem Audio verbinden. Meist wird dabei das visuelle Artefakt mit einem Begleittext verbunden, welcher die Falschaussage enthält, während das visuelle Artefakt die Aussage unterstützt \parencite[3700]{weikmann_visual_2023}.
 
-Visuelle Desinformation stellt ein besonderes Gefahrenpotenzial dar, da sie in der Tendenz mehr Aufmerksamkeit generiert als Text \parencites[3701]{weikmann_visual_2023} und sich Rezipierende einfacher an Bilder erinnern können als an Text \parencite{grady_neural_1998}. Weiter wird visuellen Elementen eine erhöhte Glaubhaftigkeit zugeschrieben \parencite[3703f]{weikmann_visual_2023}.\\
+Visuelle Desinformation stellt ein besonderes Gefahrenpotenzial dar, da sie in der Tendenz mehr Aufmerksamkeit auf sich zieht als Text \parencites[3701]{weikmann_visual_2023} und sich Rezipierende einfacher an Bilder erinnern können als an textbasierte Inhalte \parencite{grady_neural_1998}. Weiter wird visuellen Elementen eine erhöhte Glaubhaftigkeit zugeschrieben \parencite[3703f]{weikmann_visual_2023}.\\
 Erkenntnisse aus der Verhaltenspsychologie deuten ausserdem darauf hin, dass visuelle Informationen eine stärkere emotionale Reaktion auslösen \parencite[3703]{weikmann_visual_2023} und dies dazu führt, dass die Rezipierenden ein Video länger konsumieren und sich stärker darauf konzentrieren, sofern sie sich durch die emotionale Reaktion angesprochen fühlen \parencite[146]{teixeira_emotion-induced_2012}. \textcite[23]{zhou_effects_2005} halten zusammenfassend fest, dass die emotionale Antwort einen Einfluss hat auf die Aufmerksamkeit, Wahrnehmung, Erinnerung und sie die Meinungsbildung beeinflusst. \\
 \textcite[501]{schaewitz_when_2020} beurteilen die Auswirkung von visuellen Elementen ambivalent, da diese in einigen Fällen möglicherweise gar nicht beachtet werden, beispielsweise bei Symbolbildern.
 
@@ -351,10 +378,9 @@ In der Wissenschaft werden für die Inhaltsanalyse von Social-Media-Beiträge zu
 {schwartz_data-driven_2015}{wilson_content_2022}{wang_video_2015}. Dadurch kann innert kurzer Zeit eine grosse Menge an Daten ausgewertet werden.\\
 Die Anwendung solcher automatisierter Verfahren würde den Rahmen der vorliegenden Arbeit sprengen. Sie fokussiert deshalb auf die manuelle Auswertung der Inhalte, insbesondere betreffend der visuellen und audiovisuellen Artefakte. Bei der Erstellung des Codebuchs werden dafür die Kriterien für die automatisierten Auswertungen aus den verschiedenen Studien übernommen und auf eine manuelle Auswertung angepasst.
 \subsubsection{Analysegegenstand}
-Analysiert werden sämtliche Social-Media-Beiträge mit visuellen oder audiovisuellen Inhalten, welche während des Analysezeitraums durch die Faktencheck-Plattformen Keystone-SDA, AFP Agence France-Presse und 20Minuten.ch geprüft wurden. Durch diese Einschränkung wird die Überprüfung der Inhalte nicht selbst vorgenommen, sondern Fachpersonen überlassen. Es findet eine inhaltliche Auswertung des Analysegegenstands statt.
+Analysiert werden sämtliche Social-Media-Beiträge mit visuellen oder audiovisuellen Inhalten, welche während des Analysezeitraums durch die Faktencheck-Plattformen Keystone-SDA, AFP Agence France-Presse und 20 Minuten.ch geprüft wurden. Durch diese Einschränkung wird die Überprüfung der Inhalte nicht selbst vorgenommen, sondern Fachpersonen überlassen. Es findet eine inhaltliche Auswertung des Analysegegenstands statt.
 
 Nur vollständig auswertbare Datensätze werden berücksichtigt. Kann ein Datensatz nicht vollständig erfasst werden (beispielsweise aufgrund fehlender Angabe des ursprünglichen Beitrages auf Social Media) wird dieser nicht ausgewertet, da eine Kriterien-gemässe Bewertung nicht möglich wäre.
-% - Statistik bzgl. Analysegegenstand; Untersucht werden insgesamt x Artikel v. K-SDA, y Artikel v. AFP, z Artikel v. 20Minuten.ch.
 
 % Gütekriterien: Reliabilität, Validität und Objektivität
 Die Gütekriterien für eine quantitative Analyse sind folgendermassen gegeben: Die vorgegebenen Codierungsvariablen stellen sicher, dass der Forschungsgegenstand den tatsächlichen Hypothesen entsprechend analysiert wird.\\
@@ -374,8 +400,36 @@ Eine weitere Einschränkung muss hingenommen werden in Bezug auf die Verbreitung
 
 Weitere Untersuchungen bezüglich Desinformation auf Social-Media-Plattformen in der Schweiz könnten hier ansetzen und die Verbreitung der Inhalte und deren Rezeption weiter untersuchen.
 \subsection{Methodisches Vorgehen}
+Von den drei Faktencheck-Portalen wurde jeder Artikel und die zugehörigen Beiträge mit Metadaten in einer json-Datei gespeichert. Während bei AFP und 20 Minuten die Artikel manuell gespeichert werden mussten, konnte bei Keystone-SDA aufgrund ausreichend eindeutiger Website-Elemente ein Python-Crawler eingesetzt werden, welcher die entsprechenden Artikel mit Metadaten automatisiert gespeichert hat.\\
+Der Crawler speicherte zuerst Titel, URL und Datum des Artikels und indexierte anschliessend den Link des Social-Media-Beitrages und die entsprechende Herkunftsplattform (s. Anhang~\ref{appendix_crawler}~\nameref{appendix_crawler}). Für AFP und 20 Minuten.ch wurde der gleiche Vorgang manuell durchgeführt.
 
-% – Eigenschaft der Daten:
+Anschliessend wurden die Social-Media-Beiträge aus den Artikeln mittels eines Codebuchs mit vordefinierten Variablen ausgewertet. Die Variablen wurden ausgehend von den Hypothesen aus der Literatur abgeleitet.
+
+Insgesamt wurden 164 Artikel von Keystone-SDA, 99 Artikel von AFP und 27 Artikel von 20 Minuten erfasst. Gesamthaft wurden x Beiträge ausgewertet.
+
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{|l|c|c|c|}
+    \hline
+    \textbf{Plattform} & \textbf{Keystone-SDA} & \textbf{AFP} & \textbf{20 Minuten.ch} \\
+    \hline
+    \textbf{\# Artikel} & 164 & 99 & 27 \\
+    \hline
+    \textbf{\# SoMe-Beiträge} & 164 & 140 & 43 \\
+    \hline
+    \textbf{\# fVar 91, 92} & - & 2 & 6 \\
+    \hline
+    \textbf{\# ohne CH-Bezug} & - & - & - \\
+    \hline
+    \textbf{\# bereinigt} & - & - & - \\
+    \hline
+    \multicolumn{4}{|c|}{Total:} \\
+    \hline
+  \end{tabular}
+  \caption{Erfassung der Stichprobe der auszuwertenden Social-Media-Beiträge}
+  \label{tab:stichprobe}
+\end{table}
+
 \subsection{Auswertung}
 \pagebreak
 \section{Ergebnisse}
@@ -396,6 +450,10 @@ Weitere Untersuchungen bezüglich Desinformation auf Social-Media-Plattformen in
 \subsection{Abbildungsverzeichnis}
 \listoffigures[heading=none]
 \subsection{Hilfsmittelverzeichnis}
-
+\pagebreak
 \section{Anhang}
+\subsection{Python Webcrawler}
+~\label{appendix_crawler}
+\begin{lstinputlisting}[language=Python, caption=Python Webcrawler für Keystone-SDA]{bsc_crawl_keystone-sda-listing.py}
+\end{lstinputlisting}
 \end{document}
