@@ -49,6 +49,24 @@
 % Easier inline citation -> \say{} command
 \usepackage{dirtytalk}
 
+% List of content formatting
+\makeatletter
+% Redefine listoffigures as a subsection:
+\renewcommand\listoffigures{%
+  \subsection{\listfigurename}% numbered subsection
+  \@mkboth{\MakeUppercase\listfigurename}{\MakeUppercase\listfigurename}%
+  \addcontentsline{toc}{subsection}{\listfigurename}%
+  \@starttoc{lof}%
+}
+% Redefine listoftables as a subsection:
+\renewcommand\listoftables{%
+  \subsection{\listtablename}%
+  \@mkboth{\MakeUppercase\listtablename}{\MakeUppercase\listtablename}%
+  \addcontentsline{toc}{subsection}{\listtablename}%
+  \@starttoc{lot}%
+}
+\makeatother
+
 % Code highlighting
 \usepackage{listings}
 \usepackage{xcolor}
@@ -87,7 +105,7 @@
 \usepackage{tabularx}   % width-adjustable tables
 
 %Use markdown in LaTex https://de.overleaf.com/learn/latex/Articles/How_to_write_in_Markdown_on_Overleaf
-\usepackage[footnotes,definitionLists,hashEnumerators,smartEllipses,hybrid]{markdown}
+%\usepackage[footnotes,definitionLists,hashEnumerators,smartEllipses,hybrid]{markdown}
 
 \usepackage{titlesec}   %Style titles
 \usepackage{fancyhdr}   %Header/footer
@@ -384,7 +402,7 @@ Nur vollständig auswertbare Datensätze werden berücksichtigt. Kann ein Datens
 
 % Gütekriterien: Reliabilität, Validität und Objektivität
 Die Gütekriterien für eine quantitative Analyse sind folgendermassen gegeben: Die vorgegebenen Codierungsvariablen stellen sicher, dass der Forschungsgegenstand den tatsächlichen Hypothesen entsprechend analysiert wird.\\
-Zur Sicherstellung der Reliabilität und Objektivität wurde vor der Codierung ein Pre-Test mit zwei unabhängigen Personen durchgeführt. Es wurden drei zufällige, zuvor codierte Artikel von snopes.com ausgewertet und überprüft, ob dabei die gleichen Ergebnisse zustande kommen. Person 1 codierte aus Zeitgründen einen Artikel, die Codierung entsprach zu 88~\% der ursprünglichen Codierung, zwei Variablen wurden nicht verstanden (bereinigt 100~\% identisch). Person 2 codierte alle drei Artikel, die Codierung entsprach im Durchschnitt zu 71~\% der ursprünglichen Codierung, eine Variable wurde nicht verstanden (bereinigt 75~\% identisch).
+Zur Sicherstellung der Reliabilität und Objektivität wurde vor der Codierung ein Pre-Test mit zwei unabhängigen Personen durchgeführt. Es wurden drei zufällig ausgewählte, zuvor codierte Artikel von snopes.com ausgewertet und überprüft, ob dabei die gleichen Ergebnisse zustande kommen. Person 1 codierte aus Zeitgründen einen Artikel, die Codierung entsprach zu 88~\% der ursprünglichen Codierung, zwei Variablen wurden nicht verstanden (bereinigt 100~\% identisch). Person 2 codierte alle drei Artikel, die Codierung entsprach im Durchschnitt zu 71~\% der ursprünglichen Codierung, eine Variable wurde nicht verstanden (bereinigt 75~\% identisch).
 
 \subsubsection{Untersuchungszeitraum}
 Untersucht werden Inhalte vom 1. Januar 2020 bis zum 31. März 2025 (Beginn der Auswertung). Durch den gewählten Datumsbereich wird einerseits der Aktualitätsbezug sichergestellt, andererseits wird in Krisenzeiten nachweislich besonders viel Desinformation verbreitet \parencites{tandoc_jr_defining_2018}[Lim \& Ling (2018) zit.\ nach][2]{ceron_fake_2021}. In den entsprechenden Untersuchungszeitraum fallen einige Krisenphasen, beispielsweise die Covid19-Pandemie (ebd.) oder bewaffnete Konflikte wie der Ukraine-\ oder der Israel-Konflikt.
@@ -394,40 +412,41 @@ Die vorliegende Arbeit fokussiert auf Schweiz-bezogene Beiträge. Diese Einschr�
 Die vorliegende Arbeit liefert eine statistische Auswertung visueller und audiovisueller Desinformation auf Social-Media-Plattformen mit Fokus auf die Schweiz. Betrachtet wird dabei der Zeitraum von Januar 2020 bis Frühling 2025. Der Schwerpunkt der Untersuchung liegt auf der Auswertung der audiovisuellen Artefakte der Beiträge, um so mögliche Muster hinter der Produktion zu identifizieren.\\
 Die gewählte Methode bringt einige Einschränkungen mit sich.
 
-Die Auswahl der analysierten Beiträge basiert auf den Inhalten, welche durch die Faktencheck-Organisationen überprüft wurden. Dadurch kann einerseits eine fundierte Grundlage für die Auswahl als Basis genommen werden, andererseits findet so automatisch bereits eine Vorselektion statt. Eine uneingeschränkte Repräsentativität für sämtliche visuelle und audiovisuelle Desinformation auf Social-Media-Plattformen in der Schweiz ist so möglicherweise nicht gegeben. Auch liefert die angewandte Methode keine Aussage über das tatsächliche Ausmass von visueller und audiovisueller Desinformation in der Schweiz.
+Die Auswahl der analysierten Beiträge basiert auf den Inhalten, welche durch die Faktencheck-Organisationen überprüft wurden. Dadurch kann einerseits eine fundierte Grundlage für die Auswahl als Basis genommen werden, andererseits findet so automatisch bereits eine Vorselektion statt. Eine uneingeschränkte Repräsentativität für sämtliche visuelle und audiovisuelle Desinformation auf Social-Media-Plattformen in der Schweiz ist so möglicherweise nicht gegeben. Auch liefert die angewandte Methode keine Aussage über das tatsächliche Ausmass von visueller und audiovisueller Desinformation in der Schweiz. Es lässt sich nicht feststellen, wie gross die Grundgesamtheit aller desinformativer Beiträge auf Social-Media-Plattformen mit Schweizbezug ist.
 
 Eine weitere Einschränkung muss hingenommen werden in Bezug auf die Verbreitung der Inhalte. Die vorliegende Methode kann nur zu einem geringen Mass eine Aussage darüber liefern, wie die untersuchten Inhalte von den Rezipierenden aufgenommen wurden, ob ihnen Glaube geschenkt wurde und inwiefern sie weitergeleitet wurden. Ausserdem ist keine Aussage darüber möglich, ob der Ursprung des Artefakts bei der verbreitenden Person liegt oder diese den Inhalt lediglich weiterverbreitet.
 
 Weitere Untersuchungen bezüglich Desinformation auf Social-Media-Plattformen in der Schweiz könnten hier ansetzen und die Verbreitung der Inhalte und deren Rezeption weiter untersuchen.
 \subsection{Methodisches Vorgehen}
 Von den drei Faktencheck-Portalen wurde jeder Artikel und die zugehörigen Beiträge mit Metadaten in einer json-Datei gespeichert. Während bei AFP und 20 Minuten die Artikel manuell gespeichert werden mussten, konnte bei Keystone-SDA aufgrund ausreichend eindeutiger Website-Elemente ein Python-Crawler eingesetzt werden, welcher die entsprechenden Artikel mit Metadaten automatisiert gespeichert hat.\\
-Der Crawler speicherte zuerst Titel, URL und Datum des Artikels und indexierte anschliessend den Link des Social-Media-Beitrages und die entsprechende Herkunftsplattform (s. Anhang~\ref{appendix_crawler}~\nameref{appendix_crawler}). Für AFP und 20 Minuten.ch wurde der gleiche Vorgang manuell durchgeführt.
-
+Der Crawler speicherte zuerst Titel, URL und Datum des Artikels und indexierte anschliessend den Link des Social-Media-Beitrages und die entsprechende Herkunftsplattform (s. Anhang~\ref{appendix_crawler}~\nameref{appendix_crawler}). Für AFP und 20 Minuten.ch wurde der gleiche Vorgang manuell durchgeführt.\\
 Anschliessend wurden die Social-Media-Beiträge aus den Artikeln mittels eines Codebuchs mit vordefinierten Variablen ausgewertet. Die Variablen wurden ausgehend von den Hypothesen aus der Literatur abgeleitet.
 
-Insgesamt wurden 164 Artikel von Keystone-SDA, 99 Artikel von AFP und 27 Artikel von 20 Minuten erfasst. Gesamthaft wurden x Beiträge ausgewertet.
+Insgesamt wurden 164 Artikel von Keystone-SDA, 99 Artikel von AFP und 27 Artikel von 20 Minuten erfasst. Gesamthaft wurden 390 Beiträge ausgewertet.
 
 \begin{table}[h!]
+  \label{tab:stichprobe}
   \centering
   \begin{tabular}{|l|c|c|c|}
     \hline
     \textbf{Plattform} & \textbf{Keystone-SDA} & \textbf{AFP} & \textbf{20 Minuten.ch} \\
     \hline
-    \textbf{\# Artikel} & 164 & 99 & 27 \\
+    \textbf{\# Artikel} & 164 & 98 & 26 \\
     \hline
-    \textbf{\# SoMe-Beiträge} & 164 & 140 & 43 \\
+    \textbf{\# SoMe-Beiträge} & 187 & 339 & 72 \\
     \hline
-    \textbf{\# fVar 91, 92} & - & 2 & 6 \\
+    \textbf{\# fVar 91, 92} & 33 & 84 & 17 \\
     \hline
-    \textbf{\# ohne CH-Bezug} & - & - & - \\
+    \textbf{\# Ohne CH-Bezug} & 6 & 25 & 39 \\
     \hline
-    \textbf{\# bereinigt} & - & - & - \\
+    \textbf{\# Duplikate} & 2 & 2 & 0 \\
     \hline
-    \multicolumn{4}{|c|}{Total:} \\
+    \textbf{\# bereinigt} & 146 & 228 & 16 \\
+    \hline
+    \multicolumn{4}{|c|}{Total: 390} \\
     \hline
   \end{tabular}
-  \caption{Erfassung der Stichprobe der auszuwertenden Social-Media-Beiträge}
-  \label{tab:stichprobe}
+  \caption[Erfassung der Stichprobe der auszuwertenden Social-Media-Beiträge]{Erfassung der Stichprobe der auszuwertenden Social-Media-Beiträge \linebreak \textit{Lesebeispiel: Von Keystone-SDA wurden 164 Artikel gefunden, welche gesamthaft 187 Social-Media-Beiträge enthalten. Davon enthielten 33 kein auswertbares Artefakt, 6 hatten keinen Schweizbezug, 2 Artikel untersuchten bereits existierende Beiträge zu einem späteren Zeitpunkt.}}
 \end{table}
 
 \subsection{Auswertung}
@@ -447,8 +466,8 @@ Insgesamt wurden 164 Artikel von Keystone-SDA, 99 Artikel von AFP und 27 Artikel
 \printbibliography[heading=none, nottype=artwork]
 \subsection{Bildverweise}
 \printbibliography[heading=none, type=artwork] %Only reference artworks
-\subsection{Abbildungsverzeichnis}
-\listoffigures[heading=none]
+\listoffigures
+\listoftables
 \subsection{Hilfsmittelverzeichnis}
 \pagebreak
 \section{Anhang}
