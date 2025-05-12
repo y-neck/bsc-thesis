@@ -3,7 +3,9 @@
 \usepackage[margin=1.25in]{geometry}
 %\usepackage[document]{ragged2e}   %Text alignment https://www.overleaf.com/learn/latex/Text_alignment
 \usepackage{microtype}  %Refined word breaks
+
 \usepackage{tcolorbox} %Bordered boxes
+\usepackage{float}
 
 \usepackage[utf8]{inputenc}     %Usage of UTF-8 for umlauts
 \usepackage[ngerman]{babel}     %Paper language;
@@ -420,10 +422,10 @@ Von den drei Faktencheck-Portalen wurde jeder Artikel und die zugehörigen Beitr
 Der Crawler speicherte zuerst Titel, URL und Datum des Artikels und indexierte anschliessend den Link des Social-Media-Beitrages und die entsprechende Herkunftsplattform (s. Anhang~\ref{appendix_crawler}~\nameref{appendix_crawler}). Für AFP und 20 Minuten.ch wurde der gleiche Vorgang manuell durchgeführt.\\
 Anschliessend wurden die Social-Media-Beiträge aus den Artikeln mittels eines Codebuchs mit vordefinierten Variablen kategorisiert. Die Variablen wurden ausgehend von den Hypothesen aus der Literatur abgeleitet.
 
-Insgesamt wurden 164 Artikel von Keystone-SDA, 98 Artikel von AFP und 27 Artikel von 20 Minuten erfasst. Davon ausgehend werden 390 Social-Media-Beiträge ausgewertet.
+Insgesamt wurden 164 Artikel von Keystone-SDA, 98 Artikel von AFP und 27 Artikel von 20 Minuten erfasst. Davon ausgehend können 385 Social-Media-Beiträge ausgewertet werden.
 
-\begin{table}[h!]
-  \label{tab:stichprobe}
+\begin{table}[H]
+  \label{fig:stichprobe}
   \centering
   \begin{tabular}{|l|c|c|c|}
     \hline
@@ -431,24 +433,24 @@ Insgesamt wurden 164 Artikel von Keystone-SDA, 98 Artikel von AFP und 27 Artikel
     \hline
     \textbf{\# Artikel} & 164 & 98 & 26 \\
     \hline
-    \textbf{\# SoMe-Beiträge} & 187 & 339 & 72 \\
+    \textbf{\# SoMe-Beiträge} & 187 & 341 & 72 \\
     \hline
-    \textbf{\# fVar 91, 92} & 33 & 84 & 17 \\
+    \textbf{\# fVar 91, 92} & 33 & 93 & 17 \\
     \hline
     \textbf{\# Ohne CH-Bezug} & 6 & 25 & 39 \\
     \hline
     \textbf{\# Duplikate} & 2 & 2 & 0 \\
     \hline
-    \textbf{\# bereinigt} & 146 & 228 & 16 \\
+    \textbf{\# bereinigt} & 146 & 223 & 16 \\
     \hline
-    \multicolumn{4}{|c|}{Total: 390} \\
+    \multicolumn{4}{|c|}{Total: 385} \\
     \hline
   \end{tabular}
   \caption[Erfassung der Stichprobe der auszuwertenden Social-Media-Beiträge]{Erfassung der Stichprobe der auszuwertenden Social-Media-Beiträge \linebreak \textit{Lesebeispiel: Von Keystone-SDA wurden 164 Artikel ausgewertet, welche gesamthaft 187 Social-Media-Beiträge enthalten. Davon enthielten 33 kein auswertbares mediales Artefakt (Bild oder Video), 6 hatten keinen Schweizbezug, 2 Artikel behandelten bereits ausgewertete Beiträge zu einem späteren Zeitpunkt.}}
 \end{table}
 
 \subsection{Auswertung}
-Für die Auswertung wird der JSON-Datensatz in R analysiert. Dabei werden relative Häufigkeitsauswertungen, Kreuztabellen und \(\chi^2\)-Tests  durchgeführt, um die Hypothesen zu beantworten.
+Für die Auswertung wird der JSON-Datensatz in R analysiert. Dabei werden relative Häufigkeitsauswertungen, Kreuztabellen und \(\chi^2\)-Tests durchgeführt, um die Hypothesen zu beantworten.
 % P-Value
 
 \pagebreak
@@ -479,7 +481,9 @@ Für die Auswertung wird der JSON-Datensatz in R analysiert. Dabei werden relati
 ~\label{appendix_crawler}
 \begin{lstinputlisting}[language=Python, caption=Python Webcrawler für Keystone-SDA]{bsc_crawl_keystone-sda-listing.py}
 \end{lstinputlisting}
+GitHub: \url{https://github.com/y-neck/bsc-thesis/blob/c11abd9801091f22f37d34ecabb817b458cc9171/thesis/bsc_crawl_keystone-sda-listing.py}
 \subsection{Datensatz}
+\label{appendix_dataset}
 \begin{tcolorbox}[
     width=\textwidth,    % gesamte Textbreite
     boxrule=1pt,         % Stärke des Rahmens
@@ -487,7 +491,10 @@ Für die Auswertung wird der JSON-Datensatz in R analysiert. Dabei werden relati
     colback=white,       % Hintergrundfarbe
     left=6pt, right=6pt, top=6pt, bottom=6pt
   ]
-  Datensatz: \\
-  abc.def
+  \textbf{Der untersuchte Datensatz kann hier heruntergeladen werden}: \\
+  \url{https://github.com/y-neck/bsc-thesis/blob/347b14f7573e65201ccfa2710e31633e2a3966fa/dataset.json}
 \end{tcolorbox}
+\subsection{R Datenanalyse}
+~\label{appendix_analysis}
+
 \end{document}
