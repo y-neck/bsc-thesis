@@ -3,6 +3,7 @@
 \usepackage[margin=1.25in]{geometry}
 %\usepackage[document]{ragged2e}   %Text alignment https://www.overleaf.com/learn/latex/Text_alignment
 \usepackage{microtype}  %Refined word breaks
+\usepackage{tcolorbox} %Bordered boxes
 
 \usepackage[utf8]{inputenc}     %Usage of UTF-8 for umlauts
 \usepackage[ngerman]{babel}     %Paper language;
@@ -161,7 +162,7 @@ urlcolor = black]{hyperref}   %Hyperref pkg -> clickable links and TOC
   asdfghjk
 \end{abstract}
 
-\textbf{Keywords:} \textit{Audiovisuelle Desinformation, Social Media, audiovisuelle Inhaltsanalyse, Schweiz}
+\textbf{Keywords:} \textit{Audiovisuelle Desinformation, Social Media, Faktencheck, audiovisuelle Inhaltsanalyse, Schweiz}
 
 \textbf{Zitiervorschlag:}
 \linebreak
@@ -328,17 +329,14 @@ Bots nehmen Einfluss auf die Verbreitung von Inhalten oder Diskussionsverläufen
 ~\label{theory_credibility}
 Erkenntnisse zur Anfälligkeit der Rezipierenden, Desinformation zu glauben, und den entsprechenden Faktoren, welche dies begünstigen, sind weiterhin Gegenstand der Forschung \parencites[1094]{lazer_science_2018}[486]{schaewitz_when_2020}. Dennoch sind in der Wissenschaft bereits einige Theorien bekannt:
 
-% Information overload (Tandoc facts, Zoglauer, Jaster&Lanius)
 \textcite[248]{hohlfeld_schlechte_2020} erwähnen als ein Gefahrenpotenzial die limitierte kognitive Informationsverarbeitung, welche durch die Menge an über das Internet zugänglichen Informationen überschritten wird, insbesondere auf Social Media. So findet zwangsläufig eine inhaltliche Selektion der Inhalte statt, auf welche die Aufmerksamkeit verteilt werden muss (ebd.) \parencite[vgl.\ auch][5]{tandoc_jr_facts_2019}. Kommen Nutzende zu einem grossen Teil mit Desinformation in Kontakt, erscheint diese als glaubwürdiger und gewinnt an Relevanz, da weniger gedankliche Kapazität für andere Themen vorhanden ist.
 
-% Kognitive Persönlichkeitsfaktoren (NFC)
 In diesem Zusammenhang wird oft auf die \textit{dual-process theory} hingewiesen, gemäss der Informationen im Gehirn auf zwei Arten verarbeitet werden können \parencite[40]{pennycook_lazy_2019}: Während System 1 für intuitive, schnelle und automatische Entscheidungen verantwortlich ist, ermöglicht System 2 kalkulierende, analytische und bewusste Denkprozesse \parencite[249]{hohlfeld_schlechte_2020}. Gemäss \textcite[487]{schaewitz_when_2020} steigt durch Informationsüberfluss die Tendenz, Information intuitiv zu verarbeiten, da so trotz limitierter kognitiver Kapazität besser mit der übermässigen Menge an Inhalten umgegangen werden kann.
 Eine Studie von \textcite[48]{pennycook_lazy_2019} belegt, dass Inhalte auf sozialen Medien tatsächlich zumeist heuristisch verarbeitet werden und Personen anfälliger sind für Desinformation, wenn sie Inhalte nach diesem intuitiven System beurteilen. Als Ursache hierfür beschreiben sie die meist fehlende Bereitschaft, sich vertiefter mit den Inhalten auseinanderzusetzen (ebd.). Das hat einen Einfluss auf die Fähigkeit zur Meinungsbildung, da diese ein aktives Mitdenken und Handeln erfordert \parencite[216]{schmidt_meinungsbildung_2022}. Fehlt diese vertiefte Auseinandersetzung, werden Inhalte einerseits schneller geglaubt, andererseits möglicherweise auch eher gedankenlos weiterverbreitet.
 
 Während \citeauthor{pennycook_lazy_2019} also zum Schluss kommen, dass vor allem die Bereitschaft zur analytischen Beurteilung von Inhalten die Anfälligkeit für Desinformation beeinflusst und die politische Zugehörigkeit eine untergeordnete Rolle spielt, war das Ergebnis von \textcite[502]{schaewitz_when_2020} im Gegenzug, dass politische Zugehörigkeit sowie persönliche inhaltliche Bindung (\textit{motivated reasoning}) bei Versuchspersonen dennoch zumindest in gewissen Fällen eine grössere Rolle bezüglich der Vulnerabilität spielt als die Art der Informationsverarbeitung. \\
 \textcite[24]{zoglauer_konstruierte_2021} argumentiert, dass aufgrund von persönlichen Stereotypen beide Faktoren einen Einfluss haben können und sich gegenseitig nicht zwingend ausschliessen müssen, respektive diese gemeinsam auftreten können.
 
-% Biases (Lazer, Stark)
 Die Literatur kennt verschiedene Arten von Biases. \textcite{lazer_science_2018} nennen im Zusammenhang mit Desinformation die Folgenden:
 \begin{itemize}
   \item{Selective exposure}: Rezipierende bevorzugen Informationen, die ihre bereits existierenden Einstellungen abbilden oder bestätigen.
@@ -347,7 +345,6 @@ Die Literatur kennt verschiedene Arten von Biases. \textcite{lazer_science_2018}
 \end{itemize}
 Von Biases wird angenommen, dass sie die Verarbeitung von Informationen vereinfachen, was jedoch weiter in einer erhöhten Angriffsfläche für Desinformation resultiert \parencite[5]{tandoc_jr_facts_2019}.  \textcite[1095]{lazer_science_2018} zweifeln basierend darauf die Effizienz von Faktenchecks an. Sie sehen ausserdem eine zusätzliche Gefahr darin, dass Personen durch Faktenchecks an bereits bekannte Informationen erinnert werden, diese durch ihre Biases aber im falschen Kontext abgespeichert werden und sich die Falschinformationen dadurch weiter festsetzen können (ebd.). \textcite[250]{hohlfeld_schlechte_2020} ergänzen, dass ein Bias (spezifisch vor allem der Bestätigungsfehler, \textit{confirmation bias}) oft auch dazu führt, dass Informationen weniger überprüft werden. Er führe dadurch auch eher zur Tendenz, sich in sogenannten Resonanzräumen zu organisieren.
 
-% Resonanzräume (Zoglauer, Stark:222, Krafft:195)
 Resonanzräume oder Echokammern bezeichnen den Umstand, dass sich Nutzende bewusst primär mit Gleichdenkenden umgeben. Dadurch werden sie weniger mit anderen Meinungen konfrontiert, welche nicht ihren eigenen entsprechen, wodurch sie in ihren (möglicherweise faktisch falschen) Vorstellungen bestätigt werden \parencites[250]{hohlfeld_schlechte_2020}[vgl.\ auch][8]{zoglauer_konstruierte_2021}[222]{schmidt_meinungsbildung_2022}[195]{krafft_disinformation_2020}[8]{grujic_warnhinweise_2024}[221]{allcott_social_2017}. \textcite[139]{tandoc_jr_defining_2018} zeigt ausserdem, dass Informationen von sozial näheren Quellen generell als wahrer wahrgenommen werden \parencite[vgl.\ auch][42]{levak_disinformation_2020}. \\
 Von Echokammern wird befürchtet, dass sie zur gesellschaftlichen Spaltung und Polarisierung beitragen \parencite[8]{zoglauer_konstruierte_2021} und so die demokratische Meinungsbildung gefährden können, allerdings wird ihre Verbreitung und das Ausmass davon zunehmend infrage gestellt \parencite[222]{schmidt_meinungsbildung_2022}.
 
@@ -358,7 +355,6 @@ Eine funktionierende Demokratie setzt voraus, dass sich Bürgerinnen und Bürger
 Das Europäische Parlament hält fest: \say{disinformation erodes trust in institutions along with digital and traditional media and harms our democracies by hampering the ability of citizens to take informed decisions} \parencite[13]{european_parliament_directorate-general_for_external_policies_of_the_union_impact_2021} \parencites[vgl.\ auch][16]{reuter_fake_2019}[26]{vogler_wahrnehmung_2021}[19]{grujic_warnhinweise_2024}{schmidt_meinungsbildung_2022}. Allgemein führt eine weitreichende Ausbreitung von Desinformation dazu, dass es Rezipierenden schwerfällt zu unterscheiden, welche Informationen glaubwürdig sind und welche nicht \parencite[3697]{weikmann_visual_2023}.\\
 \Textcite[170]{wahl_fake_2021} hebt als Gefahr von Desinformation vor allem das propagandistische Potenzial und die Meinungsmanipulation während politischer Wahlen hervor. \textcite{allcott_social_2017} halten den Einfluss von Desinformation auf die politische Meinungsbildung am Beispiel der US-Wahlen 2016 für eher gering, während \textcite[1095]{lazer_science_2018} darauf verweisen, dass durch die Funktionsweise der Social-Media-Plattformen die Verbreitung falscher Informationen massiv verstärkt wird. Auch \textcite[26]{vogler_wahrnehmung_2021} halten fest, dass Desinformation die Entscheidungsbildung negativ beeinflussen kann.
 
-% Warum besonders gefährlich für Schweiz?
 Auf die Schweiz hat Desinformation im Bereich der Politik einen besonders gravierenden Einfluss. Als weltweiter Einzelfall hat das Schweizer Stimmvolk ein besonders grosses politisches Mitbestimmungsrecht, indem regelmässig nicht nur Wahlen stattfinden, sondern auch Volksabstimmungen zu diversen Themen \parencite[2]{sager_politische_2017}. Desinformation kann gravierende Auswirkungen auf die politischen Prozesse haben, wenn politische Entscheidungen nicht auf Fakten, sondern falschen Informationen beruhen \parencites[26]{vogler_wahrnehmung_2021}[vgl.\ auch][19]{grujic_warnhinweise_2024}.
 
 \subsection{Audiovisuelle Wirkung desinformativer Inhalte}
@@ -380,41 +376,41 @@ Ausgehend von der vorhandenen Literatur lassen sich über die Verbreitung von vi
 \begin{itemize}
   \item \textbf{H1}: Die Verbreitung visueller und audiovisueller Desinformation auf Social-Media-Plattformen in der Schweiz hat in den letzten Jahren zugenommen. Insbesondere während Krisenzeiten (beispielsweise Covid19-Pandemie, Ukraine-Konflikt, Israel-Konflikt, …) ist ein Anstieg bemerkbar.
   \item \textbf{H2}: Desinformation wird emotionalisierend und provokativ gestaltet, um so eine besonders grosse Reichweite zu generieren.
-  \item \textbf{H3}: 	In Beiträgen werden spezifische Keywords gesetzt, um so möglichst viel Aufmerksamkeit auf den Beitrag zu ziehen. Die gleichen Keywords tauchen immer wieder auf.
+  \item \textbf{H3}:   In Beiträgen werden spezifische Keywords gesetzt, um so möglichst viel Aufmerksamkeit auf den Beitrag zu ziehen. Die gleichen Keywords tauchen immer wieder auf.
   \item \textbf{H4}: Desinformation wird oft von Einzelpersonen weiterverbreitet. In den meisten Fällen handelt es sich beim Ursprung/den Produzierenden des Artefakts um offizielle Quellen (Journalismus oder Politik).
-  \item \textbf{H5}:	Primär handelt es sich bei den visuellen Artefakten um Artefakte mit tiefer technischer Komplexität, da diese weniger aufwendig sind in der Produktion.
-  \item \textbf{H6}:	Die Desinformation liegt in der Regel im Begleittext des Beitrags, das mediale Artefakt unterstützt die Aussage des Begleittextes.
-  \item \textbf{H7}:	Desinformative Inhalte werden aus einem bestimmten Grund verbreitet.
-  \item \textbf{H8}:	Desinformative Videos enthalten viele Schnitte, um die Zuschauerbindung zu erhöhen.
+  \item \textbf{H5}:  Primär handelt es sich bei den visuellen Artefakten um Artefakte mit tiefer technischer Komplexität, da diese weniger aufwendig sind in der Produktion.
+  \item \textbf{H6}:  Die Desinformation liegt in der Regel im Begleittext des Beitrags, das mediale Artefakt unterstützt die Aussage des Begleittextes.
+  \item \textbf{H7}:  Desinformative Inhalte werden aus einem bestimmten Grund verbreitet.
+  \item \textbf{H8}:  Desinformative Videos enthalten viele Schnitte, um die Zuschauerbindung zu erhöhen.
 \end{itemize}
 
 \pagebreak
 \section{Methode}
-Durch eine quantitative Inhaltsanalyse werden Beiträge auf Social-Media-Plattformen systematisch erfasst und ausgewertet, um so mögliche Rückschlüsse ziehen zu können auf die Machart und Funktionsweise visueller und audiovisueller Desinformation. Dabei werden deduktiv die aufgestellten Hypothesen überprüft.
+Durch eine quantitative Inhaltsanalyse werden Beiträge auf Social-Media-Plattformen systematisch erfasst und ausgewertet, um so mögliche Rückschlüsse ziehen zu können auf die Machart und Funktionsweise visueller und audiovisueller Desinformation. Dabei werden integrativ \parencite[13]{oehmer-pedrazzi_standardisierte_2023} die aufgestellten Hypothesen überprüft.
 \subsection{Methodenwahl}
-Die quantitative Inhaltsanalyse eignet sich deshalb zur Beantwortung der Forschungsfrage, weil sie \say{formale und inhaltliche Merkmale großer Textmengen erfasst; d. h. deren zentrale Muster herausarbeitet} \parencite[11]{oehmer-pedrazzi_standardisierte_2023}. Dieses Vorgehen vereinfacht die statistische Auswertung der Inhalte (ebd.) und die entsprechenden Merkmale können für repräsentative Aussagen herangezogen werden. Das quantitative Vorgehen limitiert ausserdem eine subjektive Auswertung der Inhalte \parencite[140]{lai_content_2015}.
+Die quantitative Inhaltsanalyse eignet sich deshalb zur Beantwortung der Forschungsfrage, weil sie \say{formale und inhaltliche Merkmale großer Textmengen erfasst; d. h. deren zentrale Muster herausarbeitet} \parencites[11]{oehmer-pedrazzi_standardisierte_2023}[vgl.\ auch][227]{lobinger_quantitative_2012}. Dieses Vorgehen vereinfacht die statistische Auswertung der Inhalte (ebd.) und die entsprechenden Merkmale können für repräsentative Aussagen herangezogen werden. Das quantitative Vorgehen limitiert ausserdem eine subjektive Auswertung der Inhalte \parencite[140]{lai_content_2015}.
 
 In der Wissenschaft werden für die Inhaltsanalyse von Social-Media-Beiträgen zumeist automatisierte Verfahren eingesetzt, welche die Anwendung von Machine Learning erfordern \parencites[vgl.\ bspw.]{andreotta_analyzing_2019}{lai_content_2015}
 {schwartz_data-driven_2015}{wilson_content_2022}{wang_video_2015}. Dadurch kann innert kurzer Zeit eine grosse Menge an Daten ausgewertet werden.\\
-Die Anwendung solcher automatisierter Verfahren würde den Rahmen der vorliegenden Arbeit sprengen. Sie fokussiert sich deshalb auf die manuelle Auswertung der Inhalte, insbesondere betreffend der visuellen und audiovisuellen Artefakte. Bei der Erstellung des Codebuchs (s. Anhang, ~\ref{appendix_codebook}~\nameref{appendix_codebook}) werden dafür die Kriterien und Variablen für die automatisierten Auswertungen aus den verschiedenen Studien übernommen und auf eine manuelle Auswertung angepasst.
+Die Anwendung solcher automatisierter Verfahren würde den Rahmen der vorliegenden Arbeit sprengen. Sie fokussiert sich deshalb auf die manuelle Auswertung der Inhalte, insbesondere betreffend der visuellen und audiovisuellen Artefakte. Bei der Erstellung des Codebuchs (s. Anhang, ~\ref{appendix_codebook}~\nameref{appendix_codebook}) werden dafür die Kriterien und Variablen für die automatisierten Auswertungen aus den verschiedenen Studien übernommen und auf eine manuelle Auswertung angepasst. Dabei werden für jede untersuchte Variable mögliche Ausprägungen mit Zahlencodes definiert, welche anschliessend statistisch untersucht werden können.
 \subsubsection{Analysegegenstand}
-Analysiert werden sämtliche Social-Media-Beiträge mit visuellen oder audiovisuellen Inhalten, welche während des Analysezeitraums durch die Faktencheck-Plattformen Keystone-SDA, AFP Agence France-Presse und 20 Minuten.ch geprüft wurden. Durch diese Einschränkung wird die Überprüfung der Inhalte nicht selbst vorgenommen, sondern Fachpersonen überlassen. Es findet eine inhaltliche Auswertung des Analysegegenstands statt.
+Analysiert werden sämtliche Social-Media-Beiträge mit visuellen oder audiovisuellen Inhalten, welche während des Analysezeitraums durch die Faktencheck-Plattformen Keystone-SDA, AFP Agence France-Presse und 20 Minuten.ch geprüft wurden. Durch diese Einschränkung wird die Überprüfung der Inhalte nicht selbst vorgenommen, sondern Fachpersonen überlassen. Es findet eine inhaltliche Auswertung des Analysegegenstands statt. Soweit feststellbar, haben sich bisher keine weiteren Studien mit diesem Fokus mit audiovisueller Desinformation auf Social Media in der Schweiz befasst.
 
 Nur vollständig auswertbare Datensätze werden berücksichtigt. Kann ein Datensatz nicht vollständig erfasst werden (beispielsweise aufgrund fehlender Angabe des ursprünglichen Beitrags auf Social Media), wird dieser nicht ausgewertet, da eine kriteriengemässe Bewertung nicht möglich wäre.
 
-% Gütekriterien: Reliabilität, Validität und Objektivität
 Die Gütekriterien für eine quantitative Analyse sind folgendermassen gegeben: Die vorgegebenen Codierungsvariablen stellen sicher, dass der Forschungsgegenstand den tatsächlichen Hypothesen entsprechend analysiert wird.\\
-Zur Sicherstellung der Reliabilität und Objektivität wurde vor der Codierung ein Pre-Test mit zwei unabhängigen Personen durchgeführt. Es wurden drei zufällig ausgewählte, zuvor codierte Artikel von snopes.com ausgewertet und überprüft, ob dabei die gleichen Ergebnisse zustande kommen. Person 1 codierte aus Zeitgründen einen Artikel, die Codierung entsprach zu 88~\% der ursprünglichen Codierung, zwei Variablen wurden nicht verstanden (bereinigt 100~\% identisch). Person 2 codierte alle drei Artikel, die Codierung entsprach im Durchschnitt zu 71~\% der ursprünglichen Codierung, eine Variable wurde nicht verstanden (bereinigt 75~\% identisch).
+Zur Sicherstellung der Reliabilität und Objektivität wurde vor der Codierung ein Pre-Test mit zwei unabhängigen Personen durchgeführt. Es wurden drei zufällig ausgewählte, zuvor codierte Artikel von snopes.com ausgewertet und überprüft, ob dabei die gleichen Ergebnisse zustande kommen. Person 1 codierte aus Zeitgründen einen Artikel, die Codierung entsprach zu 88~\% der ursprünglichen Codierung, zwei Variablen wurden nicht verstanden (bereinigt 100~\% identisch). Person 2 codierte alle drei Artikel, die Codierung entsprach im Durchschnitt zu 71~\% der ursprünglichen Codierung, eine Variable wurde nicht verstanden (bereinigt 75~\% identisch). Die missverständlichen Variablen wurden daraufhin entsprechend angepasst und ausformuliert.
 
 \subsubsection{Untersuchungszeitraum}
 Untersucht werden Inhalte vom 1. Januar 2020 bis zum 31. März 2025 (Beginn der Auswertung). Durch den gewählten Datumsbereich wird einerseits der Aktualitätsbezug sichergestellt, andererseits wird in Krisenzeiten nachweislich besonders viel Desinformation verbreitet \parencites{tandoc_jr_defining_2018}[Lim \& Ling (2018) zit.\ nach][2]{ceron_fake_2021}. In den entsprechenden Untersuchungszeitraum fallen einige Krisenphasen, beispielsweise die Covid-19-Pandemie (ebd.) oder bewaffnete Konflikte wie der Ukraine- oder der Israel-Konflikt.
 \subsubsection{Räumlicher Geltungsbereich}
 Die vorliegende Arbeit fokussiert auf Schweiz-bezogene Beiträge. Diese Einschränkung ist gegeben durch die Auswahl der Faktencheck-Plattformen. Bei jedem Beitrag wird versucht, das Herkunftsland sowie das Bezugsland der Desinformation zu identifizieren. Hat ein Beitrag erkennbar keinen Bezug zur Schweiz, weder bezüglich des thematischen Bezugs noch durch eine (mutmassliche) Schweizer Quelle, wird er nicht miteinbezogen.
 \subsubsection{Einschränkungen}
-Die vorliegende Arbeit liefert eine statistische Auswertung visueller und audiovisueller Desinformation auf Social-Media-Plattformen mit Fokus auf die Schweiz. Betrachtet wird dabei der Zeitraum von Januar 2020 bis Frühling 2025. Der Schwerpunkt der Untersuchung liegt auf der Auswertung der audiovisuellen Artefakte der Beiträge, um so mögliche Muster hinter der Produktion zu identifizieren.\\
+Die vorliegende Arbeit liefert eine statistische Auswertung visueller und audiovisueller Desinformation auf Social-Media-Plattformen mit Fokus auf die Schweiz. Betrachtet wird dabei der Zeitraum von Januar 2020 bis Frühling 2025. Der Schwerpunkt der Untersuchung liegt auf der Auswertung der audiovisuellen Artefakte der Beiträge, um so mögliche Muster hinter der Produktion zu identifizieren. \\
 Die gewählte Methode bringt einige Einschränkungen mit sich.
 
-Die Auswahl der analysierten Beiträge basiert auf den Inhalten, welche durch die Faktencheck-Organisationen überprüft wurden. Dadurch kann einerseits eine fundierte Grundlage für die Auswahl als Basis genommen werden, andererseits findet so automatisch bereits eine Vorselektion statt. Eine uneingeschränkte Repräsentativität für sämtliche visuelle und audiovisuelle Desinformation auf Social-Media-Plattformen in der Schweiz ist so möglicherweise nicht gegeben. Auch liefert die angewandte Methode keine Aussage über das tatsächliche Ausmass von visueller und audiovisueller Desinformation in der Schweiz. Es lässt sich nicht feststellen, wie gross die Grundgesamtheit aller desinformativer Beiträge auf Social-Media-Plattformen mit Schweizbezug ist.
+Die Auswahl der analysierten Beiträge basiert auf den Inhalten, welche durch die Faktencheck-Organisationen überprüft wurden. Dadurch kann einerseits eine fundierte Grundlage für die Auswahl als Basis genommen werden, andererseits findet so automatisch bereits eine Vorselektion statt. Eine uneingeschränkte Repräsentativität für sämtliche visuelle und audiovisuelle Desinformation auf Social-Media-Plattformen in der Schweiz ist so möglicherweise nicht gegeben. Eine repräsentative Aussage über die Grundgesamtheit lässt sich also nur aufgrund der Plausibilität bilden \parencite[vgl.\ dazu auch][12]{oehmer-pedrazzi_standardisierte_2023}.
+\\ Auch liefert die angewandte Methode keine Aussage über das tatsächliche Ausmass von visueller und audiovisueller Desinformation in der Schweiz. Es lässt sich nicht feststellen, wie gross die Grundgesamtheit aller desinformativer Beiträge auf Social-Media-Plattformen mit Schweizbezug ist.
 
 Eine weitere Einschränkung muss hingenommen werden in Bezug auf die Verbreitung der Inhalte. Die vorliegende Methode kann nur zu einem geringen Mass eine Aussage darüber liefern, wie die untersuchten Inhalte von den Rezipierenden aufgenommen wurden, ob ihnen Glaube geschenkt wurde und inwiefern sie weitergeleitet wurden. Ausserdem ist keine Aussage darüber möglich, ob der Ursprung des Artefakts bei der verbreitenden Person liegt oder diese den Inhalt lediglich weiterverbreitet.
 
@@ -422,9 +418,9 @@ Weitere Untersuchungen bezüglich Desinformation auf Social-Media-Plattformen in
 \subsection{Methodisches Vorgehen}
 Von den drei Faktencheck-Portalen wurde jeder Artikel und die zugehörigen Beiträge mit Metadaten in einer json-Datei gespeichert. Während bei AFP und 20 Minuten die Artikel manuell gespeichert werden mussten, konnte bei Keystone-SDA aufgrund ausreichend eindeutiger Website-Elemente ein Python-Crawler eingesetzt werden, welcher die entsprechenden Artikel mit Metadaten automatisiert gespeichert hat.\\
 Der Crawler speicherte zuerst Titel, URL und Datum des Artikels und indexierte anschliessend den Link des Social-Media-Beitrages und die entsprechende Herkunftsplattform (s. Anhang~\ref{appendix_crawler}~\nameref{appendix_crawler}). Für AFP und 20 Minuten.ch wurde der gleiche Vorgang manuell durchgeführt.\\
-Anschliessend wurden die Social-Media-Beiträge aus den Artikeln mittels eines Codebuchs mit vordefinierten Variablen ausgewertet. Die Variablen wurden ausgehend von den Hypothesen aus der Literatur abgeleitet.
+Anschliessend wurden die Social-Media-Beiträge aus den Artikeln mittels eines Codebuchs mit vordefinierten Variablen kategorisiert. Die Variablen wurden ausgehend von den Hypothesen aus der Literatur abgeleitet.
 
-Insgesamt wurden 164 Artikel von Keystone-SDA, 98 Artikel von AFP und 27 Artikel von 20 Minuten erfasst. Davon ausgehend wurden 390 Social-Media-Beiträge ausgewertet.
+Insgesamt wurden 164 Artikel von Keystone-SDA, 98 Artikel von AFP und 27 Artikel von 20 Minuten erfasst. Davon ausgehend werden 390 Social-Media-Beiträge ausgewertet.
 
 \begin{table}[h!]
   \label{tab:stichprobe}
@@ -448,11 +444,12 @@ Insgesamt wurden 164 Artikel von Keystone-SDA, 98 Artikel von AFP und 27 Artikel
     \multicolumn{4}{|c|}{Total: 390} \\
     \hline
   \end{tabular}
-  \caption[Erfassung der Stichprobe der auszuwertenden Social-Media-Beiträge]{Erfassung der Stichprobe der auszuwertenden Social-Media-Beiträge \linebreak \textit{Lesebeispiel: Von Keystone-SDA wurden 164 Artikel gefunden, welche gesamthaft 187 Social-Media-Beiträge enthalten. Davon enthielten 33 kein auswertbares Artefakt, 6 hatten keinen Schweizbezug, 2 Artikel untersuchten bereits existierende Beiträge zu einem späteren Zeitpunkt.}}
+  \caption[Erfassung der Stichprobe der auszuwertenden Social-Media-Beiträge]{Erfassung der Stichprobe der auszuwertenden Social-Media-Beiträge \linebreak \textit{Lesebeispiel: Von Keystone-SDA wurden 164 Artikel ausgewertet, welche gesamthaft 187 Social-Media-Beiträge enthalten. Davon enthielten 33 kein auswertbares mediales Artefakt (Bild oder Video), 6 hatten keinen Schweizbezug, 2 Artikel behandelten bereits ausgewertete Beiträge zu einem späteren Zeitpunkt.}}
 \end{table}
 
 \subsection{Auswertung}
-
+Für die Auswertung wird der JSON-Datensatz in R analysiert. Dabei werden relative Häufigkeitsauswertungen, Kreuztabellen und \(\chi^2\)-Tests  durchgeführt, um die Hypothesen zu beantworten.
+% P-Value
 
 \pagebreak
 \section{Ergebnisse}
@@ -482,4 +479,15 @@ Insgesamt wurden 164 Artikel von Keystone-SDA, 98 Artikel von AFP und 27 Artikel
 ~\label{appendix_crawler}
 \begin{lstinputlisting}[language=Python, caption=Python Webcrawler für Keystone-SDA]{bsc_crawl_keystone-sda-listing.py}
 \end{lstinputlisting}
+\subsection{Datensatz}
+\begin{tcolorbox}[
+    width=\textwidth,    % gesamte Textbreite
+    boxrule=1pt,         % Stärke des Rahmens
+    arc=0pt,             % quadratische Ecken
+    colback=white,       % Hintergrundfarbe
+    left=6pt, right=6pt, top=6pt, bottom=6pt
+  ]
+  Datensatz: \\
+  abc.def
+\end{tcolorbox}
 \end{document}
