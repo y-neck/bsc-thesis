@@ -120,7 +120,10 @@ balanced_matrix_sum <- balanced_dates %>%
   column_to_rownames("date") %>%
   as.matrix()
 
-date_dependency_chisq <- chisq.test(balanced_matrix_sum)
+date_dependency_chisq <- chisq.test(balanced_matrix_sum,
+  simulate.p.value = TRUE,
+  B = 10000 # number of replicates
+)
 
 # balanced matrix without sum
 balanced_matrix <- date_dependency_txtable %>%
@@ -188,12 +191,12 @@ View(date_dependency_stdres)
 # Results
 # List of 9
 #  $ statistic:   2990
-#  $ parameter:   1795
-#  $ method   :  "Chi-squared test for given probabilities"
+#  $ parameter:   NA -> no degrees of freedom for Monte Carlo simulated p-value
+#  $ method   :  "Chi-squared test for given probabilities with simulated p-value\n\t (based on 10000 replicates)"
 #  $ data.name:  "balanced_matrix_sum"
 #  $ observed :  [1:1796] 1 0 0 0 0 0 0 0 0 0 ... -> observed values
 #  $ expected :  [1:1796] 0.211 0.211 0.211 0.211 0.211 ... -> expected values
 
-#  $ p.value  :  4.74e-63 -> p value << 0.05; reject H0 hypothesis
-#  $ residuals:  [1:1796] 1.718 -0.459 -0.459 -0.459 -0.459 ... -> standardized deviation for each cell
-#  $ stdres   :  [1:1796] 1.72 -0.46 -0.46 -0.46 -0.46 ...
+#  $ p.value  :  1e-04 -> p value << 0.05; reject H0 hypothesis
+#  $ residuals:  [1:1796] 1.718 -0.459 -0.459 -0.459 -0.459 ... -> Raw deviations of observed from expected.
+#  $ stdres   :  [1:1796] 1.72 -0.46 -0.46 -0.46 -0.46 ... -> Standardized residuals, showing which dates deviate most in 𝜎 units

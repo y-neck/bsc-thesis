@@ -157,7 +157,10 @@ sentiment_coherence_txtable <- as.data.frame(sentiment_coherence_xtabs) %>%
 sentiment_coherence_matrix <- sentiment_coherence_txtable %>%
   column_to_rownames("post_sentiment") %>%
   as.matrix()
-sentiment_coherence_chisq <- chisq.test(sentiment_coherence_matrix)
+sentiment_coherence_chisq <- chisq.test(sentiment_coherence_matrix,
+  simulate.p.value = TRUE,
+  B = 10000 # number of replicates
+)
 
 # calculate overall cohen's kappa
 sentiment_coherence_ckappa_obs <- sentiment_txtable %>%
@@ -169,7 +172,6 @@ sentiment_coherence_ckappa_obs <- sentiment_txtable %>%
   filter(freq > 0) %>% # drop zero‐frequency cells
   uncount(weights = freq) %>% # replicate rows by count
   select(post_sentiment, visual_sentiment)
-
 sentiment_coherence_ckappa <- kappa2(
   sentiment_coherence_ckappa_obs,
   weight = "unweighted"
@@ -228,7 +230,7 @@ print(sentiment_coherence_ckappa)
 
 # Pearson's Chi-squared test
 #   data:  sentiment_coherence_matrix
-#   X-squared = 178.03, df = 36, p-value < 2.2e-16
+#   X-squared = 178.03, df = NA, p-value = 9.999e-05 -> observed co‑occurrence pattern is extremely unlikely under independence—strong evidence that post_sentiment and visual_sentiment are associated.
 
 # Cohen's Kappa for 2 Raters (Weights: unweighted)
 #   Subjects = 381
