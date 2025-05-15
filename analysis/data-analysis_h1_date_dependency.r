@@ -84,7 +84,7 @@ date_dependency_txtable <- as.data.frame(date_dependency_xtabs) %>%
       .default = "Nicht erkennbar"
     )
   ) %>%
-  # now filter by actual Dates
+  # filter by actual dates
   filter(date > as.Date("2020-01-01")) %>%
   pivot_wider(
     id_cols = date,
@@ -94,7 +94,7 @@ date_dependency_txtable <- as.data.frame(date_dependency_xtabs) %>%
     values_fill = 0 # fill missing combos with zero
   )
 
-# calculate Pearson chi-squared
+# calculate overall Pearson x^2
 date_dependency_matrix <- date_dependency_txtable %>%
   column_to_rownames("date") %>%
   as.matrix()
@@ -133,6 +133,7 @@ balanced_matrix <- date_dependency_txtable %>%
   # restore date as rownames for matrix conversion
   column_to_rownames("date") %>%
   as.matrix()
+
 date_dependency_plot <- balanced_matrix %>%
   as.data.frame() %>%
   rownames_to_column("date") %>%
@@ -188,10 +189,11 @@ View(date_dependency_stdres)
 # List of 9
 #  $ statistic:   2990
 #  $ parameter:   1795
-#  $ p.value  :  4.74e-63 -> p value << 0.05; reject H0 hypothesis
 #  $ method   :  "Chi-squared test for given probabilities"
 #  $ data.name:  "balanced_matrix_sum"
 #  $ observed :  [1:1796] 1 0 0 0 0 0 0 0 0 0 ... -> observed values
 #  $ expected :  [1:1796] 0.211 0.211 0.211 0.211 0.211 ... -> expected values
+
+#  $ p.value  :  4.74e-63 -> p value << 0.05; reject H0 hypothesis
 #  $ residuals:  [1:1796] 1.718 -0.459 -0.459 -0.459 -0.459 ... -> standardized deviation for each cell
 #  $ stdres   :  [1:1796] 1.72 -0.46 -0.46 -0.46 -0.46 ...
