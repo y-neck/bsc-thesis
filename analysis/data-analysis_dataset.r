@@ -148,7 +148,7 @@ artefact_type_plot <- ggplot(artefact_type_table, aes(x = fVar_artefact, y = rel
 
 # xTab origin country/reference country
 # country labels
-country_labels <- c(
+country_lut <- c(
   "1" = "Schweiz",
   "2" = "Deutschland",
   "3" = "Österreich",
@@ -197,7 +197,7 @@ country_txtable <- as.data.frame(country_xtabs) %>%
       c(source_country, content_reference_country),
       ~ recode_factor(
         .x,
-        !!!country_labels,
+        !!!country_lut,
         .default = "Andere" # fallback label if a code is unexpected
       )
     )
@@ -236,7 +236,7 @@ country_plot <- country_txtable %>%
     size = count
   )) +
   geom_point(alpha = 0.5) +
-  scale_size(range = c(0.2, 20)) +
+  scale_size(range = c(1, 20)) +
   scale_fill_viridis_d() +
   labs(
     x = "Bezugsland",
@@ -251,16 +251,23 @@ country_plot <- country_txtable %>%
     plot.title = element_text(hjust = 0.5),
     legend.position = "none" # hide legend
   )
+country_txtable_relfreq <- country_xtabs %>%
+  prop.table(1) # row proportions
 
 #############################################################
+
 # Viewers
 View(dataset)
 
 View(origin_platform_table)
 print(origin_platform_plot)
+
 View(post_topic_table)
 print(post_topic_plot)
+
 View(artefact_type_table)
 print(artefact_type_plot)
+
 View(country_txtable)
+View(country_txtable_relfreq)
 print(country_plot)
