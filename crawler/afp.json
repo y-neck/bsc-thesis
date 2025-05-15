@@ -4942,7 +4942,7 @@
         "source_country": 99,
         "content_reference_country": 1,
         "content_creation_purpose": 99,
-        "post_sentiment": 99,
+        "post_sentiment": 9,
         "fVar_artefact": 1,
         "visual_disinformation_category": 11,
         "visual_disinformation_topic": 21,
