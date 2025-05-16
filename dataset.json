@@ -8440,7 +8440,7 @@
         "fVar_artefact": 1,
         "visual_disinformation_category": 11,
         "visual_disinformation_topic": 31,
-        "visual_coherence": 32,
+        "visual_coherence": 3,
         "visual_sentiment": 9,
         "auditive_specifications": 9,
         "visual_cut_tempo": 0,
