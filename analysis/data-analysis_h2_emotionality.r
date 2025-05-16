@@ -163,7 +163,7 @@ sentiment_coherence_chisq <- chisq.test(sentiment_coherence_matrix,
 )
 
 # calculate overall cohen's kappa
-sentiment_coherence_ckappa_obs <- sentiment_txtable %>%
+sentiment_coherence_ckappa_obs <- sentiment_coherence_txtable %>%
   pivot_longer(
     cols      = -post_sentiment,
     names_to  = "visual_sentiment",

@@ -237,7 +237,7 @@ country_plot <- country_txtable %>%
   )) +
   geom_point(alpha = 0.5) +
   scale_size(range = c(1, 20)) +
-  scale_fill_viridis_d() +
+  scale_fill_viridis_d(option = "B") +
   labs(
     x = "Bezugsland",
     y = "Ursprungsland",
