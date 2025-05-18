@@ -104,6 +104,8 @@ topic_coherence_plot_table <- dataset %>%
       code_str == "99" ~ "Nicht erkennbar",
       TRUE ~ NA_character_
     ),
+# TODO: Überthemen anpassen -> nicht Politik/Politik
+
     # now recode both dimensions exactly once
     post_topic = fct_recode(
       as.factor(post_topic),
@@ -170,7 +172,7 @@ topic_coherence_plot <- ggplot(topic_coherence_plot_table, aes(
     title = "Verhältnis zwischen Beitrags- und Artefaktthema",
     subtitle = "Relative Häufigkeit in %"
   ) +
-  scale_fill_viridis_d(option = "B", direction = 1) + # use viridis color scale for color blindness optimization
+  scale_fill_viridis_d(option = "B", direction = -1) + # use viridis color scale for color blindness optimization
   theme_minimal() +
   theme(
     axis.text.y = element_text(size = 11),

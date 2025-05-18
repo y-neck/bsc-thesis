@@ -733,7 +733,7 @@
     "source_role": 4,
     "source_country": 99,
     "content_reference_country": 2,
-    "content_creation_purpose": 9,
+    "content_creation_purpose": 99,
     "post_sentiment": 9,
     "fVar_artefact": 1,
     "visual_disinformation_category": 11,
