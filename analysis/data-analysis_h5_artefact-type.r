@@ -79,13 +79,18 @@ artefact_type_table <- dataset %>%
 
 artefact_type_plot <- ggplot(artefact_type_table, aes(x = visual_disinformation_category, y = relative_freq)) +
   geom_bar(stat = "identity", show.legend = FALSE) +
-  labs(x = "Art der Visualisierung", y = "Relative Häufigkeit", title = "Art der Visualisierung", subtitle = "Relative Häufigkeit in %") +
+  labs(
+    x = "Art der Visualisierung",
+    y = "Relative Häufigkeit (%)",
+    title = "Art der Visualisierung",
+    subtitle = "Relative Häufigkeit in %"
+  ) +
   theme_minimal() +
   theme(
     axis.text.x = element_text(angle = 45, hjust = 1),
     plot.title = element_text(hjust = 0.5),
     plot.subtitle = element_text(hjust = 0.5)
-  ) 
+  )
 
 
 #############################################################

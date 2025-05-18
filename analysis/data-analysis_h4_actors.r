@@ -119,13 +119,13 @@ actor_plot_table <- dataset %>%
   mutate(
     total_type    = sum(n),
     rel_type      = total_type / nrow(dataset) * 100,
-    rel_segment   = n / total_type * rel_type # segment’s share of overall %
+    rel_freq   = n / total_type * rel_type # segment’s share of overall %
   ) %>%
   ungroup()
 
 actor_plot <- ggplot(actor_plot_table, aes(
   x    = actor_type,
-  y    = rel_segment,
+  y    = rel_freq,
   fill = actor_role
 )) +
   geom_col() +
