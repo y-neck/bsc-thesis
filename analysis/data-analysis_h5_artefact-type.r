@@ -74,17 +74,23 @@ artefact_type_table <- dataset %>%
     as.factor(visual_disinformation_category),
     !!!artefact_type_lut
   )) %>%
-  mutate(relative_freq = n / nrow(dataset) * 100) %>%
+  # color based on category (first digit of artefact type)
+  mutate(
+    relative_freq = n / nrow(dataset) * 100,
+    color_group = substr(visual_disinformation_category, 1, 1)
+  ) %>%
   arrange(match(visual_disinformation_category, names(artefact_type_lut)))
 
-artefact_type_plot <- ggplot(artefact_type_table, aes(x = visual_disinformation_category, y = relative_freq)) +
+artefact_type_plot <- ggplot(artefact_type_table, aes(x = visual_disinformation_category, y = relative_freq, fill = color_group)) +
   geom_bar(stat = "identity", show.legend = FALSE) +
   labs(
     x = "Art der Visualisierung",
     y = "Relative Häufigkeit (%)",
     title = "Art der Visualisierung",
-    subtitle = "Relative Häufigkeit in %"
+    subtitle = "Relative Häufigkeit in %",
+    fill = "Kategorie"
   ) +
+  scale_fill_viridis_d(option = "B", begin = 0.3, end = 0.8) +
   theme_minimal() +
   theme(
     axis.text.x = element_text(angle = 45, hjust = 1),

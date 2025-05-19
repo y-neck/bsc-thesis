@@ -98,6 +98,7 @@ origin_platform_plot <- ggplot(
   # scale_fill_brewer(palette = "Dark2") +
   theme_minimal() + # minimal graphics theme, remove grey bg
   theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
     plot.title = element_text(hjust = 0.5),
     plot.subtitle = element_text(hjust = 0.5)
   )
@@ -124,6 +125,7 @@ post_topic_plot <- ggplot(post_topic_table, aes(x = post_topic, y = relative_fre
   labs(x = "Themengebiet", y = "Relative Häufigkeit", title = "Themengebiet der Beiträge", subtitle = "Relative Häufigkeit in %") +
   theme_minimal() +
   theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
     plot.title = element_text(hjust = 0.5),
     plot.subtitle = element_text(hjust = 0.5)
   )
@@ -142,6 +144,7 @@ artefact_type_plot <- ggplot(artefact_type_table, aes(x = fVar_artefact, y = rel
   labs(x = "Artefakt-Typ", y = "Relative Häufigkeit", title = "Mediales Artefakt", subtitle = "Relative Häufigkeit in %") +
   theme_minimal() +
   theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
     plot.title = element_text(hjust = 0.5),
     plot.subtitle = element_text(hjust = 0.5)
   )
@@ -235,9 +238,9 @@ country_plot <- country_txtable %>%
     color = count,
     size = count
   )) +
-  geom_point(alpha = 0.5) +
+  geom_point(alpha = 0.7) +
   scale_size(range = c(1, 20)) +
-  scale_fill_viridis_d(option = "B") +
+  scale_color_viridis_c(option = "B", end = 0.9) +
   labs(
     x = "Bezugsland",
     y = "Ursprungsland",

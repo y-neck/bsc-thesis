@@ -68,8 +68,8 @@ tags_count <- dataset %>%
 
 # tag by topic
 tags_long <- dataset %>%
-  mutate(id = row_number()) %>% # or whatever your true ID column is
-  select(id, post_topic, user_generated_tags) %>%
+  mutate(id = row_number()) %>%
+  select(id, post_topic, user_generated_tags, keyword_coherence) %>%
   unnest(user_generated_tags) %>%
   filter(!is.na(user_generated_tags), user_generated_tags != "") %>%
   mutate(
@@ -77,17 +77,46 @@ tags_long <- dataset %>%
       str_trim() %>%
       str_replace_all("[^\\p{L}\\d ]", "")
   )
-
 # Now count tags per post_topic
 tag_by_topic <- tags_long %>%
-  left_join(tags_long %>% select(post_topic, tag_clean, keyword_coherence),
-    by = c("post_topic", "tag_clean")
+  # include keyword_coherence in the count grouping
+  count(
+    post_topic,
+    tag_clean,
+    keyword_coherence,
+    name = "n"
   ) %>%
-  count(post_topic, tag_clean, name = "n") %>%
   group_by(post_topic) %>%
   ungroup() %>%
   arrange(desc(n))
 
+tag_likeliness_by_topic <- dataset %>%
+  # ensure user_generated_tags is always a list of strings
+  mutate(
+    has_tag = map_lgl(user_generated_tags, ~ length(.x) > 0)
+  ) %>%
+  # recode post_topic into human labels if not done already
+  mutate(
+    post_topic = fct_recode(
+      as.factor(post_topic),
+      "Politik" = "1",
+      "Journalismus" = "2",
+      "Wissenschaft/Technik" = "3",
+      "Gesundheit/Medizin" = "4",
+      "Gender/Race/Ethnien/Migration" = "5",
+      "Sport/Kultur" = "6",
+      "Wirtschaft" = "7",
+      "Sonstige" = "8",
+      "Nicht erkennbar" = "9"
+    )
+  ) %>%
+  group_by(post_topic) %>%
+  summarise(
+    n_entries = n(),
+    n_with_tags = sum(has_tag),
+    prop_contains_tags = mean(has_tag) * 100 # percentage
+  ) %>%
+  ungroup()
 
 
 #############################################################
@@ -96,6 +125,7 @@ tag_by_topic <- tags_long %>%
 View(dataset)
 View(tags_count)
 View(tag_by_topic)
+View(tag_likeliness_by_topic)
 
 #############################################################
 

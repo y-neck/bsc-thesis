@@ -196,6 +196,8 @@ sentiment_coherence_plot <- sentiment_coherence_txtable %>%
     color = count,
     fill = count
   )) +
+  scale_color_viridis_c(option = "B", begin = 0.1, end = 0.9) +
+  scale_fill_viridis_c(option = "B", begin = 0.1, end = 0.9) +
   geom_tile() +
   labs(
     x     = "Post-Emotionalität",

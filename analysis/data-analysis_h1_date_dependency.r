@@ -158,7 +158,7 @@ date_dependency_plot <- balanced_matrix %>%
     show.legend = FALSE
   ) +
   scale_radius(range = c(2, 10)) +
-  scale_fill_viridis_b(option = "B") +
+  scale_color_viridis_d(option = "B", begin = 0, end = 0.9) +
   labs(
     x     = "Zeitverlauf",
     y     = "Thema des Beitrags",

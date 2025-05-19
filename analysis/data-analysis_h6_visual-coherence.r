@@ -93,19 +93,17 @@ topic_coherence_plot_table <- dataset %>%
   mutate(
     code_str = as.character(visual_disinformation_topic),
     super_topic = case_when(
-      code_str %in% c("10", "11", "12", "13", "14", "19") ~ "Politik",
-      code_str %in% c("20", "21", "22", "23", "29") ~ "Journalismus",
-      code_str %in% c("30", "31", "32") ~ "Wissenschaft",
-      code_str %in% c("40", "41", "42", "49") ~ "Gesundheit",
-      code_str %in% c("51", "52", "53") ~ "Gesellschaft",
-      code_str %in% c("61", "62") ~ "Kultur",
-      code_str %in% c("71", "72", "79") ~ "Wirtschaft",
+      code_str %in% c("10", "11", "12", "13", "14", "19") ~ "Politische Komm.",
+      code_str %in% c("20", "21", "22", "23", "29") ~ "Journalistisches Erzeugnis",
+      code_str %in% c("30", "31", "32") ~ "Wissenschaftskomm.",
+      code_str %in% c("40", "41", "42", "49") ~ "Gesundheitsbezogene Abb.",
+      code_str %in% c("51", "52", "53") ~ "Gesellschaftsbezogene Abb.",
+      code_str %in% c("61", "62") ~ "Kulturbezogene Abb.",
+      code_str %in% c("71", "72", "79") ~ "Wirtschaftskomm.",
       code_str == "80" ~ "Weitere",
       code_str == "99" ~ "Nicht erkennbar",
       TRUE ~ NA_character_
     ),
-# TODO: Überthemen anpassen -> nicht Politik/Politik
-
     # now recode both dimensions exactly once
     post_topic = fct_recode(
       as.factor(post_topic),
@@ -167,12 +165,12 @@ topic_coherence_plot <- ggplot(topic_coherence_plot_table, aes(
   coord_flip() +
   labs(
     x = "Thema des Beitrag",
-    y = "Relative Häufigkeit",
+    y = "Relative Häufigkeit (%)",
     fill = "Thema des Artefakts",
     title = "Verhältnis zwischen Beitrags- und Artefaktthema",
     subtitle = "Relative Häufigkeit in %"
   ) +
-  scale_fill_viridis_d(option = "B", direction = -1) + # use viridis color scale for color blindness optimization
+  scale_fill_viridis_d(option = "B", direction = -1, end = 0.9) + # use viridis color scale for color blindness optimization
   theme_minimal() +
   theme(
     axis.text.y = element_text(size = 11),

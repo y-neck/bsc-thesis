@@ -117,9 +117,9 @@ actor_plot_table <- dataset %>%
   count(actor_type, actor_role, name = "n") %>%
   group_by(actor_type) %>%
   mutate(
-    total_type    = sum(n),
-    rel_type      = total_type / nrow(dataset) * 100,
-    rel_freq   = n / total_type * rel_type # segment’s share of overall %
+    total_type = sum(n),
+    rel_type = total_type / nrow(dataset) * 100,
+    rel_freq = n / total_type * rel_type # segment’s share of overall %
   ) %>%
   ungroup()
 
@@ -137,7 +137,7 @@ actor_plot <- ggplot(actor_plot_table, aes(
     title = "Verteilung der Akteursrollen innerhalb der Akteurstypen",
     subtitle = "Relative Häufigkeit in %"
   ) +
-  scale_fill_viridis_d(option = "B", direction = 1) + # use viridis color scale for color blindness optimization
+  scale_fill_viridis_d(option = "B", end = 0.9, direction = -1) + # use viridis color scale for color blindness optimization
   theme_minimal() +
   theme(
     axis.text.y = element_text(size = 11),
@@ -166,7 +166,6 @@ print(actor_plot)
 
 View(actor_txtable)
 print(actor_txtable_chisq)
-print(actor_txtable_stdres)
 
 #############################################################
 
