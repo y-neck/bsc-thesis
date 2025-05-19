@@ -3208,7 +3208,7 @@
         "visual_coherence": 4,
         "visual_sentiment": 3,
         "auditive_specifications": 9,
-        "visual_cut_tempo": 1,
+        "visual_cut_tempo": 0,
         "relation_between_post_and_artefact": 1
     },
     {
@@ -4054,7 +4054,7 @@
         "visual_coherence": 4,
         "visual_sentiment": 5,
         "auditive_specifications": 1,
-        "visual_cut_tempo": 16.55,
+        "visual_cut_tempo": 16.6,
         "relation_between_post_and_artefact": 1
     },
     {
@@ -4080,7 +4080,7 @@
         "visual_coherence": 4,
         "visual_sentiment": 1,
         "auditive_specifications": 1,
-        "visual_cut_tempo": 10.12,
+        "visual_cut_tempo": 10.1,
         "relation_between_post_and_artefact": 1
     },
     {
@@ -4106,7 +4106,7 @@
         "visual_coherence": 9,
         "visual_sentiment": 5,
         "auditive_specifications": 1,
-        "visual_cut_tempo": 16.88,
+        "visual_cut_tempo": 16.9,
         "relation_between_post_and_artefact": 9
     },
     {
@@ -4132,7 +4132,7 @@
         "visual_coherence": 4,
         "visual_sentiment": 5,
         "auditive_specifications": 1,
-        "visual_cut_tempo": 16.88,
+        "visual_cut_tempo": 16.9,
         "relation_between_post_and_artefact": 1
     },
     {
@@ -4237,7 +4237,7 @@
         "visual_coherence": 3,
         "visual_sentiment": 3,
         "auditive_specifications": 1,
-        "visual_cut_tempo": 0.37,
+        "visual_cut_tempo": 0.4,
         "relation_between_post_and_artefact": 1
     },
     {
@@ -4278,7 +4278,7 @@
         "visual_coherence": 3,
         "visual_sentiment": 3,
         "auditive_specifications": 1,
-        "visual_cut_tempo": 0.38,
+        "visual_cut_tempo": 0.4,
         "relation_between_post_and_artefact": 1
     },
     {
@@ -4304,7 +4304,7 @@
         "visual_coherence": 4,
         "visual_sentiment": 3,
         "auditive_specifications": 1,
-        "visual_cut_tempo": 0.37,
+        "visual_cut_tempo": 0.4,
         "relation_between_post_and_artefact": 1
     },
     {
@@ -4333,7 +4333,7 @@
         "visual_coherence": 4,
         "visual_sentiment": 3,
         "auditive_specifications": 1,
-        "visual_cut_tempo": 0.37,
+        "visual_cut_tempo": 0.4,
         "relation_between_post_and_artefact": 1
     },
     {
@@ -4411,7 +4411,7 @@
         "visual_coherence": 9,
         "visual_sentiment": 3,
         "auditive_specifications": 1,
-        "visual_cut_tempo": 4.53,
+        "visual_cut_tempo": 4.5,
         "relation_between_post_and_artefact": 9
     },
     {
@@ -4622,7 +4622,7 @@
         "visual_coherence": 4,
         "visual_sentiment": 4,
         "auditive_specifications": 1,
-        "visual_cut_tempo": 31.58,
+        "visual_cut_tempo": 31.6,
         "relation_between_post_and_artefact": 1
     },
     {
@@ -4650,7 +4650,7 @@
         "visual_coherence": 4,
         "visual_sentiment": 4,
         "auditive_specifications": 1,
-        "visual_cut_tempo": 31.58,
+        "visual_cut_tempo": 31.6,
         "relation_between_post_and_artefact": 1
     },
     {
@@ -4689,7 +4689,7 @@
         "visual_coherence": 4,
         "visual_sentiment": 4,
         "auditive_specifications": 1,
-        "visual_cut_tempo": 33.33,
+        "visual_cut_tempo": 33.3,
         "relation_between_post_and_artefact": 1
     },
     {
@@ -4720,7 +4720,7 @@
         "visual_coherence": 4,
         "visual_sentiment": 4,
         "auditive_specifications": 1,
-        "visual_cut_tempo": 33.33,
+        "visual_cut_tempo": 33.3,
         "relation_between_post_and_artefact": 1
     },
     {
@@ -4750,7 +4750,7 @@
         "visual_coherence": 4,
         "visual_sentiment": 4,
         "auditive_specifications": 1,
-        "visual_cut_tempo": 31.56,
+        "visual_cut_tempo": 31.6,
         "relation_between_post_and_artefact": 1
     },
     
@@ -4780,7 +4780,7 @@
         "visual_coherence": 4,
         "visual_sentiment": 4,
         "auditive_specifications": 1,
-        "visual_cut_tempo": 31.56,
+        "visual_cut_tempo": 31.6,
         "relation_between_post_and_artefact": 1
     },
     {
@@ -4806,7 +4806,7 @@
         "visual_coherence": 9,
         "visual_sentiment": 4,
         "auditive_specifications": 1,
-        "visual_cut_tempo": 31.56,
+        "visual_cut_tempo": 31.6,
         "relation_between_post_and_artefact": 9
     },
     {
@@ -4982,7 +4982,7 @@
         "visual_coherence": 9,
         "visual_sentiment": 9,
         "auditive_specifications": 9,
-        "visual_cut_tempo": 8.73,
+        "visual_cut_tempo": 8.7,
         "relation_between_post_and_artefact": 9
     },
     {
@@ -5018,7 +5018,7 @@
         "visual_coherence": 9,
         "visual_sentiment": 9,
         "auditive_specifications": 9,
-        "visual_cut_tempo": 8.73,
+        "visual_cut_tempo": 8.7,
         "relation_between_post_and_artefact": 9
     },
     {
@@ -5772,7 +5772,7 @@
         "visual_coherence": 9,
         "visual_sentiment": 6,
         "auditive_specifications": 1,
-        "visual_cut_tempo": 1.88,
+        "visual_cut_tempo": 1.9,
         "relation_between_post_and_artefact": 9
     },
     {
@@ -5798,7 +5798,7 @@
         "visual_coherence": 9,
         "visual_sentiment": 6,
         "auditive_specifications": 1,
-        "visual_cut_tempo": 1.88,
+        "visual_cut_tempo": 1.9,
         "relation_between_post_and_artefact": 9
     },
     {

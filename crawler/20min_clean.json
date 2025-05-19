@@ -406,7 +406,7 @@
     "visual_coherence": 4,
     "visual_sentiment": 3,
     "auditive_specifications": 1,
-    "visual_cut_tempo": 0.25,
+    "visual_cut_tempo": 0.3,
     "relation_between_post_and_artefact": 1
   },
   {

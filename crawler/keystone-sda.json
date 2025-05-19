@@ -1005,7 +1005,7 @@
     "visual_disinformation_topic": 32,
     "visual_coherence": 1,
     "visual_sentiment": 3,
-    "auditive_specifications": 0,
+    "auditive_specifications": 9,
     "visual_cut_tempo": 0,
     "relation_between_post_and_artefact": 1
   },
@@ -1637,7 +1637,7 @@
     "visual_disinformation_topic": 53,
     "visual_coherence": 4,
     "visual_sentiment": 4,
-    "auditive_specifications": 0,
+    "auditive_specifications": 9,
     "visual_cut_tempo": 0,
     "relation_between_post_and_artefact": 1
   },
