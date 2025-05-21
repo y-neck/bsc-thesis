@@ -518,14 +518,13 @@ Bei jedem Beitrag wurde erfasst, aus welchem Land er kommt, und auf welches Land
 \end{figure}
 
 Die meisten Beiträge, bei denen Ursprungs- und Bezugsland erkennbar waren, stammten aus der Schweiz und hatten Schweiz-Bezug (20,73 \%). Bei vielen Beiträgen ist jedoch weder ein klares Ursprungs- noch ein klares Bezugsland erkennbar (Modus; 27,82 \%).\\
-Ein \(\chi^2\)-Test mit Monte-Carlo-Simulation zeigte keinen statistischen Zusammenhang zwischen Herkunftsland und Bezugsland der Beiträge (10000 Simulationen; \(\chi^2\) (df = 187, \textit{N} = 381) = 291.7,  \textit{p} = .17).
+Ein \(\chi^2\)-Test mit Monte-Carlo-Simulation zeigte keinen statistischen Zusammenhang zwischen Herkunftsland und Bezugsland der Beiträge (10.000 Simulationen; \(\chi^2\) (df = 187, \textit{N} = 381) = 291,7,  \textit{p} = .17).
 
 \textbf{Auditive Videomerkmale}\\
 Für jedes Video wurde untersucht, welche audio-spezifische Haupt-Ausprägung das Video hat. Unterschieden wurde zwischen Sprache, Musik und Umgebungsgeräuschen.
 \begin{table}[H]
   \label{tab:results_auditive_specifications}
   \centering
-
   \begin{tabular}{|l|l|l|} \hline
     \textbf{Auditives Merkmal} & \textbf{Anzahl Beiträge n} & \textbf{Relative Häufigkeit \({h_n}{x_i}\)} \\ \hline
     Sprache & 59 & 81.94 \\ \hline
@@ -542,7 +541,7 @@ Für jedes Video wurde untersucht, welche audio-spezifische Haupt-Ausprägung da
 \end{quote}
 Ausgehend vom untersuchten Datensatz konnte der Verdacht, dass Desinformation generell über die Jahre zunimmt, nicht bestätigt werden:
 \begin{table}[H]
-  \label{tab:results_auditive_specifications}
+  \label{tab:results_posts_per_year}
   \centering
   \begin{tabular}{|l|l|} \hline
     \textbf{Jahr} (Ausgenommen 2025) & \textbf{Anzahl Beiträge n} \\ \hline
@@ -555,16 +554,15 @@ Ausgehend vom untersuchten Datensatz konnte der Verdacht, dass Desinformation ge
   \caption{Anzahl untersuchte Beiträge pro Jahr.}
 \end{table}
 Diese Häufigkeitsauswertung legt jedoch weiter nahe, dass die Verbreitung von Desinformation datenabhängig ist. Deshalb wurde die Verteilung über die Zeit analysiert:
-\begin{figure}
+\begin{figure}[H]
   \centering
   \includegraphics[width=1\linewidth]{images/date_dependency_plot.png}
   \caption{Verteilung der Beiträge nach Thema über die Zeit.}
   \label{fig:results_date_dependency}
 \end{figure}
 Über Politik und Gesundheit wurde durchgängig viel berichtet. Andere Themen traten punktuell auf.
-Weiter wurde der z-Wert (Themen-Standardisierung) aller Themenbereiche errechnet, um zu analysieren, ob gewisse Themen (beispielsweise Politik und Gesundheit aufgrund der Covid-19-Pandemie) im Datensatz überrepräsentiert sind, indem sie von ihrem eigenen typischen Mass abweichen. Dies ist für keines der Themen der Fall, der Abweich-Wert ist für alle Themen nahezu 0:
-
-\begin{table}
+Weiter wurde der \textit{z}-Wert (Themen-Standardisierung) aller Themenbereiche errechnet, um zu analysieren, ob gewisse Themen (beispielsweise Politik und Gesundheit aufgrund der Covid-19-Pandemie) im Datensatz überrepräsentiert sind, indem sie von ihrem eigenen typischen Mass abweichen. Dies ist für keines der Themen der Fall, der Abweich-Wert ist für alle Themen nahezu 0:
+\begin{table}[H]
   \centering
   \begin{tabular}{|c|c|} \hline
     \textbf{Thema}&  \textbf{Mittlerer z-Wert}\\ \hline
@@ -582,9 +580,9 @@ Weiter wurde der z-Wert (Themen-Standardisierung) aller Themenbereiche errechnet
   \label{tab:results_date_dependency_topic_deviation}
 \end{table}
 Die Abweichungen der einzelnen Datenpunkte bewegten sich zwischen \textit{z} = 1,7346 und \textit{z} = 14,283. Für alle Punkte über dem Mittelwert (\textit{z} = 8,0088) wurde das Thema analysiert:
-
-\begin{table}
+\begin{table}[H]
   \centering
+  \resizebox{\textwidth}{!}{
   \begin{tabular}{|c|c|c|c|} \hline
     Thema&  Datum&  z-Wert& Beschreibung der Desinformation \\ \hline
     Sport/Kultur&  26.10.2023&  14.283& Menschen sind Eigentum des Vatikans \\ \hline
@@ -594,20 +592,29 @@ Die Abweichungen der einzelnen Datenpunkte bewegten sich zwischen \textit{z} = 1
     Sonstige&  11.10.2022&  10.4197&  Kürbisse sollten nach Halloween nicht im Wald entsorgt werden\\ \hline
     Politik&  17.01.2024&  8.8587&  Klaus Schwab wird am WEF beleidigt\\ \hline
     Identität&  02.06.2021&  8.8052&  Covid ist rückwärts ein hebräischer Fluch\\ \hline
-  \end{tabular}
+  \end{tabular}}
   \caption{Tage mit besonders starker Abweichung vom Mittelmass der Themen}
   \label{tab:results_spike_days}
 \end{table}
+Von den untersuchten Spitzenabweichungen korrelieren einige mit aktuellen Vorkommnissen, andere haben keinen direkten Bezug zu aktuellen Ereignissen. Aus der Inhaltsverteilung über den Zeitstrahl (s. \ref{fig:results_date_dependency} \nameref{fig:results_date_dependency}) lassen sich gewisse Ereignis-Berichtstendenzen ableiten.
 
-\textbf{Hypothese 2}:
+\textbf{Emotionalisierung}:
 \begin{quote}
   \(H_2\): Desinformation wird emotionalisierend und provokativ gestaltet, um so eine möglichst grosse Reichweite zu generieren.\\
   \(H_{0_2}\): Desinformation hat keine bewusste emotionale Ausprägung.
 \end{quote}
-% - Häufigkeitsverteilung
-% - x^2: Koherenz zwischen Post-Sentiment und Visual-Sentiment;
-% - StdResiduals + Cramers V
-% - cohens kappa: Kleine Koherenz
+Mit der angewandten Methode ist es nahezu unmöglich, zu überprüfen, wie ein Beitrag wahrgenommen wird. Es wurde deshalb untersucht, welche Emotion durch die Posts am wahrscheinlichsten vermittelt werden sollte.
+Die Häufigkeitsauswertung ergab sowohl für den Beitragstext als auch für das visuelle Artefakt, dass Emotionalität in den Postings eingesetzt wird.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{images/sentiment_plot.png}
+    \caption{Vergleich der vermittelten Beitrags- und Artefakt-Emotionalität}
+    \label{fig:results_sentiment_plot}
+\end{figure}
+Abgesehen von den Posts, bei welchen die vermittelte Emotionalität nicht erkennbar war, bildete Wut/Ärger die grösste Kategorie, bei den Beitragstexten und den visuellen Artefakten (Modus; 32,28 \% \/ 29,4 \%).
+
+Um die Korrelation zwischen Beitrags-Emotionalität und Emotionalität des visuellen Artefakts festzustellen,  wurde ein \(\chi^2\)-Test mit Monte-Carlo-Simulation (10.000 Simulationen) durchgeführt. Diese ergab folgende Werte: \(\chi^2\) (df = 36, \textit{N} = 381) = 178,03, \textit{p} = .00009.\\
+Mittels Cramér's V wurde eine Effektstärke von \(\phi_c\) = +0,28 errechnet. %Schwache bis mittlere Korrelation
 
 \textbf{Hypothese 3}:
 \begin{quote}
