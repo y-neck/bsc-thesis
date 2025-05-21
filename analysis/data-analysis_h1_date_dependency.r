@@ -137,7 +137,39 @@ balanced_matrix <- date_dependency_txtable %>%
   column_to_rownames("date") %>%
   as.matrix()
 
-
+date_dependency_plot <- balanced_matrix %>%
+  as.data.frame() %>%
+  rownames_to_column("date") %>%
+  # convert factor ’date’ to Date first
+  mutate(date = as.Date(as.character(date))) %>%
+  # pivot to long, so you have (date, topic, count)
+  pivot_longer(
+    cols      = -date,
+    names_to  = "post_topic",
+    values_to = "count"
+  ) %>%
+  filter(count > 0) %>%
+  filter(date > as.Date("2020-01-01")) %>%
+  ggplot(aes(
+    x = date, y = post_topic, color = post_topic, size = count * 3
+  )) +
+  geom_point(
+    alpha = 0.5,
+    show.legend = FALSE
+  ) +
+  scale_radius(range = c(2, 10)) +
+  scale_color_viridis_d(option = "B", begin = 0, end = 0.9) +
+  labs(
+    x     = "Zeitverlauf",
+    y     = "Thema des Beitrags",
+    color = "Topic",
+    title = "Inhaltsverteilung der Beiträge über Zeit"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    plot.title  = element_text(hjust = 0.5)
+  )
 
 # stdresiduals per date
 date_dependency_stdres <- tibble(
