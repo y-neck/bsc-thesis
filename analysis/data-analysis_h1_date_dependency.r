@@ -120,10 +120,11 @@ balanced_matrix_sum <- balanced_dates %>%
   column_to_rownames("date") %>%
   as.matrix()
 
-date_dependency_chisq <- chisq.test(balanced_matrix_sum,
-  simulate.p.value = TRUE,
-  B = 10000 # number of replicates
-)
+# x^2 -> cannot be used as it only calculates x^2 dependent on date and not on events
+# date_dependency_chisq <- chisq.test(balanced_matrix_sum,
+#   simulate.p.value = TRUE,
+#   B = 10000 # number of replicates
+# )
 
 # balanced matrix without sum
 balanced_matrix <- date_dependency_txtable %>%
@@ -150,6 +151,11 @@ date_dependency_plot <- balanced_matrix %>%
   ) %>%
   filter(count > 0) %>%
   filter(date > as.Date("2020-01-01")) %>%
+  mutate(post_topic = factor(
+    post_topic,
+    levels = post_topic_lut, # this uses the value order
+    labels = post_topic_lut # these are the displayed names
+  )) %>%
   ggplot(aes(
     x = date, y = post_topic, color = post_topic, size = count * 3
   )) +
@@ -177,6 +183,13 @@ date_dependency_stdres <- tibble(
   stdres = date_dependency_chisq$stdres
 ) %>%
   arrange(desc(abs(stdres)))
+
+# # cramers v effect size
+# date_dependency_chisq_stat <- as.numeric(date_dependency_chisq$statistic)
+# date_dependency_chisq_n <- sum(balanced_matrix)
+# dims <- dim(balanced_matrix) # rows = topics, cols = dates
+# k <- min(dims[1], dims[2])
+# date_dependency_cv <- sqrt(date_dependency_chisq_stat / (date_dependency_chisq_n * (k - 1)))
 
 # z-score to calculate overall topic overrepresentation
 daily_topic <- date_dependency_txtable %>%
@@ -217,13 +230,13 @@ spike_days <- daily_z %>%
 View(dataset)
 
 View(date_dependency_txtable)
-str(date_dependency_chisq)
+# str(date_dependency_chisq)
 print(date_dependency_plot)
 View(date_dependency_stdres)
-
 print(mean_z_by_topic)
 View(mean_z_by_topic)
 View(spike_days)
+# print(date_dependency_cv)
 
 #############################################################
 
@@ -239,3 +252,14 @@ View(spike_days)
 #  $ p.value  :  1e-04 -> p value << 0.05; reject H0 hypothesis
 #  $ residuals:  [1:1796] 1.718 -0.459 -0.459 -0.459 -0.459 ... -> Raw deviations of observed from expected.
 #  $ stdres   :  [1:1796] 1.72 -0.46 -0.46 -0.46 -0.46 ... -> Standardized residuals, showing which dates deviate most in 𝜎 units
+
+#  topic              mean_z  sd_z days_observed
+# 1 Gesundheit      -2.63e-16  1.00           274
+# 2 Identität       -7.96e-17  1.00           274
+# 3 Journalismus     1.60e-16  1.00           274
+# 4 Nicht erkennbar  1.12e-16  1.00           274
+# 5 Politik         -3.08e-17  1.00           274
+# 6 Sonstige        -2.68e-16  1.00           274
+# 7 Sport/Kultur    -1.17e-16  1.00           274
+# 8 Wirtschaft       2.57e-16  1              274
+# 9 Wissenschaft    -2.89e-16  1.00           274
