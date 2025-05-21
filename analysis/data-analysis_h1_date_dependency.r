@@ -177,12 +177,12 @@ date_dependency_plot <- balanced_matrix %>%
     plot.title  = element_text(hjust = 0.5)
   )
 
-# stdresiduals per date
-date_dependency_stdres <- tibble(
-  date = rownames(balanced_matrix_sum),
-  stdres = date_dependency_chisq$stdres
-) %>%
-  arrange(desc(abs(stdres)))
+# # stdresiduals per date
+# date_dependency_stdres <- tibble(
+#   date = rownames(balanced_matrix_sum),
+#   stdres = date_dependency_chisq$stdres
+# ) %>%
+#   arrange(desc(abs(stdres)))
 
 # # cramers v effect size
 # date_dependency_chisq_stat <- as.numeric(date_dependency_chisq$statistic)
@@ -218,7 +218,7 @@ mean_z_by_topic <- daily_z %>%
   ungroup()
 # spike days to assess specific events
 spike_days <- daily_z %>%
-  filter(z > 7) %>% # threshold for “spike”
+  filter(z > 1) %>% # threshold for “spike”
   arrange(topic, desc(z)) %>%
   select(topic, date, count, z)
 
@@ -232,7 +232,7 @@ View(dataset)
 View(date_dependency_txtable)
 # str(date_dependency_chisq)
 print(date_dependency_plot)
-View(date_dependency_stdres)
+# View(date_dependency_stdres)
 print(mean_z_by_topic)
 View(mean_z_by_topic)
 View(spike_days)

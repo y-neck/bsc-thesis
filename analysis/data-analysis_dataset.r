@@ -257,6 +257,9 @@ country_plot <- country_txtable %>%
 country_txtable_relfreq <- country_xtabs %>%
   prop.table(1) # row proportions
 
+  # x^2
+country_txtable_chisq <- chisq.test(country_xtabs, simulate.p.value = TRUE, B = 10000)
+
 #############################################################
 
 # Viewers
@@ -274,3 +277,4 @@ print(artefact_type_plot)
 View(country_txtable)
 View(country_txtable_relfreq)
 print(country_plot)
+print(country_txtable_chisq)

@@ -55,8 +55,8 @@
 % List of content formatting
 \makeatletter
 % Redefine listoffigures as a subsection:
-\renewcommand\listoffigures{%
-  \subsection{\listfigurename}% numbered subsection
+\renewcommand\listoffigures{
+  \subsection{\listfigurename} % numbered subsection
   \@mkboth{\MakeUppercase\listfigurename}{\MakeUppercase\listfigurename}%
   \addcontentsline{toc}{subsection}{\listfigurename}%
   \@starttoc{lof}%
@@ -112,7 +112,7 @@
 
 \usepackage{titlesec}   %Style titles
 \usepackage{fancyhdr}   %Header/footer
-%\usepackage[bottom]{footmisc}   %Foot notes, at end of page
+\usepackage[bottom]{footmisc}   %Foot notes, at end of page
 
 %Links
 \usepackage[colorlinks,
@@ -185,14 +185,13 @@ Aufgrund der sozialen Medien und der Möglichkeit, innerhalb kürzester Zeit Vid
 
 Die Bachelorarbeit befasst sich damit, welche inhaltlichen und gestalterischen Merkmale audiovisuelle und bildbasierte Desinformation auf Social-Media-Plattformen in der Schweiz aufweist. \\
 Ziel der Arbeit ist zum einen, herauszufinden, ob es mögliche Muster und
-Strategien hinter der Produktion der Inhalte gibt. Zum anderen soll auch ein
-allgemeines Verständnis über die entsprechenden Inhalte gewonnen werden. \\
+Strategien hinter der Produktion der Inhalte gibt. Zum anderen soll auch ein allgemeines Verständnis über die entsprechenden Inhalte gewonnen werden. \\
 Die Erkenntnisse der Bachelorarbeit werden anschliessend verwendet, um darauf basierend eine interaktive Aufklärungsplattform zu gestalten.
 
 \subsection{Relevanz}
 \textbf{Gesellschaft} \\
 Im Jahr 2024 betrug der Anteil der Social-Media-Nutzenden in der Schweiz knapp 80 \%. Weiter informiert sich ein bedeutender Anteil der europäischen Bevölkerung über das Internet, eine Mehrheit verwendet Social Media primär für Nachrichten und Unterhaltung \parencite[21ff]{we_are_social_anteil_2024}. Gemäss der JAMES-Studie 2024 \parencite[40]{kulling-knecht_james_2024} informiert sich 2024 etwa die Hälfte der Jugendlichen täglich oder mehrmals pro Woche auf sozialen Plattformen. \\
-Somit wird durch Social-Media-Inhalte ein Grossteil der Schweizer Bevölkerung erreicht. Dadurch können desinformative Inhalte potenziell einen grossen Einfluss auf die Bevölkerung und ihre (politische) Meinungsbildung haben \parencites[18]{grujic_warnhinweise_2024}[258]{hohlfeld_schlechte_2020}[1f]{khan_fake_2021}, insbesondere wenn Social-Media-Plattformen auch als Informationsquelle zu politischen und gesellschaftlichen Themen dienen.
+Somit wird durch Social-Media-Inhalte ein Grossteil der Schweizer Bevölkerung erreicht. Dadurch können desinformierende Inhalte potenziell einen grossen Einfluss auf die Bevölkerung und ihre (politische) Meinungsbildung haben \parencites[18]{grujic_warnhinweise_2024}[258]{hohlfeld_schlechte_2020}[1f]{khan_fake_2021}, insbesondere wenn Social-Media-Plattformen auch als Informationsquelle zu politischen und gesellschaftlichen Themen dienen.
 
 \textcite{grady_neural_1998} haben gezeigt, dass sich Rezipierende besser und länger an visuelle Inhalte erinnern können als an Worte. Eine weitere Untersuchung fand einen Zusammenhang zwischen dem Konsum von Videos und der Möglichkeit der Nutzenden, auf diese zu reagieren \parencite[242]{khan_social_2017}. Inhalte mit Partizipationsmöglichkeit scheinen ausserdem den weiteren Konsum (\textit{information seeking}) zu befeuern \parencite[243]{khan_social_2017}. \\
 Insofern kann davon ausgegangen werden, dass audiovisuelle Desinformation eine besondere Gefahr darstellt.
@@ -222,7 +221,7 @@ Folgende Fragestellung wird in der Bachelorarbeit behandelt:
 \begin{quote}
   Welche inhaltlichen und gestalterischen Merkmale weist visuelle und audiovisuelle Desinformation auf Social-Media-Plattformen in der Schweiz auf?
 \end{quote}
-\color{red}Begründung für Forschungsfrage.
+\color{red}Begründung für Forschungsfrage. + Lasswell-Formel
 
 \color{red}Aufbau der Arbeit
 \color{black}
@@ -235,7 +234,7 @@ Dazu werden aktuelle Studien aufgearbeitet und die entsprechenden Erkenntnisse g
 \subsection{Begriffsdefinition}
 
 Beispielsweise durch die erste Amtszeit des US-Präsidenten Donald Trump (2017–2021) oder den Brexit hat der Begriff «Fake News» weltweit an Bedeutung gewonnen \parencites[1f]{hohlfeld_schlechte_2020}[1]{marx_fake_2020}. \\
-In der Literatur existieren verschiedene Definitionen des Begriffes. \textcite[246f]{hohlfeld_schlechte_2020} vertreten beispielsweise die Haltung, dass «Fake News» als Begriff für desinformative Inhalte gleichbedeutend sind mit dem politischen Propagandabegriff. In den letzten Jahren wurde allerdings auch oft argumentiert, dass «Fake News» lediglich als politischer Begriff gewertet und im wissenschaftlichen Kontext stattdessen von (aktueller) Desinformation gesprochen werden sollte \parencites[3]{bontridder_role_2021}{habgood-coote_stop_2019}[148]{marx_fake_2020}. Egelhofer \& Lecheler \parencite[zit.\ nach][148]{marx_fake_2020} differenzieren zwischen «Fake News» als Genre für Falschinformationen und «Fake News» als Label im Sinne einer politischen Instrumentalisierung zur Diskreditierung von Medien und Institutionen.\\
+In der Literatur existieren verschiedene Definitionen des Begriffes. \textcite[246f]{hohlfeld_schlechte_2020} vertreten beispielsweise die Haltung, dass «Fake News» als Begriff für desinformierende Inhalte gleichbedeutend sind mit dem politischen Propagandabegriff. In den letzten Jahren wurde allerdings auch oft argumentiert, dass «Fake News» lediglich als politischer Begriff gewertet und im wissenschaftlichen Kontext stattdessen von (aktueller) Desinformation gesprochen werden sollte \parencites[3]{bontridder_role_2021}{habgood-coote_stop_2019}[148]{marx_fake_2020}. Egelhofer \& Lecheler \parencite[zit.\ nach][148]{marx_fake_2020} differenzieren zwischen «Fake News» als Genre für Falschinformationen und «Fake News» als Label im Sinne einer politischen Instrumentalisierung zur Diskreditierung von Medien und Institutionen.\\
 In Anlehnung an \textcite{marx_fake_2020} und in Abgrenzung zum politischen Label wird in dieser Bachelorarbeit der Begriff «Desinformation» verwendet.
 
 In der Wissenschaft gibt es bisher keine einstimmige Definition für Desinformation.
@@ -248,7 +247,7 @@ Diese Definition kann nicht nur auf News-Artikel angewendet werden, sondern auch
   \item \textbf{(Visuelle) Kommunikation}: Eine wahrheitsfähige Mitteilung mit darstellendem Gehalt, welche einen Teil der Wirklichkeit abbildet. Dies bezieht sich nicht nur auf sprachliche, sondern auch auf visuelle Mitteilungen \parencite[151]{marx_fake_2020}.
   \item \textbf{Aktualitätsbezug}: \say{(\ldots) überraschende Themen mit (potenziell) großer Auswirkung auf die Gesellschaft. So ermöglicht sie ihrem Publikum die Ausbildung von (wenn auch empirisch unzutreffenden [\ldots]) Erwartungen und dadurch die Orientierung in einer komplexen Welt.} \parencite[152]{marx_fake_2020}.
   \item \textbf{Wahrheitsanspruch}: Aktuelle Desinformation beansprucht für sich, dass sie (vorgetäuscht) wahr ist. In diese Betrachtung werden sowohl Produzierende wie auch Rezipierende des Inhaltes miteinbezogen. Hierbei gilt, ob es für externe Beobachtende plausibel ist, dass Rezipierende die Nachricht als wahr betrachten \parencite[153]{marx_fake_2020}.
-  \item \textbf{Unwahrheit}: Der desinformative Inhalt besitzt irreführendes Potenzial, da er empirisch falsch ist und somit den zuvor beanspruchten Wahrheitsgehalt nicht einlöst. \parencite[154]{marx_fake_2020}.
+  \item \textbf{Unwahrheit}: Der desinformierende Inhalt besitzt irreführendes Potenzial, da er empirisch falsch ist und somit den zuvor beanspruchten Wahrheitsgehalt nicht einlöst. \parencite[154]{marx_fake_2020}.
   \item \textbf{Unwahrhaftigkeit}: Die Produzierenden sind sich der Tatsache bewusst, dass ihre Mitteilungen falsch sind. \parencite[156]{marx_fake_2020}
   \item \textbf{Täuschungsabsicht}: Falsche Tatsachen werden vorsätzlich und bewusst verbreitet. Dabei spielt es keine Rolle, ob diese der gezielten Verbreitung von Falschinformationen dienen sollen oder beispielsweise zu Clickbait-Zwecken eingesetzt werden \parencites[157]{marx_fake_2020}[vgl.\ auch][2]{khan_fake_2021}.
 \end{itemize}
@@ -294,7 +293,7 @@ Die meisten Bürgerinnen und Bürger moderner Demokratien informieren sich nicht
 % generelle Motivation hinter der Verbreitung
 Da die Produktion von Desinformation einen bewussten Akt der Täuschung darstellt, kann davon ausgegangen werden, dass es schwierig ist, tatsächliche Aussagen über die Produzierenden zu treffen \parencite[73]{lecheler_disinformation_2022}. \textcite[39]{pennycook_lazy_2019} benennen als Grundmotivation jedoch bereits in ihrer Definition von Desinformation \say{highly salient [\ldots] fabricated claims that are created to spread on social media.} Die Literatur nennt zumeist zwei klare Motive zur Produktion von Desinformation: finanzielle Anreize oder politische und ideologische Überlegungen.
 
-Gehen Inhalte auf Social Media viral und werden einer grossen Menge an Nutzenden angezeigt, so generiert dies oft finanziellen Umsatz \parencites[217]{allcott_social_2017}[3]{tandoc_jr_facts_2019}[157]{marx_fake_2020}, indem beispielsweise auf externe Artikel verlinkt wird, welche dann Werbeanzeigen beinhalten. \textcite[76]{lecheler_disinformation_2022} weisen hier etwa auf Journalistinnen und Journalisten oder Medienhäuser hin, welche bewusst desinformative Taktiken einsetzen, um durch Clickbaiting oder besonders polarisierende Inhalte mehr Umsatz zu generieren. \\
+Gehen Inhalte auf Social Media viral und werden einer grossen Menge an Nutzenden angezeigt, so generiert dies oft finanziellen Umsatz \parencites[217]{allcott_social_2017}[3]{tandoc_jr_facts_2019}[157]{marx_fake_2020}, indem beispielsweise auf externe Artikel verlinkt wird, welche dann Werbeanzeigen beinhalten. \textcite[76]{lecheler_disinformation_2022} weisen hier etwa auf Journalistinnen und Journalisten oder Medienhäuser hin, welche bewusst desinformierende Taktiken einsetzen, um durch Clickbaiting oder besonders polarisierende Inhalte mehr Umsatz zu generieren. \\
 Doch nicht nur journalistische Akteurinnen und Akteure verwenden Desinformation aus finanziellen Gründen, sondern auch Privatpersonen. Ein berühmtes Beispiel stammt von den US-Wahlen 2016, als eine Gruppe Jugendlicher in Mazedonien massenweise Desinformation verbreitet hat, was ihnen Tausende von Dollars einbrachte \parencites[217]{allcott_social_2017}[vgl.\ auch][]{subramanian_meet_2017}[3]{tandoc_jr_facts_2019}. \textcite[217]{allcott_social_2017} erwähnen als weiteres Beispiel Paul Horner, welcher aus Profitgründen massenweise Desinformation auf Social Media geteilt hat \parencite[vgl.\ auch][]{dewey_facebook_2016}.
 
 Als zweiter Motivationstreiber gelten ideologisch motivierte Versuche, Einfluss auf die politische Meinungsbildung zu nehmen und demokratische Institutionen zu schwächen \parencites[225]{schmidt_meinungsbildung_2022}[75]{lecheler_disinformation_2022}[157]{marx_fake_2020}. So werden zum Beispiel oftmals Politikerinnen und Politiker diskreditiert \parencites[3]{tandoc_jr_facts_2019}[217]{allcott_social_2017} oder bewusst polarisierende Inhalte verbreitet \parencites[8]{european_parliament_directorate-general_for_external_policies_of_the_union_impact_2021}[3]{tandoc_jr_facts_2019}.\\
@@ -318,7 +317,7 @@ Viele Quellen belegen, dass Desinformation oft an echte Nachrichtenformate angel
 ~\label{theory_distribution}
 Digitale Social-Media-Plattformen ermöglichen es sämtlichen Nutzenden, Informationen einem nahezu unbegrenzten Publikum zugänglich zu machen \parencite[147]{marx_fake_2020}. \textcite[485]{schaewitz_when_2020} stellen dazu klar, dass negative Auswirkungen von Desinformation nur dann zu erwarten sind, wenn diese nach Prüfung durch die Rezipierenden geglaubt und weiterverbreitet wird. Eine Information, welche von Anfang an nicht glaubwürdig ist, wird in den wenigsten Fällen weiterverbreitet, es sei denn mit mutwilliger Absicht. \textcite{guess_less_2019} zeigen, dass die Weiterverbreitung von Desinformation durch Rezipierende generell eher selten stattfindet.
 
-Wird ein desinformativer Inhalt auf Social Media weiterverbreitet, geschieht die Distribution nicht nur durch die Nutzenden selbst, sondern wird durch die Funktionsweise der Plattformen weiter vorangetrieben \parencite[vgl.\ auch][199]{krafft_disinformation_2020}.
+Wird ein desinformierender Inhalt auf Social Media weiterverbreitet, geschieht die Distribution nicht nur durch die Nutzenden selbst, sondern wird durch die Funktionsweise der Plattformen weiter vorangetrieben \parencite[vgl.\ auch][199]{krafft_disinformation_2020}.
 Was die Verbreitung auf Social Media so effektiv macht, ist die Personalisierung der Inhalte basierend auf den Plattform-Algorithmen \parencite[219f]{schmidt_meinungsbildung_2022}: Um die Nutzenden möglichst lange auf den Plattformen zu halten, werden ihnen gezielt Inhalte angezeigt, welche sie ansprechen und ihre Aufmerksamkeit erhalten. Dadurch wird Desinformation gezielt vor allem denjenigen Personen angezeigt, welche diese mit hoher Wahrscheinlichkeit weiter teilen und so weitere Aufmerksamkeit generieren. Während die Plattformen so mehr Einnahmen durch angezeigte Werbung machen, führt es dazu, dass sich Desinformation weiter verbreiten kann (ebd.) \parencite[vgl.\ auch][967]{ghai_deep-learning-based_2024}.
 
 Ausserdem kursieren auf den sozialen Plattformen sogenannte \textit{Bots}.
@@ -359,7 +358,7 @@ Das Europäische Parlament hält fest: \say{disinformation erodes trust in insti
 
 Auf die Schweiz hat Desinformation im Bereich der Politik einen besonders gravierenden Einfluss. Als weltweiter Einzelfall hat das Schweizer Stimmvolk ein besonders grosses politisches Mitbestimmungsrecht, indem regelmässig nicht nur Wahlen stattfinden, sondern auch Volksabstimmungen zu diversen Themen \parencite[2]{sager_politische_2017}. Desinformation kann gravierende Auswirkungen auf die politischen Prozesse haben, wenn politische Entscheidungen nicht auf Fakten, sondern falschen Informationen beruhen \parencites[26]{vogler_wahrnehmung_2021}[vgl.\ auch][19]{grujic_warnhinweise_2024}.
 
-\subsection{Audiovisuelle Wirkung desinformativer Inhalte}
+\subsection{Audiovisuelle Wirkung desinformierender Inhalte}
 ~\label{theory_audiovisual_content}
 Grösstenteils handelt es sich bei der visuellen Desinformation bisher um bearbeitete oder aus dem Kontext gerissene Bilder und Echtvideos \parencite[15]{bradshaw_industrialized_2021}. \textcite[3698]{weikmann_visual_2023} nennen als weitere Formen aber auch irreführende Grafiken, Deepfakes und \say{Virtual performances}, welche Deepfakes mit KI-generiertem Audio verbinden. Meist wird dabei das visuelle Artefakt mit einem Begleittext verbunden, welcher die Falschaussage enthält, während das visuelle Artefakt die Aussage unterstützt \parencite[3700]{weikmann_visual_2023}.
 
@@ -372,18 +371,18 @@ Erkenntnisse aus der Verhaltenspsychologie deuten ausserdem darauf hin, dass vis
 \subsubsection{Eindämmungsmöglichkeiten gegen Desinformation}
 \subsection{Diskussion}
 Das Phänomen der aktuellen Desinformation ist trotz diverser Studien nach wie vor noch wenig erforscht, selbst der Begriff ist nicht klar und einheitlich definiert. Es ist jedoch unumstritten, dass Desinformation massive Auswirkungen auf die Meinungsbildung der Rezipierenden und somit auf demokratische Prozesse haben kann. \\
-Produzierende nutzen gezielt psychologische Effekte, um ihre Inhalte zu verbreiten und Aufmerksamkeit darauf zu ziehen. Dazu werden unterschiedliche Mechanismen eingesetzt, unter anderem visuelle Elemente, welche die Aufmerksamkeit, die Wahrnehmung und die Glaubwürdigkeit der desinformativen Inhalte steigern.
+Produzierende nutzen gezielt psychologische Effekte, um ihre Inhalte zu verbreiten und Aufmerksamkeit darauf zu ziehen. Dazu werden unterschiedliche Mechanismen eingesetzt, unter anderem visuelle Elemente, welche die Aufmerksamkeit, die Wahrnehmung und die Glaubwürdigkeit der desinformierenden Inhalte steigern.
 
 Ausgehend von der vorhandenen Literatur lassen sich über die Verbreitung von visueller und audiovisueller Desinformation auf Social-Media-Plattformen in der Schweiz folgende Hypothesen bilden:
 \begin{itemize}
-  \item \textbf{H1}: Die Verbreitung visueller und audiovisueller Desinformation auf Social-Media-Plattformen in der Schweiz hat in den letzten Jahren zugenommen. Insbesondere während Krisenzeiten (beispielsweise Covid19-Pandemie, Ukraine-Konflikt, Israel-Konflikt, …) ist ein Anstieg bemerkbar.
+  \item \textbf{H1}: Die Verbreitung visueller und audiovisueller Desinformation auf Social-Media-Plattformen in der Schweiz hat in den letzten Jahren zugenommen. Insbesondere während Krisenzeiten (beispielsweise Covid-19-Pandemie, Ukraine-Konflikt, Israel-Konflikt, …) ist ein Anstieg bemerkbar.
   \item \textbf{H2}: Desinformation wird emotionalisierend und provokativ gestaltet, um so eine besonders grosse Reichweite zu generieren.
   \item \textbf{H3}:  In Beiträgen werden spezifische Keywords gesetzt, um so möglichst viel Aufmerksamkeit auf den Beitrag zu ziehen. Die gleichen Keywords tauchen immer wieder auf.
   \item \textbf{H4}:  Desinformation wird primär von Einzelpersonen mit bestimmten gesellschaftlichen Rollen weiterverbreitet.
   \item \textbf{H5}:  Primär handelt es sich bei den visuellen Artefakten um Artefakte mit tiefer technischer Komplexität, da diese weniger aufwendig sind in der Produktion.
   \item \textbf{H6}:  Die Desinformation liegt in der Regel im Begleittext des Beitrags, das mediale Artefakt unterstützt die Aussage des Begleittextes.
-  \item \textbf{H7}:  Desinformative Inhalte werden aus einem bestimmten Grund verbreitet.
-  \item \textbf{H8}:  Desinformative Videos enthalten viele Schnitte, um die Zuschauerbindung zu erhöhen.
+  \item \textbf{H7}:  Desinformierende Inhalte werden aus einem bestimmten Grund verbreitet.
+  \item \textbf{H8}:  Desinformierende Videos enthalten viele Schnitte, um die Zuschauerbindung zu erhöhen.
 \end{itemize}
 
 \pagebreak
@@ -422,10 +421,10 @@ Von den drei Faktencheck-Portalen wurde jeder Artikel und die zugehörigen Beitr
 Der Crawler speicherte zuerst Titel, URL und Datum des Artikels und indexierte anschliessend den Link des Social-Media-Beitrages und die entsprechende Herkunftsplattform (s. Anhang~\ref{appendix_crawler}~\nameref{appendix_crawler}). Für AFP und 20 Minuten.ch wurde der gleiche Vorgang manuell durchgeführt.\\
 Anschliessend wurden die Social-Media-Beiträge aus den Artikeln mittels eines Codebuchs mit vordefinierten Variablen kategorisiert. Die Variablen wurden ausgehend von den Hypothesen aus der Literatur abgeleitet.
 
-Insgesamt wurden 164 Artikel von Keystone-SDA, 98 Artikel von AFP und 27 Artikel von 20 Minuten erfasst. Davon ausgehend können 385 Social-Media-Beiträge ausgewertet werden.
+Insgesamt wurden 164 Artikel von Keystone-SDA, 98 Artikel von AFP und 26 Artikel von 20 Minuten erfasst. Davon ausgehend können 381 Social-Media-Beiträge ausgewertet werden.
 
 \begin{table}[H]
-  \label{fig:stichprobe}
+  \label{tab:method_sample}
   \centering
   \begin{tabular}{|l|c|c|c|}
     \hline
@@ -435,15 +434,15 @@ Insgesamt wurden 164 Artikel von Keystone-SDA, 98 Artikel von AFP und 27 Artikel
     \hline
     \textbf{\# SoMe-Beiträge} & 187 & 341 & 72 \\
     \hline
-    \textbf{\# fVar 91, 92} & 33 & 93 & 17 \\
+    \textbf{\# fVar 91, 92} & 33 & 97 & 17 \\
     \hline
     \textbf{\# Ohne CH-Bezug} & 6 & 25 & 39 \\
     \hline
     \textbf{\# Duplikate} & 2 & 2 & 0 \\
     \hline
-    \textbf{\# bereinigt} & 146 & 223 & 16 \\
+    \textbf{\# bereinigt} & 146 & 219 & 16 \\
     \hline
-    \multicolumn{4}{|c|}{Total: 385} \\
+    \multicolumn{4}{|c|}{Total: 381} \\
     \hline
   \end{tabular}
   \caption[Erfassung der Stichprobe der auszuwertenden Social-Media-Beiträge]{Erfassung der Stichprobe der auszuwertenden Social-Media-Beiträge \linebreak \textit{Lesebeispiel: Von Keystone-SDA wurden 164 Artikel ausgewertet, welche gesamthaft 187 Social-Media-Beiträge enthalten. Davon enthielten 33 kein auswertbares mediales Artefakt (Bild oder Video), 6 hatten keinen Schweizbezug, 2 Artikel behandelten bereits ausgewertete Beiträge zu einem späteren Zeitpunkt.}}
@@ -451,39 +450,154 @@ Insgesamt wurden 164 Artikel von Keystone-SDA, 98 Artikel von AFP und 27 Artikel
 
 \pagebreak
 \section{Ergebnisse}
-Anhand einer quantitativen Inhaltsanalyse wurden die Produktion und Funktionsweise visueller und audiovisueller Desinformation auf Social-Media-Plattformen mit Schweizbezug untersucht.
-Für die Auswertung wurde der JSON-Datensatz in R analysiert. Dabei wurden primär relative Häufigkeitsauswertungen, Kreuztabellen und Pearson's \(\chi^2\)-Tests durchgeführt, um die Hypothesen zu beantworten. Für jede Auswertung werden die verwendeten Auswertungsmethoden separat beschrieben.\\ Die Ergebnisse dieser quantitativen Analyse werden im Folgenden ausgeführt.
+Anhand einer quantitativen Inhaltsanalyse wurden die Produktion und Funktionsweise visueller und audiovisueller Desinformation auf Social-Media-Plattformen mit Schweiz-Bezug untersucht.\\
+Für die Auswertung wurde der JSON-Datensatz mit 381 Social-Media-Beiträgen in R analysiert. Dabei wurden primär relative Häufigkeitsauswertungen, Kreuztabellen und Pearson’s \(\chi^2\)-Tests durchgeführt, um die Hypothesen zu beantworten. Für jede Auswertung werden die verwendeten Auswertungsmethoden separat beschrieben.\\ Die Ergebnisse dieser quantitativen Analyse werden im Folgenden ausgeführt. Zuerst werden einige grundsätzliche Variablen ausgewertet, anschliessend erfolgt eine Beurteilung der spezifischen Hypothesen.
 
-% Metadaten-Auswertung
-\subsection{Metadaten-Auswertung}
-\textbf{Ursprungsplattform}
-% Häufigkeitsauswertung
-% Modus
+% To include: Analyse-Methode, relevante Ergebnisse, Bezug zur jwlg. Hypothese
+\textbf{Ursprungsplattform}\\
+Die Auswertung der Plattformen, auf welchen die desinformierenden Inhalte verbreitet wurden, ergab folgende Häufigkeitsverteilung:
 
-\textbf{Themengebiet}
-% Häufigkeitsauswertung
-% Modus
+\begin{table}[H]
+  \label{tab:results_origin_platform}
+  \centering
+  \resizebox{\textwidth}{!}{
+    \begin{tabular}{|l|l|l|} \hline
+      \textbf{Ursprungsplattform} & \textbf{Anzahl Beiträge n} & \textbf{Relative Häufigkeit \({h_n}{x_i}\)} \\ \hline
+      Instagram & 8 & 2.10 \\ \hline
+      Facebook/fbcdn & 286 & 75.07 \\ \hline
+      TikTok & 8 & 2.10 \\ \hline
+      X/Twitter& 28 & 7.35 \\ \hline
+      YouTube & 2 & 0.53 \\ \hline
+      Telegram & 45 & 11.81 \\ \hline
+      Desinformative Website & 1 & 0.26 \\ \hline
+      Sonstige & 3 & 0.79
+      \\ \hline
+    \end{tabular}
+  }
+  \caption{Relative Häufigkeitsverteilung der Ursprungsplattformen der desinformierenden Beiträge in \%.}
+\end{table}
 
-\textbf{Filtervariable: Mediales Artefakt}
-% Häufigkeitsauswertung
-% Modus
+Den Modus bildet Facebook mit 75,07 \%. Weiter werden viele Beiträge auf Telegram (11,81 \%) und X/Twitter (7,35 \%) geteilt. Von LinkedIn, gemäss~\cite{we_are_social_fuhrende_2025}  die meistgenutzte Plattform (nach Nutzenden) in der Schweiz, wurden im Rahmen der Auswertung keine desinformierenden Beiträge erfasst.
 
-\textbf{Quelle und Landesbezug}
-% Häufigkeitsauswertung via Kreuztabelle
-% Modus
-% Darstellung: Blasendiagramm: Herkunftsland⁄Bezugsland
+\textbf{Themengebiet}\\
+Für jeden Beitrag wurde das Thema ermittelt, welches der Beitrag behandelt. Die Ausprägungen der verschiedenen Themenbereiche wurden via Häufigkeitsauswertung analysiert.
 
-\textbf{Auditive Videomerkmale}
+\begin{table}[H]
+  \label{tab:results_post_topic}
+  \centering
+  \resizebox{\textwidth}{!}{
+    \begin{tabular}{|l|l|l|} \hline
+      \textbf{Themengebiet des Beitrags} & \textbf{Anzahl Beiträge n} & \textbf{Relative Häufigkeit \({h_n}{x_i}\)} \\ \hline
+      Politik & 133 & 34.91 \\ \hline
+      Journalismus & 2 & 0.52 \\ \hline
+      Wissenschaft/Technik & 55 & 14.44 \\ \hline
+      Gesundheit/Medizin & 151 & 39.63 \\ \hline
+      Identität & 12 & 3.15 \\ \hline
+      Sport/Kultur & 6& 61.57 \\ \hline
+      Wirtschaft & 5 & 1.31 \\ \hline
+      Sonstige & 8 & 2.10 \\ \hline
+      Nicht erkennbar & 9 & 2.36 \\ \hline
+    \end{tabular}
+  }
+  \caption{Relative Häufigkeitsverteilung der Themengebiete der Beiträge in \%.}
+\end{table}
+Besonders oft wurden im untersuchten Zeitraum Beiträge über gesundheitsspezifische (39,63 \%) oder politische (34,91 \%) Themen veröffentlicht.
 
+\textbf{Filtervariable: Mediales Artefakt}\\
+Für jeden Beitrag wurde erhoben, ob es sich beim medialen begleitenden Artefakt um ein Bild oder ein Video handelt. Hatte ein Beitrag weder ein begleitendes Bild noch ein Video, wurde er nicht ausgewertet. \\
+Bilder wurden in 79,53 \% der Fälle gepostet, Videos in 20,47 \%.
+
+\textbf{Herkunftsland und Landesbezug}\\
+Bei jedem Beitrag wurde erfasst, aus welchem Land er kommt, und auf welches Land er sich bezieht. Mittels einer Kreuztabelle wurden die entsprechenden Verhältnisse bestimmt.
+
+\begin{figure}[H]
+  \label{fig:results_country_relation}
+  \centering
+  \includegraphics[width=1\linewidth]{images/country_relation_plot.png}
+  \caption{Verhältnis zwischen Ursprungsländern und Bezugsländern. }
+\end{figure}
+
+Die meisten Beiträge, bei denen Ursprungs- und Bezugsland erkennbar waren, stammten aus der Schweiz und hatten Schweiz-Bezug (20,73 \%). Bei vielen Beiträgen ist jedoch weder ein klares Ursprungs- noch ein klares Bezugsland erkennbar (Modus; 27,82 \%).\\
+Ein \(\chi^2\)-Test mit Monte-Carlo-Simulation zeigte keinen statistischen Zusammenhang zwischen Herkunftsland und Bezugsland der Beiträge (10000 Simulationen; \(\chi^2\) (df = 187, \textit{N} = 381) = 291.7,  \textit{p} = .17).
+
+\textbf{Auditive Videomerkmale}\\
+Für jedes Video wurde untersucht, welche audio-spezifische Haupt-Ausprägung das Video hat. Unterschieden wurde zwischen Sprache, Musik und Umgebungsgeräuschen.
+\begin{table}[H]
+  \label{tab:results_auditive_specifications}
+  \centering
+
+  \begin{tabular}{|l|l|l|} \hline
+    \textbf{Auditives Merkmal} & \textbf{Anzahl Beiträge n} & \textbf{Relative Häufigkeit \({h_n}{x_i}\)} \\ \hline
+    Sprache & 59 & 81.94 \\ \hline
+    Musik & 8 & 11.11 \\ \hline
+    Umgebungsgeräusche & 5 & 6.94 \\ \hline
+  \end{tabular}
+  \caption{Relative Häufigkeitsverteilung der auditiven Merkmale der Beitrags-Videos in \%.}
+\end{table}
 \subsection{Hypothesen}
-\textbf{Hypothese 1}:
+\textbf{Thematischer Bezug auf aktuelle Themen}:
 \begin{quote}
   \(H_1\): Die Verbreitung visueller und audiovisueller Desinformation auf Social-Media-Plattformen in der Schweiz hat in den letzten Jahren zugenommen. Insbesondere während Krisenzeiten (beispielsweise Covid-19-Pandemie, Ukraine-Konflikt, Israel-Konflikt, …) ist ein Anstieg bemerkbar.\\
   \(H_{0_1}\): Die Verbreitung visueller und audiovisueller Desinformation auf Social-Media-Plattformen in der Schweiz ist konstant.
 \end{quote}
-% - Themen/Aufkommen hängen mit Daten zusammen
-% - x^2-Test of Independence: https://www.scribbr.com/statistics/chi-square-test-of-independence/
-% - StdResiduals
+Ausgehend vom untersuchten Datensatz konnte der Verdacht, dass Desinformation generell über die Jahre zunimmt, nicht bestätigt werden:
+\begin{table}[H]
+  \label{tab:results_auditive_specifications}
+  \centering
+  \begin{tabular}{|l|l|} \hline
+    \textbf{Jahr} (Ausgenommen 2025) & \textbf{Anzahl Beiträge n} \\ \hline
+    2020& 18\\ \hline
+    2021& 82\\ \hline
+    2022& 59\\ \hline
+    2023&57\\\hline
+    2024&52\\\hline
+  \end{tabular}
+  \caption{Anzahl untersuchte Beiträge pro Jahr.}
+\end{table}
+Diese Häufigkeitsauswertung legt jedoch weiter nahe, dass die Verbreitung von Desinformation datenabhängig ist. Deshalb wurde die Verteilung über die Zeit analysiert:
+\begin{figure}
+  \centering
+  \includegraphics[width=1\linewidth]{images/date_dependency_plot.png}
+  \caption{Verteilung der Beiträge nach Thema über die Zeit.}
+  \label{fig:results_date_dependency}
+\end{figure}
+Über Politik und Gesundheit wurde durchgängig viel berichtet. Andere Themen traten punktuell auf.
+Weiter wurde der z-Wert (Themen-Standardisierung) aller Themenbereiche errechnet, um zu analysieren, ob gewisse Themen (beispielsweise Politik und Gesundheit aufgrund der Covid-19-Pandemie) im Datensatz überrepräsentiert sind, indem sie von ihrem eigenen typischen Mass abweichen. Dies ist für keines der Themen der Fall, der Abweich-Wert ist für alle Themen nahezu 0:
+
+\begin{table}
+  \centering
+  \begin{tabular}{|c|c|} \hline
+    \textbf{Thema}&  \textbf{Mittlerer z-Wert}\\ \hline
+    Politik&  \(3.0795*10^{-17}\)\\ \hline
+    Journalismus&  \(1.5975*10^{-16}\)\\ \hline
+    Wissenschaft&  \(2.8931*10^{-16}\)\\ \hline
+    Gesundheit&  \(2.6337*10^{-16}\)\\ \hline
+    Identität&  \(7.962*10^{-17}\)\\ \hline
+    Sport/Kultur&  \(1.1669*10^{-16}\)\\ \hline
+    Wirtschaft&  \(2.5709*10^{-16}\)\\ \hline
+    Sonstige&  \(2.6824*10^{-16}\)\\ \hline
+    Nicht erkennbar& \(1.1224*10^{-16}\)\\ \hline
+  \end{tabular}
+  \caption{Mittlere Abweichung vom Mittelmass pro Thema über die Zeit}
+  \label{tab:results_date_dependency_topic_deviation}
+\end{table}
+Die Abweichungen der einzelnen Datenpunkte bewegten sich zwischen \textit{z} = 1,7346 und \textit{z} = 14,283. Für alle Punkte über dem Mittelwert (\textit{z} = 8,0088) wurde das Thema analysiert:
+
+\begin{table}
+  \centering
+  \begin{tabular}{|c|c|c|c|} \hline
+    Thema&  Datum&  z-Wert& Beschreibung der Desinformation \\ \hline
+    Sport/Kultur&  26.10.2023&  14.283& Menschen sind Eigentum des Vatikans \\ \hline
+    Journalismus&  01.03.2022&  11.6406&  Medien sind nicht mehr unabhängig\\ \hline
+    Journalismus&  06.04.2022&  11.6406&  Medien verwenden gleiche Bezugspersonen für unterschiedliche Schlagzeilen\\ \hline
+    Nicht erkennbar&  08.07.2021&  10.9841&  Schweiz soll Covid-Massnahmen beendet haben\\ \hline
+    Sonstige&  11.10.2022&  10.4197&  Kürbisse sollten nach Halloween nicht im Wald entsorgt werden\\ \hline
+    Politik&  17.01.2024&  8.8587&  Klaus Schwab wird am WEF beleidigt\\ \hline
+    Identität&  02.06.2021&  8.8052&  Covid ist rückwärts ein hebräischer Fluch\\ \hline
+  \end{tabular}
+  \caption{Tage mit besonders starker Abweichung vom Mittelmass der Themen}
+  \label{tab:results_spike_days}
+\end{table}
 
 \textbf{Hypothese 2}:
 \begin{quote}
@@ -492,6 +606,7 @@ Für die Auswertung wurde der JSON-Datensatz in R analysiert. Dabei wurden prim�
 \end{quote}
 % - Häufigkeitsverteilung
 % - x^2: Koherenz zwischen Post-Sentiment und Visual-Sentiment;
+% - StdResiduals + Cramers V
 % - cohens kappa: Kleine Koherenz
 
 \textbf{Hypothese 3}:
@@ -501,11 +616,12 @@ Für die Auswertung wurde der JSON-Datensatz in R analysiert. Dabei wurden prim�
 \end{quote}
 % - Häufigkeitsauswertung
 % - Tabelle
+% - Probability by topic to contain tags
 
 \textbf{Hypothese 4}:
 \begin{quote}
   \(H_4\): Desinformation wird primär von Einzelpersonen mit bestimmten gesellschaftlichen Rollen weiterverbreitet.\\
-  \(H_{0_4}\): Desinformationen wird durch Einzelpersonen und Kollektivakteure gleichermassen verbreitet. Die gesellschaftlichen Rollen sind gleichmässig verteilt.
+  \(H_{0_4}\): Desinformation wird durch Einzelpersonen und Kollektivakteure gleichermassen verbreitet. Die gesellschaftlichen Rollen sind gleichmässig verteilt.
 \end{quote}
 % - Häufigkeitsverteilung
 % - x^2 zwischen Akteurstyp und gesellschaftlicher Rolle
@@ -521,7 +637,7 @@ Für die Auswertung wurde der JSON-Datensatz in R analysiert. Dabei wurden prim�
 \textbf{Hypothese 6}:
 \begin{quote}
   \(H_6\): Die Desinformation liegt in der Regel im Begleittext des Beitrags, das mediale Artefakt unterstützt die Aussage des Begleittextes. \\
-  \(H_{0_6}\): Beitragstexte und Artefakte sind gleichermassen desinformativ.
+  \(H_{0_6}\): Beitragstexte und Artefakte sind gleichermassen desinformierend.
 \end{quote}
 % - Häufigkeitsverteilung
 % - Thematik des Artefakts: Häufigkeitsverteilung
@@ -529,13 +645,13 @@ Für die Auswertung wurde der JSON-Datensatz in R analysiert. Dabei wurden prim�
 
 \textbf{Hypothese 7}:
 \begin{quote}
-  \(H_7\): Desinformative Inhalte werden aus einem bestimmten Grund verbreitet.\\
+  \(H_7\): Desinformierende Inhalte werden aus einem bestimmten Grund verbreitet.\\
   \(H_{0_7}\): Es ist kein bestimmter Verbreitungsgrund erkennbar.
 \end{quote}
 
 \textbf{Hypothese 8}:
 \begin{quote}
-  \(H_8\): Desinformative Videos enthalten viele Schnitte, um die Zuschauerbindung zu erhöhen. \\
+  \(H_8\): Desinformierende Videos enthalten viele Schnitte, um die Zuschauerbindung zu erhöhen. \\
   \(H_{0_8}\): Es ist keine besondere Schnittgeschwindigkeit erkennbar.
 \end{quote}
 
