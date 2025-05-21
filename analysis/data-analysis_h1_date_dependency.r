@@ -137,54 +137,61 @@ balanced_matrix <- date_dependency_txtable %>%
   column_to_rownames("date") %>%
   as.matrix()
 
-date_dependency_plot <- balanced_matrix %>%
-  as.data.frame() %>%
-  rownames_to_column("date") %>%
-  # convert factor ’date’ to Date first
-  mutate(date = as.Date(as.character(date))) %>%
-  # pivot to long, so you have (date, topic, count)
-  pivot_longer(
-    cols      = -date,
-    names_to  = "post_topic",
-    values_to = "count"
-  ) %>%
-  filter(count > 0) %>%
-  filter(date > as.Date("2020-01-01")) %>%
-  ggplot(aes(
-    x = date, y = post_topic, color = post_topic, size = count * 3
-  )) +
-  geom_point(
-    alpha = 0.5,
-    show.legend = FALSE
-  ) +
-  scale_radius(range = c(2, 10)) +
-  scale_color_viridis_d(option = "B", begin = 0, end = 0.9) +
-  labs(
-    x     = "Zeitverlauf",
-    y     = "Thema des Beitrags",
-    color = "Topic",
-    title = "Inhaltsverteilung der Beiträge über Zeit"
-  ) +
-  theme_minimal() +
-  theme(
-    axis.text.x = element_text(angle = 45, hjust = 1),
-    plot.title  = element_text(hjust = 0.5)
-  )
 
-# stdresiduals
+
+# stdresiduals per date
 date_dependency_stdres <- tibble(
   date = rownames(balanced_matrix_sum),
   stdres = date_dependency_chisq$stdres
 ) %>%
   arrange(desc(abs(stdres)))
+
+# z-score to calculate overall topic overrepresentation
+daily_topic <- date_dependency_txtable %>%
+  pivot_longer(
+    cols      = -date,
+    names_to  = "topic",
+    values_to = "count"
+  )
+# Compute per‑topic mean & sd, then z‑score each day
+daily_z <- daily_topic %>%
+  group_by(topic) %>%
+  mutate(
+    mu    = mean(count),
+    sigma = sd(count),
+    z     = (count - mu) / sigma
+  ) %>%
+  ungroup()
+# summarized mean z‑score per topic
+mean_z_by_topic <- daily_z %>%
+  group_by(topic) %>%
+  summarize(
+    mean_z = mean(z, na.rm = TRUE),
+    sd_z = sd(z, na.rm = TRUE),
+    days_observed = n()
+  ) %>%
+  ungroup()
+# spike days to assess specific events
+spike_days <- daily_z %>%
+  filter(z > 7) %>% # threshold for “spike”
+  arrange(topic, desc(z)) %>%
+  select(topic, date, count, z)
+
+
+
 #############################################################
 
 # Viewers
 View(dataset)
+
 View(date_dependency_txtable)
 str(date_dependency_chisq)
 print(date_dependency_plot)
 View(date_dependency_stdres)
+
+print(mean_z_by_topic)
+View(mean_z_by_topic)
+View(spike_days)
 
 #############################################################
 
