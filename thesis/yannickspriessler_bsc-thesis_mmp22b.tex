@@ -184,8 +184,7 @@ Spätestens seit den US-Wahlen 2016 hat der Begriff «Fake News» stark an Bedeu
 Aufgrund der sozialen Medien und der Möglichkeit, innerhalb kürzester Zeit Videos und Bilder zu produzieren, können heute sehr schnell audiovisuelle Falschinformationen verbreitet werden. Diese stellen nicht nur ein Problem für die individuellen Rezipierenden dar, sondern gefährden dabei auch politische und gesellschaftliche Prozesse.
 
 Die Bachelorarbeit befasst sich damit, welche inhaltlichen und gestalterischen Merkmale audiovisuelle und bildbasierte Desinformation auf Social-Media-Plattformen in der Schweiz aufweist. \\
-Ziel der Arbeit ist zum einen, herauszufinden, ob es mögliche Muster und
-Strategien hinter der Produktion der Inhalte gibt. Zum anderen soll auch ein allgemeines Verständnis über die entsprechenden Inhalte gewonnen werden. \\
+Ziel der Arbeit ist zum einen, herauszufinden, ob es mögliche Muster und Strategien hinter der Produktion der Inhalte gibt. Zum anderen soll auch ein allgemeines Verständnis über die entsprechenden Inhalte gewonnen werden. \\
 Die Erkenntnisse der Bachelorarbeit werden anschliessend verwendet, um darauf basierend eine interaktive Aufklärungsplattform zu gestalten.
 
 \subsection{Relevanz}
@@ -584,7 +583,7 @@ Die Abweichungen der einzelnen Datenpunkte bewegten sich zwischen \textit{z} = 1
   \centering
   \resizebox{\textwidth}{!}{
   \begin{tabular}{|c|c|c|c|} \hline
-    Thema&  Datum&  z-Wert& Beschreibung der Desinformation \\ \hline
+    \textbf{Thema}&  \textbf{Datum}&  \textbf{z-Wert}& \textbf{Beschreibung der Desinformation} \\ \hline
     Sport/Kultur&  26.10.2023&  14.283& Menschen sind Eigentum des Vatikans \\ \hline
     Journalismus&  01.03.2022&  11.6406&  Medien sind nicht mehr unabhängig\\ \hline
     Journalismus&  06.04.2022&  11.6406&  Medien verwenden gleiche Bezugspersonen für unterschiedliche Schlagzeilen\\ \hline
@@ -596,7 +595,7 @@ Die Abweichungen der einzelnen Datenpunkte bewegten sich zwischen \textit{z} = 1
   \caption{Tage mit besonders starker Abweichung vom Mittelmass der Themen}
   \label{tab:results_spike_days}
 \end{table}
-Von den untersuchten Spitzenabweichungen korrelieren einige mit aktuellen Vorkommnissen, andere haben keinen direkten Bezug zu aktuellen Ereignissen. Aus der Inhaltsverteilung über den Zeitstrahl (s. \ref{fig:results_date_dependency} \nameref{fig:results_date_dependency}) lassen sich gewisse Ereignis-Berichtstendenzen ableiten.
+Von den untersuchten Spitzenabweichungen korrelierten einige mit aktuellen Vorkommnissen, andere hatten keinen direkten Bezug zu aktuellen Ereignissen. Aus der Inhaltsverteilung über den Zeitstrahl (s. \ref{fig:results_date_dependency} \nameref{fig:results_date_dependency}) liessen sich gewisse Ereignis-Berichtstendenzen ableiten und prüfen:  so bezog sich beispielsweise der aussergewöhnlich starke Ausschlag im Thema Politik anfangs 2024 auf desinformierende Berichterstattung über das World Economics Forum.
 
 \textbf{Emotionalisierung}:
 \begin{quote}
@@ -611,19 +610,39 @@ Die Häufigkeitsauswertung ergab sowohl für den Beitragstext als auch für das 
     \caption{Vergleich der vermittelten Beitrags- und Artefakt-Emotionalität}
     \label{fig:results_sentiment_plot}
 \end{figure}
-Abgesehen von den Posts, bei welchen die vermittelte Emotionalität nicht erkennbar war, bildete Wut/Ärger die grösste Kategorie, bei den Beitragstexten und den visuellen Artefakten (Modus; 32,28 \% \/ 29,4 \%).
+Abgesehen von den Posts, bei welchen die vermittelte Emotionalität nicht erkennbar war, bildete Wut/Ärger die grösste Kategorie, bei den Beitragstexten und den visuellen Artefakten (Modus; 32,28 \% / 29,4 \%).
 
-Um die Korrelation zwischen Beitrags-Emotionalität und Emotionalität des visuellen Artefakts festzustellen,  wurde ein \(\chi^2\)-Test mit Monte-Carlo-Simulation (10.000 Simulationen) durchgeführt. Diese ergab folgende Werte: \(\chi^2\) (df = 36, \textit{N} = 381) = 178,03, \textit{p} = .00009.\\
+Um die Korrelation zwischen Beitrags-Emotionalität und Emotionalität des visuellen Artefakts festzustellen,  wurde ein \(\chi^2\)-Test mit Monte-Carlo-Simulation (10.000 Simulationen) durchgeführt. Dieser ergab folgende Werte: \(\chi^2\) (df = 36, \textit{N} = 381) = 178,03, \textit{p} = .00009.\\
 Mittels Cramér's V wurde eine Effektstärke von \(\phi_c\) = +0,28 errechnet. %Schwache bis mittlere Korrelation
 
-\textbf{Hypothese 3}:
+\textbf{Spezifische Keywords}:
 \begin{quote}
   \(H_3\): In Beiträgen werden spezifische Keywords gesetzt, um so möglichst viel Aufmerksamkeit auf den Beitrag zu ziehen. Die gleichen Keywords tauchen immer wieder auf.\\
   \(H_{0_3}\): Keywords werden nicht verwendet oder haben keinen spezifischen Bezug.
 \end{quote}
-% - Häufigkeitsauswertung
-% - Tabelle
-% - Probability by topic to contain tags
+Von den 381 untersuchten Beiträgen beinhalteten 37 (9,71 \%) mindestens ein Keyword/Hashtag. Meist enthielt ein Beitrag mehr als ein Keyword (\textit{n} = 26, 70,27 \%). Grösstenteils stimmten die Keywords mit dem Thema des Beitrags überein (72,97 \%).
+
+Durch Zählung der Beiträge mit Keywords und Gruppierung in Themen wurde der mittlere Anteil an Beiträgen mit Keyword pro Thema und somit die Wahrscheinlichkeit für jedes Thema errechnet, dass ein zugehöriger Beitrag Keywords enthält:
+\begin{table}[H]
+  \centering
+  \resizebox{\textwidth}{!}{
+  \begin{tabular}{|c|c|c|c|} \hline
+    \textbf{Thema}&  \textbf{n Beiträge}&  \textbf{n Beiträge mit Keyword}& \textbf{Wahrscheinlichkeit p}\\ \hline
+    Politik&  133&  22& 16.54\\ \hline
+    Journalismus&  2&  0&  0\\ \hline
+    Wissenschaft/Technik&  55&  4&  7.27\\ \hline
+    Gesundheit/Medizin&  151&  10&  6.62\\ \hline
+    Identität&  12&  0&  0\\ \hline
+    Sport/Kultur&  6&  0&  0\\ \hline
+    Wirtschaft&  5&  0&  0\\ \hline
+ Sonstige& 8& 1&12.5\\\hline
+ Nicht erkennbar& 9& 0&0\\\hline
+  \end{tabular}}
+  \caption{Statistische Wahrscheinlichkeit pro Themenbeitrag, ein Keyword zu enthalten}
+  \label{tab:results_tag_likeliness_per_topic}
+\end{table}
+Politik (Modus; 16,54 \%), Wissenschaft (7,27 \%) und Gesundheit (6,62 \%) waren die einzigen klar definierten Oberthemen, bei welchen die Beiträge Keywords enthielten. \\
+Unter den sonstigen Beiträgen betrug der Anteil 12,5 \%, allerdings war hier die Anzahl der Beiträge allgemein sehr klein und deshalb nur eine geringe Aussage möglich.
 
 \textbf{Hypothese 4}:
 \begin{quote}
