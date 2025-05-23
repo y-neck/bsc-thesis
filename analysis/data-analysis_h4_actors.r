@@ -152,13 +152,80 @@ actor_txtable <- xtabs(
     count(source_actor, source_role, name = "n")
 )
 
-# x^2
+# actor x^2
 actor_txtable_chisq <- chisq.test(actor_txtable, simulate.p.value = TRUE, B = 10000)
 
-#############################################################
+# cramers v effect size for actor x^2
+actor_chisq_stat <- as.numeric(actor_txtable_chisq$statistic)
+actor_chisq_n <- sum(actor_txtable)
+dims <- dim(actor_txtable) # rows = topics, cols = dates
+k <- min(dims[1], dims[2])
+actor_cv <- sqrt(actor_chisq_stat / (actor_chisq_n * (k - 1)))
 
-# Viewers
-View(dataset)
+# contingency table for actor_role and topic
+topic_table <- dataset %>%
+  count(post_topic) %>%
+  mutate(
+    relative_freq = n / nrow(dataset) * 100,
+    source = "Themengebiet des Beitrags"
+  )
+
+# role topic correlation
+role_topic_txtable <- dataset %>%
+  mutate(
+    source_role = fct_recode(
+      as.factor(source_role),
+      "Politik" = "1",
+      "Journalismus" = "2",
+      "Wissenschaft" = "3",
+      "Gesundheit" = "4",
+      "Sport" = "5",
+      "Kultur" = "6",
+      "Wirtschaft" = "7",
+      "Bildung" = "8",
+      "Weitere" = "9",
+      "Nicht erkennbar" = "99"
+    ),
+    post_topic = fct_recode(
+      as.factor(post_topic),
+      "Politik" = "1",
+      "Journalismus" = "2",
+      "Wissenschaft" = "3",
+      "Gesundheit" = "4",
+      "Sport" = "5",
+      "Kultur" = "6",
+      "Wirtschaft" = "7",
+      "Sonstige" = "8",
+      "Nicht erkennbar" = "9"
+    )
+  ) %>%
+  count(source_role, post_topic, name = "n") %>%
+  xtabs(formula = n ~ source_role + post_topic, data = .)
+
+# role_topic x^2
+role_topic_txtable_chisq <- chisq.test(role_topic_txtable, simulate.p.value = TRUE, B = 10000)
+
+# cramers v effect size for role_topic x^2
+role_topic_chisq_stat <- as.numeric(role_topic_txtable_chisq$statistic)
+role_topic_chisq_n <- sum(role_topic_txtable)
+dims <- dim(role_topic_txtable) # rows = topics, cols = dates
+k <- min(dims[1], dims[2])
+role_topic_cv <- sqrt(role_topic_chisq_stat / (role_topic_chisq_n * (k - 1)))
+
+# mean stdres for role_topic x^2
+role_topic_txtable_chisq_stdres <- role_topic_txtable_chisq$stdres
+role_topic_mean_stdres <- as.data.frame(role_topic_txtable_chisq_stdres) %>%
+  rownames_to_column("role") %>%
+  rowwise() %>%
+  mutate(
+    mean_stdres = mean(c_across(where(is.numeric)), na.rm = TRUE),
+    sd_stdres <- sd(c_across(where(is.numeric)), na.rm = TRUE)
+  ) %>%
+  ungroup()
+  #############################################################
+
+  # Viewers
+  View(dataset)
 View(actors_table)
 View(actor_plot_table)
 
@@ -166,10 +233,24 @@ print(actor_plot)
 
 View(actor_txtable)
 print(actor_txtable_chisq)
+print(actor_cv)
+
+View(role_topic_txtable)
+print(role_topic_txtable_chisq)
+View(role_topic_txtable_chisq_stdres)
+print(role_topic_cv)
 
 #############################################################
 
 # Results
 # Pearson's Chi-squared test with simulated p-value (based on 10000 replicates)
 #     data:  actor_txtable
-#     X-squared = 44.602, df = NA, p-value = 0.007699
+#     X-squared = 44.602, df = NA, p-value = 0.008099
+# Cramer's V [1] 0.2419353
+
+# Pearson's Chi-squared test with simulated p-value (based on 10000 replicates)
+#      data:  role_topic_txtable
+#      X-squared = 52.536, df = NA, p-value = 0.5671
+# StdRes
+#
+# Cramer's V [1] 0.1312868

@@ -613,7 +613,7 @@ Die Häufigkeitsauswertung ergab sowohl für den Beitragstext als auch für das 
 Abgesehen von den Posts, bei welchen die vermittelte Emotionalität nicht erkennbar war, bildete Wut/Ärger die grösste Kategorie, bei den Beitragstexten und den visuellen Artefakten (Modus; 32,28 \% / 29,4 \%).
 
 Um die Korrelation zwischen Beitrags-Emotionalität und Emotionalität des visuellen Artefakts festzustellen,  wurde ein \(\chi^2\)-Test mit Monte-Carlo-Simulation (10.000 Simulationen) durchgeführt. Dieser ergab folgende Werte: \(\chi^2\) (df = 36, \textit{N} = 381) = 178,03, \textit{p} = .00009.\\
-Mittels Cramér's V wurde eine Effektstärke von \(\phi_c\) = +0,28 errechnet. %Schwache bis mittlere Korrelation
+Mittels Cramér's V wurde eine Effektstärke von \(\phi_c\) = +0,28 errechnet. Zwischen der vermittelten Emotionalität des Beitrags und des visuellen Begleit-Artefakts besteht somit eine schwache bis mittlere Korrelation.
 
 \textbf{Spezifische Keywords}:
 \begin{quote}
@@ -644,13 +644,40 @@ Durch Zählung der Beiträge mit Keywords und Gruppierung in Themen wurde der mi
 Politik (Modus; 16,54 \%), Wissenschaft (7,27 \%) und Gesundheit (6,62 \%) waren die einzigen klar definierten Oberthemen, bei welchen die Beiträge Keywords enthielten. \\
 Unter den sonstigen Beiträgen betrug der Anteil 12,5 \%, allerdings war hier die Anzahl der Beiträge allgemein sehr klein und deshalb nur eine geringe Aussage möglich.
 
-\textbf{Hypothese 4}:
+\textbf{Distribution}:
 \begin{quote}
   \(H_4\): Desinformation wird primär von Einzelpersonen mit bestimmten gesellschaftlichen Rollen weiterverbreitet.\\
   \(H_{0_4}\): Desinformation wird durch Einzelpersonen und Kollektivakteure gleichermassen verbreitet. Die gesellschaftlichen Rollen sind gleichmässig verteilt.
 \end{quote}
-% - Häufigkeitsverteilung
-% - x^2 zwischen Akteurstyp und gesellschaftlicher Rolle
+Die Häufigkeitsverteilung der Akteurstypen ergab, dass es sich in etwa drei Viertel (Modus; 74,28 \%) der Fälle um Privatpersonen handelt, welche die Desinformation auf Social Media teilen. Bei 4,21 \% handelte es sich um Kollektivakteure, der Rest ist nicht klar erkennbar.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{images/actor_plot.png}
+    \caption{Relative Häufigkeit der Akteursrollen innerhalb der Akteurstypen}
+    \label{fig:results_actor_plot}
+\end{figure}
+Innerhalb der Akteurstypen waren die gesellschaftlichen Rollen unterschiedlich verteilt. Neben Privatpersonen ohne erkennbare gesellschaftliche Rolle waren bei den Privatpersonen Kultur (Modus; 7.61 \%) und Politik (7.35 \%) besonders stark ausgeprägt, bei den Kollektivakteuren waren journalistische Akteure (4.21 \%) am stärksten vertreten. Der \(\chi^2\)-Test mit Monte-Carlo-Simulation (10.000 Simulationen) ergab eine Korrelation zwischen Akteurstyp und seiner gesellschaftlichen Rolle: \(\chi^2\) (df = 18, \textit{N} = 381) = 44,6, \textit{p} = .0081, mit einer Effektstärke von \(\phi_c\) = 0.24.
+
+Um herauszufinden, inwiefern die Rolle eines Akteurs mit dem Thema des Beitrags korreliert, wurde auch für die Kreuztabelle zwischen Beitragsthema und Akteursrolle ein \(\chi^2\)-Test mit Monte-Carlo-Simulation (10.000 Simulationen) berechnet:  \(\chi^2\) (df = 64, \textit{N} = 381) = 52,54, \textit{p} = .57. Die Effektstärke betrug gemäss Cramér's V \(\phi_c\) = 0.13. Der \(\chi^2\)-Test ergab keine statistische Korrelation zwischen gesellschaftlicher Rolle und Beitragsthema.
+
+Zusätzlich wurden für jede Akteursrolle und jedes Thema die Standardresiduen errechnet, um eine Aussage darüber zu treffen, inwiefern Akteure (beispielsweise Politiker und Politikerinnen) Beiträge über das zugehörige Thema (Politik) veröffentlichen. Positive Werte zeigen eine Tendenz, besonders oft über ein Thema zu berichten, negative Werte implizieren eine Vermeidung. Als statistisch signifikanter Grenzwert wurde \(\pm\) 2.0 angenommen.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}\hline
+         \textbf{Gesellschaftliche Rolle} &  Standardresiduum \leq -2 & Standardresiduum \geq +2\\\hline
+         Politik&  Gesundheit (-2.1)& \\\hline
+         Journalismus&  & \\\hline
+         Gesundheit&  Politik (-2.09)& Gesundheit (2.2)\\\hline
+         Sport&  & \\\hline
+         Kultur&  & Politik (2.42)\\\hline
+         Wirtschaft&  & \\\hline
+         Bildung&  & \\\hline
+         Weitere&  & Sonstige (2.6)\\\hline
+         Nicht erkennbar&  & \\ \hline
+    \end{tabular}
+    \caption{Statistisch signifikante Tendenzen pro gesellschaftliche Rolle, über ein Thema zu berichten.}
+    \label{tab:role_topic_stdres}
+\end{table}
 
 \textbf{Hypothese 5}:
 \begin{quote}
