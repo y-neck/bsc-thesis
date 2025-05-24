@@ -80,9 +80,9 @@ cut_tempo_plot <- ggplot(cut_tempo_table, aes(
   ) +
   labs(
     x = "Anzahl Schnitte",
-    y = "Relative Häufigkeit (%)",
+    y = "Anzahl Videos",
     title = "Anzahl Schnitte pro Video",
-    subtitle = "Relative Häufigkeit in %"
+    subtitle = "Absolute Häufigkeit"
   ) +
   theme_minimal() +
   theme(
