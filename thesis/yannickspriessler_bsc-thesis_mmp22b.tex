@@ -423,8 +423,8 @@ Anschliessend wurden die Social-Media-Beiträge aus den Artikeln mittels eines C
 Insgesamt wurden 164 Artikel von Keystone-SDA, 98 Artikel von AFP und 26 Artikel von 20 Minuten erfasst. Davon ausgehend können 381 Social-Media-Beiträge ausgewertet werden.
 
 \begin{table}[H]
-  \caption{\textit{Erfassung der Stichprobe der auszuwertenden Social-Media-Beiträge} \\
-  \textit{Lesebeispiel: Von Keystone-SDA wurden 164 Artikel ausgewertet, welche gesamthaft 187 Social-Media-Beiträge enthalten. Davon enthielten 33 kein auswertbares mediales Artefakt (Bild oder Video), 6 hatten keinen Schweizbezug, 2 Artikel behandelten bereits ausgewertete Beiträge zu einem späteren Zeitpunkt.}}
+  \caption{\textit{Erfassung der Stichprobe der auszuwertenden Social-Media-Beiträge}}\\
+  \textit{Lesebeispiel: Von Keystone-SDA wurden 164 Artikel ausgewertet, welche gesamthaft 187 Social-Media-Beiträge enthalten. Davon enthielten 33 kein auswertbares mediales Artefakt (Bild oder Video), 6 hatten keinen Schweizbezug, 2 Artikel behandelten bereits ausgewertete Beiträge zu einem späteren Zeitpunkt.}
   \label{tab:method_sample}
   \centering
   \begin{tabular}{|l|c|c|c|}
@@ -446,7 +446,8 @@ Insgesamt wurden 164 Artikel von Keystone-SDA, 98 Artikel von AFP und 26 Artikel
     \multicolumn{4}{|c|}{Total: 381} \\
     \hline
   \end{tabular}
-\footnotesize\textit{Anmerkung.} Eigene Darstellung.  
+
+  \footnotesize\textit{Anmerkung.} Eigene Darstellung.
 \end{table}
 
 \pagebreak
@@ -502,7 +503,7 @@ Für jeden Beitrag wurde das Thema ermittelt, welches der Beitrag behandelt. Die
       Nicht erkennbar & 9 & 2.36 \\ \hline
     \end{tabular}
   }
-\footnotesize\textit{Anmerkung.} Eigene Darstellung.
+  \footnotesize\textit{Anmerkung.} Eigene Darstellung.
 \end{table}
 Besonders oft wurden im untersuchten Zeitraum Beiträge über gesundheitsspezifische (39,63 \%) oder politische (34,91 \%) Themen veröffentlicht.
 
@@ -517,7 +518,7 @@ Bei jedem Beitrag wurde erfasst, aus welchem Land er kommt, und auf welches Land
   \label{fig:results_country_relation}
   \centering
   \includegraphics[width=1\linewidth]{images/country_relation_plot.png}
-\footnotesize\textit{Anmerkung.} Eigene Darstellung.
+  \footnotesize\textit{Anmerkung.} Eigene Darstellung.
 \end{figure}
 
 Die meisten Beiträge, bei denen Ursprungs- und Bezugsland erkennbar waren, stammten aus der Schweiz und hatten Schweiz-Bezug (20,73 \%). Bei vielen Beiträgen ist jedoch weder ein klares Ursprungs- noch ein klares Bezugsland erkennbar (Modus; 27,82 \%).\\
@@ -556,7 +557,7 @@ Ausgehend vom untersuchten Datensatz konnte der Verdacht, dass Desinformation ge
     2023&57\\\hline
     2024&52\\\hline
   \end{tabular}
-\footnotesize\textit{Anmerkung.} Eigene Darstellung.
+  \footnotesize\textit{Anmerkung.} Eigene Darstellung.
 \end{table}
 Diese Häufigkeitsauswertung legt jedoch weiter nahe, dass die Verbreitung von Desinformation datenabhängig ist. Deshalb wurde die Verteilung über die Zeit analysiert. \ref{fig:results_date_dependency} zeigt die Anzahl der desinformierenden Beiträge in Abhängigkeit vom Datum und Beitragsthema:
 \begin{figure}[H]
@@ -564,7 +565,7 @@ Diese Häufigkeitsauswertung legt jedoch weiter nahe, dass die Verbreitung von D
   \label{fig:results_date_dependency}
   \centering
   \includegraphics[width=1\linewidth]{images/date_dependency_plot.png}
-\footnotesize\textit{Anmerkung.} Eigene Darstellung.
+  \footnotesize\textit{Anmerkung.} Eigene Darstellung.
 \end{figure}
 Über Politik und Gesundheit wurde durchgängig viel berichtet. Andere Themen traten punktuell auf.
 
@@ -585,7 +586,7 @@ Weiter wurde der \textit{z}-Wert (Themen-Standardisierung) aller Themenbereiche 
     Sonstige&  \(2.6824*10^{-16}\)\\ \hline
     Nicht erkennbar& \(1.1224*10^{-16}\)\\ \hline
   \end{tabular}
-\footnotesize\textit{Anmerkung}. Eigene Darstellung.
+  \footnotesize\textit{Anmerkung}. Eigene Darstellung.
 \end{table}
 Die Abweichungen der einzelnen Datenpunkte bewegten sich zwischen \textit{z} = 1,7346 und \textit{z} = 14,283. Für alle Punkte über dem Mittelwert (\textit{z} = 8,0088) wurde das Thema des Beitrags analysiert, wie in \ref{tab:results_spike_days} dargestellt:
 \begin{table}[H]
@@ -593,15 +594,15 @@ Die Abweichungen der einzelnen Datenpunkte bewegten sich zwischen \textit{z} = 1
   \label{tab:results_spike_days}
   \centering
   \resizebox{\textwidth}{!}{
-  \begin{tabular}{|c|c|c|c|} \hline
-    \textbf{Thema}&  \textbf{Datum}&  \textbf{\textit{z}-Wert}& \textbf{Beschreibung der Desinformation} \\ \hline
-    Sport/Kultur&  26.10.2023&  14.283& Menschen sind Eigentum des Vatikans \\ \hline
-    Journalismus&  01.03.2022&  11.6406&  Medien sind nicht mehr unabhängig\\ \hline
-    Journalismus&  06.04.2022&  11.6406&  Medien verwenden gleiche Bezugspersonen für unterschiedliche Schlagzeilen\\ \hline
-    Nicht erkennbar&  08.07.2021&  10.9841&  Schweiz soll Covid-Massnahmen beendet haben\\ \hline
-    Sonstige&  11.10.2022&  10.4197&  Kürbisse sollten nach Halloween nicht im Wald entsorgt werden\\ \hline
-    Politik&  17.01.2024&  8.8587&  Klaus Schwab wird am WEF beleidigt\\ \hline
-    Identität&  02.06.2021&  8.8052&  Covid ist rückwärts ein hebräischer Fluch\\ \hline
+    \begin{tabular}{|c|c|c|c|} \hline
+      \textbf{Thema}&  \textbf{Datum}&  \textbf{\textit{z}-Wert}& \textbf{Beschreibung der Desinformation} \\ \hline
+      Sport/Kultur&  26.10.2023&  14.283& Menschen sind Eigentum des Vatikans \\ \hline
+      Journalismus&  01.03.2022&  11.6406&  Medien sind nicht mehr unabhängig\\ \hline
+      Journalismus&  06.04.2022&  11.6406&  Medien verwenden gleiche Bezugspersonen für unterschiedliche Schlagzeilen\\ \hline
+      Nicht erkennbar&  08.07.2021&  10.9841&  Schweiz soll Covid-Massnahmen beendet haben\\ \hline
+      Sonstige&  11.10.2022&  10.4197&  Kürbisse sollten nach Halloween nicht im Wald entsorgt werden\\ \hline
+      Politik&  17.01.2024&  8.8587&  Klaus Schwab wird am WEF beleidigt\\ \hline
+      Identität&  02.06.2021&  8.8052&  Covid ist rückwärts ein hebräischer Fluch\\ \hline
   \end{tabular}}
   \footnotesize\textit{Anmerkung}. Eigene Darstellung.
 \end{table}
@@ -615,11 +616,11 @@ Von den untersuchten Spitzenabweichungen korrelierten einige mit aktuellen Vorko
 Mit der angewandten Methode war es nahezu unmöglich, zu überprüfen, wie ein Beitrag wahrgenommen wird. Es wurde deshalb untersucht, welche Emotion durch die Posts am wahrscheinlichsten vermittelt werden sollte.
 Die Häufigkeitsauswertung, dargestellt in \ref{fig:results_sentiment_plot}, ergab sowohl für den Beitragstext als auch für das visuelle Artefakt, dass Emotionalität in den Postings eingesetzt wurde.
 \begin{figure}[H]
-    \caption{\textit{Vergleich der vermittelten Beitrags- und Artefakt-Emotionalität}}
-    \label{fig:results_sentiment_plot}
-    \centering
-    \includegraphics[width=1\linewidth]{images/sentiment_plot.png}
-\footnotesize\textit{Anmerkung.} Eigene Darstellung.
+  \caption{\textit{Vergleich der vermittelten Beitrags- und Artefakt-Emotionalität}}
+  \label{fig:results_sentiment_plot}
+  \centering
+  \includegraphics[width=1\linewidth]{images/sentiment_plot.png}
+  \footnotesize\textit{Anmerkung.} Eigene Darstellung.
 \end{figure}
 Abgesehen von den Posts, bei welchen die vermittelte Emotionalität nicht erkennbar war, bildete Wut und Ärger die grösste Kategorie, bei den Beitragstexten und den visuellen Artefakten (Modus; 32,28 \% / 29,4 \%).
 
@@ -639,19 +640,19 @@ Durch Zählung der Beiträge mit Keywords und Gruppierung in Themen wurde der mi
   \label{tab:results_tag_likeliness_per_topic}
   \centering
   \resizebox{\textwidth}{!}{
-  \begin{tabular}{|c|c|c|c|} \hline
-    \textbf{Thema}&  \textbf{Anzahl Beiträge \textit{n}}&  \textbf{Anzahl Beiträge mit \textit{n} mit Keywords}& \textbf{Wahrscheinlichkeit \textit{p}}\\ \hline
-    Politik&  133&  22& 16.54\\ \hline
-    Journalismus&  2&  0&  0\\ \hline
-    Wissenschaft/Technik&  55&  4&  7.27\\ \hline
-    Gesundheit/Medizin&  151&  10&  6.62\\ \hline
-    Identität&  12&  0&  0\\ \hline
-    Sport/Kultur&  6&  0&  0\\ \hline
-    Wirtschaft&  5&  0&  0\\ \hline
- Sonstige& 8& 1&12.5\\\hline
- Nicht erkennbar& 9& 0&0\\\hline
+    \begin{tabular}{|c|c|c|c|} \hline
+      \textbf{Thema}&  \textbf{Anzahl Beiträge \textit{n}}&  \textbf{Anzahl Beiträge mit \textit{n} mit Keywords}& \textbf{Wahrscheinlichkeit \textit{p}}\\ \hline
+      Politik&  133&  22& 16.54\\ \hline
+      Journalismus&  2&  0&  0\\ \hline
+      Wissenschaft/Technik&  55&  4&  7.27\\ \hline
+      Gesundheit/Medizin&  151&  10&  6.62\\ \hline
+      Identität&  12&  0&  0\\ \hline
+      Sport/Kultur&  6&  0&  0\\ \hline
+      Wirtschaft&  5&  0&  0\\ \hline
+      Sonstige& 8& 1&12.5\\\hline
+      Nicht erkennbar& 9& 0&0\\\hline
   \end{tabular}}
-\footnotesize\textit{Anmerkung.} Eigene Darstellung.
+  \footnotesize\textit{Anmerkung.} Eigene Darstellung.
 \end{table}
 Politik (Modus; 16,54 \%), Wissenschaft (7,27 \%) und Gesundheit (6,62 \%) waren die einzigen klar definierten Oberthemen, bei welchen die Beiträge Keywords enthielten. \\
 Unter den sonstigen Beiträgen betrug der Anteil 12,5 \%, allerdings war hier die Anzahl der Beiträge allgemein sehr klein und deshalb nur eine geringe Aussage möglich.
@@ -664,11 +665,11 @@ Unter den sonstigen Beiträgen betrug der Anteil 12,5 \%, allerdings war hier d
 Die Häufigkeitsverteilung der Akteurstypen ergab, dass es sich in etwa drei Viertel (Modus; 74,28 \%) der Fälle um Privatpersonen handelte, welche die Desinformation auf Social Media teilten. Bei 4,21 \% handelte es sich um Kollektivakteure, der Rest war nicht klar erkennbar.\\
 \ref{fig:results_actor_plot} zeigt die Verteilung der Akteursrollen im Gesamthverhältnis zur relativen Häufigkeit der Akteurstypen.
 \begin{figure}[H]
-    \caption{\textit{Relative Häufigkeit der Akteursrollen innerhalb der Akteurstypen}}
-    \label{fig:results_actor_plot}
-    \centering
-    \includegraphics[width=1\linewidth]{images/actor_plot.png}
-\footnotesize\textit{Anmerkung.} Eigene Darstellung.
+  \caption{\textit{Relative Häufigkeit der Akteursrollen innerhalb der Akteurstypen}}
+  \label{fig:results_actor_plot}
+  \centering
+  \includegraphics[width=1\linewidth]{images/actor_plot.png}
+  \footnotesize\textit{Anmerkung.} Eigene Darstellung.
 \end{figure}
 Innerhalb der Akteurstypen waren die gesellschaftlichen Rollen unterschiedlich verteilt. Neben Privatpersonen ohne erkennbare gesellschaftliche Rolle waren bei den Privatpersonen Kultur (Modus; 7.61 \%) und Politik (7.35 \%) besonders stark ausgeprägt, bei den Kollektivakteuren waren journalistische Akteure (4.21 \%) am stärksten vertreten. Der \(\chi^2\)-Test mit Monte-Carlo-Simulation (10.000 Simulationen) ergab eine Korrelation zwischen Akteurstyp und seiner gesellschaftlichen Rolle: \(\chi^2\) (df = 18, \textit{n} = 381) = 44,6, \textit{p} = .0081, mit einer Effektstärke von \(\phi_c\) = +0.24.
 
@@ -676,22 +677,22 @@ Um herauszufinden, inwiefern die Rolle eines Akteurs mit dem Thema des Beitrags 
 
 Zusätzlich wurden für jede Akteursrolle und jedes Thema die Standardresiduen errechnet, um eine Aussage darüber zu treffen, inwiefern Akteure (beispielsweise Politiker und Politikerinnen) Beiträge über das zugehörige Thema (Politik) veröffentlichen. \\Tabelle \ref{tab:results_role_topic_stdres} zeigt in Relation zur gesellschaftlichen Rolle, welche Themen besonders wenig oder besonders oft thematisiert wurden. Positive Werte zeigen eine Tendenz, besonders oft über ein Thema zu berichten, negative Werte implizieren eine Vermeidung. Als statistisch signifikanter Grenzwert wurde \(\pm\) 2.0 angenommen.
 \begin{table}[H]
-    \caption{\textit{Statistisch signifikante Tendenzen pro gesellschaftliche Rolle, über ein Thema zu berichten.}}
-    \label{tab:results_role_topic_stdres}
-    \centering
-    \begin{tabular}{|c|c|c|}\hline
-         \textbf{Gesellschaftliche Rolle} &  Standardresiduum $\leq -2$& Standardresiduum $\geq +2$\\\hline
-         Politik&  Gesundheit (-2.1)& \\\hline
-         Journalismus&  & \\\hline
-         Gesundheit&  Politik (-2.09)& Gesundheit (2.2)\\\hline
-         Sport&  & \\\hline
-         Kultur&  & Politik (2.42)\\\hline
-         Wirtschaft&  & \\\hline
-         Bildung&  & \\\hline
-         Weitere&  & Sonstige (2.6)\\\hline
-         Nicht erkennbar&  & \\ \hline
-    \end{tabular}
-\footnotesize\textit{Anmerkung.} Eigene Darstellung.
+  \caption{\textit{Statistisch signifikante Tendenzen pro gesellschaftliche Rolle, über ein Thema zu berichten.}}
+  \label{tab:results_role_topic_stdres}
+  \centering
+  \begin{tabular}{|c|c|c|}\hline
+    \textbf{Gesellschaftliche Rolle} &  Standardresiduum $\leq -2$& Standardresiduum $\geq +2$\\\hline
+    Politik&  Gesundheit (-2.1)& \\\hline
+    Journalismus&  & \\\hline
+    Gesundheit&  Politik (-2.09)& Gesundheit (2.2)\\\hline
+    Sport&  & \\\hline
+    Kultur&  & Politik (2.42)\\\hline
+    Wirtschaft&  & \\\hline
+    Bildung&  & \\\hline
+    Weitere&  & Sonstige (2.6)\\\hline
+    Nicht erkennbar&  & \\ \hline
+  \end{tabular}
+  \footnotesize\textit{Anmerkung.} Eigene Darstellung.
 \end{table}
 
 \textbf{Technische Komplexität}:
@@ -699,15 +700,15 @@ Zusätzlich wurden für jede Akteursrolle und jedes Thema die Standardresiduen e
   \(H_5\): Primär handelt es sich bei den visuellen Artefakten um Artefakte mit tiefer technischer Komplexität, da diese weniger aufwendig sind in der Produktion.\\
   \(H_{0_5}\): Es ist keine besondere Produktionsmethode erkennbar.
 \end{quote}
-Die Komplexität der visuellen Artefakte wurde über eine Häufigkeitsverteilung erfasst. 
+Die Komplexität der visuellen Artefakte wurde über eine Häufigkeitsverteilung erfasst.
 \begin{figure}[H]
-    \caption{\textit{Häufigkeitsverteilung der Artefakt-Typen}}
-    \label{fig:results_artefact_type}
-    \centering
-    \includegraphics[width=0.75\linewidth]{artefact_type_plot.png}\\
-\footnotesize\textit{Anmerkung.} Eigene Darstellung.
+  \caption{\textit{Häufigkeitsverteilung der Artefakt-Typen}}
+  \label{fig:results_artefact_type}
+  \centering
+  \includegraphics[width=0.75\linewidth]{artefact_type_plot.png}\\
+  \footnotesize\textit{Anmerkung.} Eigene Darstellung.
 \end{figure}
-Den anteilsmässig grössten Teil der visuellen Artefakte machten, wie in Abbildung \ref{fig:results_artefact_type} erkennbar, eigens erstellte Grafiken aus (Modus; 46,98 \%). Darunter zählen beispielsweise Memes, rein textbasierte Bilder oder Fotos mit Begleittext. \\ 
+Den anteilsmässig grössten Teil der visuellen Artefakte machten, wie in Abbildung \ref{fig:results_artefact_type} erkennbar, eigens erstellte Grafiken aus (Modus; 46,98 \%). Darunter zählen beispielsweise Memes, rein textbasierte Bilder oder Fotos mit Begleittext. \\
 Einen weiteren grossen Anteil hatten reine Bilder, bei welchen keine Bearbeitung erkennbar war (25,72 \%). Insgesamt handelte es sich bei desinformierenden Bildern meist um Darstellungen, welche aus dem Kontext gerissen dargestellt wurden. Bildmanipulationen (Bild hoher Komplexität, 4,46 \%) konnten selten festgestellt werden.
 
 Videos machten rund einen Fünftel der visuellen Artefakte aus (20,47 \%). Den grössten Anteil hatten Videos ohne Bearbeitung (9,71 \% aller Artefakte), Videos mittlerer Komplexität (einfache Schnitte, Grafikeinblendungen) machten 7,87 \% aller Artefakte aus. Videos mit hoher technischer Komplexität wurden selten gepostet (2,62 \%).
@@ -720,38 +721,56 @@ Videos machten rund einen Fünftel der visuellen Artefakte aus (20,47 \%). Den 
 Zur Analyse des inhaltlichen Zusammenhangs zwischen dem Beitrag und dem visuellen Artefakt wurde eine Häufigkeitsauswertung vorgenommen. Die Ergebnisse sind in \ref{tab:results_visual_coherence_table} ersichtlich.
 
 \begin{table}[H]
-\caption{\textit{Häufigkeitsauswertung des inhaltlichen Zusammenhangs zwischen Beitragstext und visuellem Artefakt}}
-\label{tab:results_visual_coherence_table}
-    \centering
-    \begin{tabular}{|l|l|l|}\hline
-         \textbf{Inhaltliche Kohärenz}&  \textbf{Anzahl Beiträge \textit{n}}& \textbf{Relative Häufigkeit \({h_n}{x_i}\)}\\\hline
-         Text sachlich, Artefakt sachlich&  7& 1.84\\\hline
-         Text sachlich, Artefakt desinformierend&  8& 2.1\\\hline
-         Text desinformierend, Artefakt sachlich&  93& 24.41\\\hline
-         Text und Artefakt desinformierend&  176& 46.19\\\hline
-         Nicht erkennbar&  97& 25.46\\ \hline
-    \end{tabular}
-    \footnotesize\textit{Anmerkung.} Eigene Darstellung.
+  \caption{\textit{Häufigkeitsauswertung des inhaltlichen Zusammenhangs zwischen Beitragstext und visuellem Artefakt}}
+  \label{tab:results_visual_coherence_table}
+  \centering
+  \begin{tabular}{|l|l|l|}\hline
+    \textbf{Inhaltliche Kohärenz}&  \textbf{Anzahl Beiträge \textit{n}}& \textbf{Relative Häufigkeit \({h_n}{x_i}\)}\\\hline
+    Text sachlich, Artefakt sachlich&  7& 1.84\\\hline
+    Text sachlich, Artefakt desinformierend&  8& 2.1\\\hline
+    Text desinformierend, Artefakt sachlich&  93& 24.41\\\hline
+    Text und Artefakt desinformierend&  176& 46.19\\\hline
+    Nicht erkennbar&  97& 25.46\\ \hline
+  \end{tabular}
+  \footnotesize\textit{Anmerkung.} Eigene Darstellung.
 \end{table}
 In 46,19 \% (Modus) der Fälle waren sowohl der Beitragstext als auch das begleitende Bild oder Video desinformierend. Einen weiteren grossen Anteil machten Beiträge aus, bei welchen lediglich der Beitragstext desinformierend war (24,41 \%), beispielsweise indem Bilder, Grafiken oder Videos aus dem Zusammenhang herausgerissen und falsch dargestellt wurden. Bei etwa einem Viertel (25,46 \%) war der inhaltliche Zusammenhang nicht erkennbar, beispielsweise, weil kein Beitragstext vorhanden war und nur das visuelle Artefakt geteilt wurde.
 
-Weiter wurde untersucht, in welchem Zusammenhang das Thema des Beitrags mit dem Thema des visuellen Begleitartefakts steht. Hierfür wurden die einzelnen Codierungen für die Thematik der visuellen Artefakte thematisch zusammengefasst und eine Häufigkeitsauswertung des Artefakt-Themas in Relation zum Beitragsthema vorgenommen. 
+Weiter wurde untersucht, in welchem Zusammenhang das Thema des Beitrags mit dem Thema des visuellen Begleitartefakts steht. Hierfür wurden die einzelnen Codierungen für die Thematik der visuellen Artefakte thematisch zusammengefasst und eine Häufigkeitsauswertung des Artefakt-Themas in Relation zum Beitragsthema vorgenommen.
 \begin{figure}
-    \caption{\textit{Thematisches Verhältnis zwischen dem Thema des Beitrags und des visuellen Artefakts}}
-    \label{fig:results_visual_coherence_plot}
-    \centering
-    \includegraphics[width=1\linewidth]{images/visual_coherence_plot.png}
-\footnotesize\textit{Anmerkung.} Eigene Darstellung.
+  \caption{\textit{Thematisches Verhältnis zwischen dem Thema des Beitrags und des visuellen Artefakts}}
+  \label{fig:results_visual_coherence_plot}
+  \centering
+  \includegraphics[width=1\linewidth]{images/visual_coherence_plot.png}
+  \footnotesize\textit{Anmerkung.} Eigene Darstellung.
 \end{figure}
 Wie in \ref{fig:results_visual_coherence_plot} erkennbar ist, korrelierte in vielen Fällen das Beitragsthema mit dem Thema des visuellen Artefakts. Besonders stark war diese thematische Überschneidung bei den Themen Gesundheit, Wissenschaft, Journalismus und Politik.
 
-Um den Zusammenhang zwischen Beitrags- und Artefakt-Thema statistisch festzustellen, wurde \(\chi^2\) mit Monte-Carlo-Simulation (10.000 Simulationen) berechnet: \(\chi^2\) (df = 64, \textit{n} = 381) = 694.75, \textit{p} = .00009999. Die Effektstärke betrug \(\phi_c\) = 0,48,  was auf eine mittelstarke Korrelation hindeutet. 
+Um den Zusammenhang zwischen Beitrags- und Artefakt-Thema statistisch festzustellen, wurde \(\chi^2\) mit Monte-Carlo-Simulation (10.000 Simulationen) berechnet: \(\chi^2\) (df = 64, \textit{n} = 381) = 694.75, \textit{p} = .00009999. Die Effektstärke betrug \(\phi_c\) = 0,48,  was auf eine mittelstarke Korrelation hindeutet.
 
 \textbf{Hypothese 7}:
 \begin{quote}
   \(H_7\): Desinformierende Inhalte werden aus einem bestimmten Grund verbreitet.\\
   \(H_{0_7}\): Es ist kein bestimmter Verbreitungsgrund erkennbar.
 \end{quote}
+Pro Beitrag wurde aufgrund der definierten Codierungen der inhaltliche Erstellungszweck als Häufigkeitsverteilung ausgewertet. Die Ergebnisse sind in \ref{tab:results_content_creation_purpose} festgehalten.
+
+\begin{table}
+  \centering
+  \caption{\textit{Häufigkeitsverteilung des inhaltlichen Erstellungszwecks der Beiträge}}
+  \label{tab:results_content_creation_purpose}
+  \begin{tabular}{|c|c|c|}\hline
+    \textbf{Inhaltlicher Erstellungszweck}&  \textbf{Anzahl Beiträge \textit{n}}& Relative Häufigkeit \({h_n}{x_i}\)\\\hline
+    Teilen von Informationen&  16& 4.21\\\hline
+    Augenzeugenbericht&  5& 1.31\\\hline
+    Intimitätsaustausch&  12& 3.15\\\hline
+    Persönlicher Standpunkt&  244& 64.04\\\hline
+    Unterhaltungszweck&  10& 2.62\\\hline
+    Nicht erkennbar&  94& 24.67\\ \hline
+  \end{tabular}
+  \footnotesize\textit{Anmerkung.} Eigene Darstellung.
+\end{table}
+Den häufigsten Erstellungszweck bildet der persönliche Standpunkt (Modus; 64,04 \%). Personen verfassen primär Beiträge mit ihrer eigenen Meinung zu einem Thema.
 
 \textbf{Hypothese 8}:
 \begin{quote}
