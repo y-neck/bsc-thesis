@@ -694,7 +694,7 @@ Zusätzlich wurden für jede Akteursrolle und jedes Thema die Standardresiduen e
 \footnotesize\textit{Anmerkung.} Eigene Darstellung.
 \end{table}
 
-\textbf{Hypothese 5}:
+\textbf{Technische Komplexität}:
 \begin{quote}
   \(H_5\): Primär handelt es sich bei den visuellen Artefakten um Artefakte mit tiefer technischer Komplexität, da diese weniger aufwendig sind in der Produktion.\\
   \(H_{0_5}\): Es ist keine besondere Produktionsmethode erkennbar.
@@ -712,14 +712,40 @@ Einen weiteren grossen Anteil hatten reine Bilder, bei welchen keine Bearbeitung
 
 Videos machten rund einen Fünftel der visuellen Artefakte aus (20,47 \%). Den grössten Anteil hatten Videos ohne Bearbeitung (9,71 \% aller Artefakte), Videos mittlerer Komplexität (einfache Schnitte, Grafikeinblendungen) machten 7,87 \% aller Artefakte aus. Videos mit hoher technischer Komplexität wurden selten gepostet (2,62 \%).
 
-\textbf{Hypothese 6}:
+\textbf{Inhaltlicher Zusammenhang}:
 \begin{quote}
   \(H_6\): Die Desinformation liegt in der Regel im Begleittext des Beitrags, das mediale Artefakt unterstützt die Aussage des Begleittextes. \\
   \(H_{0_6}\): Beitragstexte und Artefakte sind gleichermassen desinformierend.
 \end{quote}
-% - Häufigkeitsverteilung
-% - Thematik des Artefakts: Häufigkeitsverteilung
-% -  X2 Beitragsthema / Thematik des Artefakts
+Zur Analyse des inhaltlichen Zusammenhangs zwischen dem Beitrag und dem visuellen Artefakt wurde eine Häufigkeitsauswertung vorgenommen. Die Ergebnisse sind in \ref{tab:results_visual_coherence_table} ersichtlich.
+
+\begin{table}[H]
+\caption{\textit{Häufigkeitsauswertung des inhaltlichen Zusammenhangs zwischen Beitragstext und visuellem Artefakt}}
+\label{tab:results_visual_coherence_table}
+    \centering
+    \begin{tabular}{|l|l|l|}\hline
+         \textbf{Inhaltliche Kohärenz}&  \textbf{Anzahl Beiträge \textit{n}}& \textbf{Relative Häufigkeit \({h_n}{x_i}\)}\\\hline
+         Text sachlich, Artefakt sachlich&  7& 1.84\\\hline
+         Text sachlich, Artefakt desinformierend&  8& 2.1\\\hline
+         Text desinformierend, Artefakt sachlich&  93& 24.41\\\hline
+         Text und Artefakt desinformierend&  176& 46.19\\\hline
+         Nicht erkennbar&  97& 25.46\\ \hline
+    \end{tabular}
+    \footnotesize\textit{Anmerkung.} Eigene Darstellung.
+\end{table}
+In 46,19 \% (Modus) der Fälle waren sowohl der Beitragstext als auch das begleitende Bild oder Video desinformierend. Einen weiteren grossen Anteil machten Beiträge aus, bei welchen lediglich der Beitragstext desinformierend war (24,41 \%), beispielsweise indem Bilder, Grafiken oder Videos aus dem Zusammenhang herausgerissen und falsch dargestellt wurden. Bei etwa einem Viertel (25,46 \%) war der inhaltliche Zusammenhang nicht erkennbar, beispielsweise, weil kein Beitragstext vorhanden war und nur das visuelle Artefakt geteilt wurde.
+
+Weiter wurde untersucht, in welchem Zusammenhang das Thema des Beitrags mit dem Thema des visuellen Begleitartefakts steht. Hierfür wurden die einzelnen Codierungen für die Thematik der visuellen Artefakte thematisch zusammengefasst und eine Häufigkeitsauswertung des Artefakt-Themas in Relation zum Beitragsthema vorgenommen. 
+\begin{figure}
+    \caption{\textit{Thematisches Verhältnis zwischen dem Thema des Beitrags und des visuellen Artefakts}}
+    \label{fig:results_visual_coherence_plot}
+    \centering
+    \includegraphics[width=1\linewidth]{images/visual_coherence_plot.png}
+\footnotesize\textit{Anmerkung.} Eigene Darstellung.
+\end{figure}
+Wie in \ref{fig:results_visual_coherence_plot} erkennbar ist, korrelierte in vielen Fällen das Beitragsthema mit dem Thema des visuellen Artefakts. Besonders stark war diese thematische Überschneidung bei den Themen Gesundheit, Wissenschaft, Journalismus und Politik.
+
+Um den Zusammenhang zwischen Beitrags- und Artefakt-Thema statistisch festzustellen, wurde \(\chi^2\) mit Monte-Carlo-Simulation (10.000 Simulationen) berechnet: \(\chi^2\) (df = 64, \textit{n} = 381) = 694.75, \textit{p} = .00009999. Die Effektstärke betrug \(\phi_c\) = 0,48,  was auf eine mittelstarke Korrelation hindeutet. 
 
 \textbf{Hypothese 7}:
 \begin{quote}

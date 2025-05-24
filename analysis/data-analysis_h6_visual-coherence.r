@@ -77,7 +77,7 @@ visual_coherence_plot <- ggplot(visual_coherence_table, aes(x = visual_coherence
   labs(
     x = "Verhältnis zwischen Beitrag und Artefakt",
     y = "Relative Häufigkeit (%)",
-    title = "Bildinhaltliche Koherenz",
+    title = "Bildinhaltliche Kohärenz",
     subtitle = "Relative Häufigkeit in %"
   ) +
   theme_minimal() +
@@ -87,6 +87,18 @@ visual_coherence_plot <- ggplot(visual_coherence_table, aes(x = visual_coherence
     plot.subtitle = element_text(hjust = 0.5)
   )
 
+desired_order <- c(
+  "Politische Komm.",
+  "Journalistisches Produkt",
+  "Wissenschaftskomm.",
+  "Gesundheitsbezogene Abb.",
+  "Gesellschaftsbezogene Abb.",
+  "Kulturbezogene Abb.",
+  "Wirtschaftskomm.",
+  "Weitere",
+  "Nicht erkennbar"
+)
+
 # topic plot for visual coherence
 topic_coherence_plot_table <- dataset %>%
   # extract code_str and derive super_topic before recoding
@@ -94,7 +106,7 @@ topic_coherence_plot_table <- dataset %>%
     code_str = as.character(visual_disinformation_topic),
     super_topic = case_when(
       code_str %in% c("10", "11", "12", "13", "14", "19") ~ "Politische Komm.",
-      code_str %in% c("20", "21", "22", "23", "29") ~ "Journalistisches Erzeugnis",
+      code_str %in% c("20", "21", "22", "23", "29") ~ "Journalistisches Produkt",
       code_str %in% c("30", "31", "32") ~ "Wissenschaftskomm.",
       code_str %in% c("40", "41", "42", "49") ~ "Gesundheitsbezogene Abb.",
       code_str %in% c("51", "52", "53") ~ "Gesellschaftsbezogene Abb.",
@@ -114,9 +126,8 @@ topic_coherence_plot_table <- dataset %>%
       "Sport" = "5",
       "Kultur" = "6",
       "Wirtschaft" = "7",
-      "Bildung" = "8",
-      "Weitere" = "9",
-      "Nicht erkennbar" = "99"
+      "Sonstige" = "8",
+      "Nicht erkennbar" = "9"
     ),
     visual_disinformation_topic = fct_recode(
       as.factor(visual_disinformation_topic),
@@ -156,6 +167,11 @@ topic_coherence_plot_table <- dataset %>%
     rel_freq   = n / total_type * rel_type
   ) %>%
   ungroup()
+topic_coherence_plot_table <- topic_coherence_plot_table %>%
+  mutate(
+    super_topic = factor(super_topic, levels = desired_order)
+  )
+
 topic_coherence_plot <- ggplot(topic_coherence_plot_table, aes(
   x = post_topic,
   y = rel_freq,
@@ -164,20 +180,70 @@ topic_coherence_plot <- ggplot(topic_coherence_plot_table, aes(
   geom_col() +
   coord_flip() +
   labs(
-    x = "Thema des Beitrag",
+    x = "Thema des Beitrags",
     y = "Relative Häufigkeit (%)",
     fill = "Thema des Artefakts",
     title = "Verhältnis zwischen Beitrags- und Artefaktthema",
     subtitle = "Relative Häufigkeit in %"
   ) +
-  scale_fill_viridis_d(option = "B", direction = -1, end = 0.9) + # use viridis color scale for color blindness optimization
+  scale_fill_viridis_d(option = "B", direction = -1, begin = 0.1, end = 0.9) + # use viridis color scale for color blindness optimization
   theme_minimal() +
   theme(
     axis.text.y = element_text(size = 11),
     plot.title = element_text(hjust = 0.5),
     plot.subtitle = element_text(hjust = 0.5),
-    legend.position = "bottom" # place legend under plot
   )
+
+# x^2 test
+dataset_super <- dataset %>%
+  mutate(
+    # extract the raw code as character
+    code_str = as.character(visual_disinformation_topic),
+    super_topic = case_when(
+      code_str %in% c("10", "11", "12", "13", "14", "19") ~ "Politische Komm.",
+      code_str %in% c("20", "21", "22", "23", "29") ~ "Journalistisches Produkt",
+      code_str %in% c("30", "31", "32") ~ "Wissenschaftskomm.",
+      code_str %in% c("40", "41", "42", "49") ~ "Gesundheitsbezogene Abb.",
+      code_str %in% c("51", "52", "53") ~ "Gesellschaftsbezogene Abb.",
+      code_str %in% c("61", "62") ~ "Kulturbezogene Abb.",
+      code_str %in% c("71", "72", "79") ~ "Wirtschaftskomm.",
+      code_str == "80" ~ "Weitere",
+      code_str == "99" ~ "Nicht erkennbar",
+      TRUE ~ NA_character_
+    ),
+    post_topic = fct_recode(
+      as.factor(post_topic),
+      "Politik" = "1",
+      "Journalismus" = "2",
+      "Wissenschaft" = "3",
+      "Gesundheit" = "4",
+      "Sport" = "5",
+      "Kultur" = "6",
+      "Wirtschaft" = "7",
+      "Sonstige" = "8",
+      "Nicht erkennbar" = "9"
+    )
+  ) %>%
+  filter(!is.na(super_topic), !is.na(post_topic))
+
+# 2. Build the contingency table
+topic_coherence_xtab <- xtabs(
+  ~ post_topic + super_topic,
+  data = dataset_super
+)
+
+# 3. Pearson chi-squared test (with simulation if small expected counts)
+topic_coherence_chisq <- chisq.test(
+  topic_coherence_xtab,
+  simulate.p.value = TRUE,
+  B = 10000
+)
+
+# 4. Effect‐size: Cramér’s V
+topic_coherence_chisq_stat <- as.numeric(topic_coherence_chisq$statistic)
+n_total <- sum(topic_coherence_xtab)
+k <- min(nrow(topic_coherence_xtab), ncol(topic_coherence_xtab))
+topic_coherence_cv <- sqrt(topic_coherence_chisq_stat / (n_total * (k - 1)))
 
 #############################################################
 
@@ -188,8 +254,16 @@ print(visual_coherence_plot)
 
 View(topic_coherence_plot_table)
 print(topic_coherence_plot)
+print(topic_coherence_chisq)
+print(topic_coherence_cv)
 
 
 #############################################################
 
 # Results
+# Pearson's Chi-squared test with simulated p-value (based on 10000
+#             replicates)
+#     data:  topic_coherence_xtab
+#     X-squared = 694.75, df = NA, p-value = 9.999e-05
+
+#     [1] 0.4774263
