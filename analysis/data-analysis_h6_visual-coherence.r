@@ -123,8 +123,8 @@ topic_coherence_plot_table <- dataset %>%
       "Journalismus" = "2",
       "Wissenschaft" = "3",
       "Gesundheit" = "4",
-      "Sport" = "5",
-      "Kultur" = "6",
+      "Identität" = "5",
+      "Sport/Kultur" = "6",
       "Wirtschaft" = "7",
       "Sonstige" = "8",
       "Nicht erkennbar" = "9"
@@ -217,8 +217,8 @@ dataset_super <- dataset %>%
       "Journalismus" = "2",
       "Wissenschaft" = "3",
       "Gesundheit" = "4",
-      "Sport" = "5",
-      "Kultur" = "6",
+      "Identität" = "5",
+      "Sport/Kultur" = "6",
       "Wirtschaft" = "7",
       "Sonstige" = "8",
       "Nicht erkennbar" = "9"

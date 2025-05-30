@@ -53,6 +53,30 @@ dataset <- dataset %>%
 #############################################################
 ### data analysis
 
+# posts per year, line graph
+postsPerYear <- dataset %>%
+  mutate(year = lubridate::year(date)) %>%
+  filter(year >= 2020 & year <= 2024) %>%
+  count(year)
+postsPerYearPlot <- ggplot(
+  postsPerYear,
+  aes(x = year, y = n)
+) +
+  geom_line() +
+  geom_point(color = "black", size = 2) +
+  labs(
+    x = "Jahr",
+    y = "Anzahl Beiträge",
+    title = "Beiträge pro Jahr",
+    subtitle = "Anzahl Beiträge pro Jahr"
+  ) +
+  theme_minimal() +
+  theme(
+    # axis.text.x = element_text(angle = 45, hjust = 1),
+    plot.title = element_text(hjust = 0.5),
+    plot.subtitle = element_text(hjust = 0.5)
+  )
+
 # hypothesis 1: amount of desinformation depends on external events
 post_topic_lut <- c(
   "1" = "Politik",
@@ -177,20 +201,6 @@ date_dependency_plot <- balanced_matrix %>%
     plot.title  = element_text(hjust = 0.5)
   )
 
-# # stdresiduals per date
-# date_dependency_stdres <- tibble(
-#   date = rownames(balanced_matrix_sum),
-#   stdres = date_dependency_chisq$stdres
-# ) %>%
-#   arrange(desc(abs(stdres)))
-
-# # cramers v effect size
-# date_dependency_chisq_stat <- as.numeric(date_dependency_chisq$statistic)
-# date_dependency_chisq_n <- sum(balanced_matrix)
-# dims <- dim(balanced_matrix) # rows = topics, cols = dates
-# k <- min(dims[1], dims[2])
-# date_dependency_cv <- sqrt(date_dependency_chisq_stat / (date_dependency_chisq_n * (k - 1)))
-
 # z-score to calculate overall topic overrepresentation
 daily_topic <- date_dependency_txtable %>%
   pivot_longer(
@@ -228,6 +238,8 @@ spike_days <- daily_z %>%
 
 # Viewers
 View(dataset)
+
+print(postsPerYearPlot)
 
 View(date_dependency_txtable)
 # str(date_dependency_chisq)
