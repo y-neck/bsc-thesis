@@ -52,23 +52,23 @@
 % Easier inline citation -> \say{} command
 \usepackage{dirtytalk}
 
-% List of content formatting
-\makeatletter
-% Redefine listoffigures as a subsection:
-\renewcommand\listoffigures{
-  \subsection{\listfigurename} % numbered subsection
-  \@mkboth{\MakeUppercase\listfigurename}{\MakeUppercase\listfigurename}%
-  \addcontentsline{toc}{subsection}{\listfigurename}%
-  \@starttoc{lof}%
-}
-% Redefine listoftables as a subsection:
-\renewcommand\listoftables{%
-  \subsection{\listtablename}%
-  \@mkboth{\MakeUppercase\listtablename}{\MakeUppercase\listtablename}%
-  \addcontentsline{toc}{subsection}{\listtablename}%
-  \@starttoc{lot}%
-}
-\makeatother
+% % List of content formatting
+% \makeatletter
+% % Redefine listoffigures as a subsection:
+% \renewcommand\listoffigures{
+%   \section{\listfigurename} % numbered subsection
+%   \@mkboth{\MakeUppercase\listfigurename}{\MakeUppercase\listfigurename}%
+%   \addcontentsline{toc}{section}{\listfigurename}%
+%   \@starttoc{lof}%
+% }
+% % Redefine listoftables as a subsection:
+% \renewcommand\listoftables{%
+%   \section{\listtablename}%
+%   \@mkboth{\MakeUppercase\listtablename}{\MakeUppercase\listtablename}%
+%   \addcontentsline{toc}{section}{\listtablename}%
+%   \@starttoc{lot}%
+% }
+% \makeatother
 
 % Code highlighting
 \usepackage{listings}
@@ -158,6 +158,9 @@ urlcolor = black]{hyperref}   %Hyperref pkg -> clickable links and TOC
 \end{titlingpage}
 \pagebreak      %Insert page break
 %-----------------------------------------------
+\pagenumbering{Roman}
+\setcounter{page}{1}    %Set page no.
+
 \renewcommand{\abstractname}{Abstract}
 \begin{abstract}
   \setlength{\parindent}{0pt}
@@ -179,20 +182,24 @@ The results of the thesis, combined with expert interviews, are used to create a
 \hangafter=1
 Spriessler, Y. (2025). \textit{(Audio-) visuelle Desinformation auf Social-Media-Plattformen in der Schweiz. Eine Analyse.} Bachelorarbeit. Chur: Fachhochschule Graubünden.
 
- \textbf{Titelblatt:}\\
+\textbf{Titelblatt:}\\
 Bild: \fullcite{howard_trees_2017}.\\
 Titelblatt: Eigene Darstellung.
 %\frontmatter   %If foreword
 \pagebreak
 %TOC
 \thispagestyle{empty}
-\setcounter{page}{0}    %Set page no.
 \tableofcontents        %Content index
+\pagebreak
+
+\listoffigures
+\listoftables
 \pagebreak
 %-----------------------------------------------
 %DOC
-
+\pagenumbering{arabic}
 %\mainmatter    %Main part if foreword used
+\setcounter{page}{1}    %Set page no.
 \section{Einleitung}
 Spätestens seit den US-Wahlen 2016 hat der Begriff «Fake News» stark an Bedeutung gewonnen. Zwar handelt es sich dabei nicht um eine Neuerscheinung und falsche Informationen wurden lange vor der Entwicklung des Internets verbreitet \parencites[214]{allcott_social_2017}[247]{hohlfeld_schlechte_2020}[1]{khan_fake_2021}, dennoch ist das Problem unter anderem durch die Verbreitung über das Internet weiter stark angewachsen \parencites[214–215]{allcott_social_2017}[1]{khan_fake_2021}[1]{lazer_science_2018}[4]{ceron_fake_2021}.\\
 Aufgrund der sozialen Medien und der Möglichkeit, innerhalb kürzester Zeit Videos und Bilder zu produzieren, können heute sehr schnell audiovisuelle Falschinformationen verbreitet werden. Diese stellen nicht nur ein Problem für die individuellen Rezipierenden dar, sondern gefährden dabei auch politische und gesellschaftliche Prozesse.
@@ -889,13 +896,14 @@ Insgesamt gibt es bisher, insbesondere mit Fokus auf die Schweiz, wenig Untersuc
 \pagebreak
 %-----------------------------------------------
 %BIB
-\section{Verzeichnisse}
-\subsection{Literatur}
+\section{Literatur}
 \printbibliography[heading=none, nottype=artwork]
-\subsection{Bildverweise}
-\listoffigures
-\listoftables
-\subsection{Hilfsmittelverzeichnis}
+\pagebreak
+\section{Hilfsmittelverzeichnis}
+Für das Schreiben dieser Bachelorarbeit wurde keine generative künstliche Intelligenz eingesetzt. \\
+DeepL wurde als Hilfestellung zum Formulieren der englischen Version des Abstracts verwendet. Für die Rechtschreibkorrektur wurden LanguageTools und Overleaf Writefull verwendet.\\
+ChatGPT wurde eingesetzt, um den Datensatz mit R zu analysieren. Die entsprechenden Initial-Prompts sind im Folgenden aufgeführt:
+\includepdf{Hilfsmittelverzeichnis-appendix}
 \pagebreak
 \section{Anhang}
 \subsection{Codebuch}
