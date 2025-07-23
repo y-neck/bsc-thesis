@@ -86,7 +86,7 @@ actor_role_table <- dataset %>%
       "Nicht erkennbar" = "99"
     ),
     relative_freq = n / nrow(dataset) * 100,
-    source = "Akteurrolle"
+    source = "Akteursrolle"
   ) %>%
   select(source, actor_role, relative_freq)
 # combine
@@ -133,7 +133,7 @@ actor_plot <- ggplot(actor_plot_table, aes(
   labs(
     x = "Akteurstyp",
     y = "Relative Häufigkeit (%)",
-    fill = "Akteurrolle",
+    fill = "Akteursrolle",
     title = "Verteilung der Akteursrollen innerhalb der Akteurstypen",
     subtitle = "Relative Häufigkeit in %"
   ) +
